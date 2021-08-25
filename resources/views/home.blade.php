@@ -16,7 +16,7 @@
         <title>{{ config('app.name') }} - Home</title>
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="{{ mix('css/Front.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ mix('css/front.css') }}">
 
         <!-- Scripts -->
         <script type="text/javascript" src="{{ mix('/js/jquery-1.12.4.min.js') }}" defer></script>
