@@ -7,6 +7,33 @@ body {
     padding-right: 45px !important;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    position: fixed;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    overflow: auto;
+    padding-right: 1px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 /*--------------------------------------------------------------------------------------
 Theme Name: OWL RESTAURANT
 Theme URI: http://devitfamily.com
