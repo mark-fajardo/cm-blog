@@ -38,7 +38,7 @@ jQuery(document).on('ready', function ($) {
 
     function toggleSearch(type) {
         if (type === "close") {
-            //close serach 
+            //close serach
             $searchForm.removeClass('is-visible');
             $searchFormTrigger.removeClass('search-is-visible');
         } else {
@@ -100,7 +100,7 @@ jQuery(document).on('ready', function ($) {
         removalDelay: 500, //delay removal by X to allow out-animation
         callbacks: {
             beforeOpen: function () {
-                // just a hack that adds mfp-anim class to markup 
+                // just a hack that adds mfp-anim class to markup
                 this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
                 this.st.mainClass = this.st.el.attr('data-effect');
             }
@@ -270,21 +270,39 @@ jQuery(document).on('ready', function ($) {
     /*----------------------------
         INSTAGRAM FEED ACTIVE
     -----------------------------*/
-    jQuery.fn.spectragram.accessData = {
-        accessToken: '2136707.4dd19c1.d077b227b0474d80a5665236d2e90fcf',
-        clientID: '4dd19c1f5c7745a2bca7b4b3524124d0'
-    }
-
-    $('.instagram-feed').spectragram('getUserFeed', {
-        query: 'adrianengine', //this gets adrianengine's photo feed
-        size: 'big',
-        max: 5
-    });
-    $('.blog-instagram-feed-widget').spectragram('getUserFeed', {
-        query: 'adrianengine', //this gets adrianengine's photo feed
-        size: 'small',
-        max: 6
-    });
+    // jQuery.fn.spectragram.accessData = {
+    //     accessToken: 'IGQVJYLV9HOUhxUXdiUXV1bXRVVWdJb0ZAuWXU4ek9HYnB5RG50ZADA2UTd1VjlyZAk52amE4TDJyVnRXVmZABZA2lJaGdGcHVBcGxyWFloN0o2aW9nSGZA5M0NVSlRyY3ZA2XzU5Ni1Ja3loR1dOV1NQR2ttMgZDZD',
+    //     clientID: '298091052068601'
+    // }
+    //
+    // $('.instagram-feed').spectragram('getUserFeed', {
+    //     query: 'chef_morrisdanzen',
+    //     size: 'big',
+    //     max: 5
+    // });
+    // $('.blog-instagram-feed-widget').spectragram('getUserFeed', {
+    //     query: 'chef_morrisdanzen',
+    //     size: 'small',
+    //     max: 6
+    // });
+    // /*----------------------------
+    //     INSTAGRAM FEED ACTIVE
+    // -----------------------------*/
+    // jQuery.fn.spectragram.accessData = {
+    //     accessToken: process.env.MIX_INSTAGRAM_ACCESS_TOKEN,
+    //     clientID: process.env.MIX_INSTAGRAM_CLIENT_ID
+    // }
+    //
+    // $('.instagram-feed').spectragram('getUserFeed', {
+    //     query: process.env.MIX_INSTAGRAM_USERNAME,
+    //     size: 'big',
+    //     max: 5
+    // });
+    // $('.blog-instagram-feed-widget').spectragram('getUserFeed', {
+    //     query: process.env.MIX_INSTAGRAM_USERNAME,
+    //     size: 'small',
+    //     max: 6
+    // });
 
 }(jQuery));
 

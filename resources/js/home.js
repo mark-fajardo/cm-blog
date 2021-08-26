@@ -3,9 +3,8 @@ require('es6-object-assign/auto');
 require('./common');
 window.Vue = require('vue');
 
-import Header from './Components/Home/Header.vue';
-import MiniAbout from './Components/Home/MiniAbout.vue';
-import Promotions from './Components/Home/Promotions.vue';
+import Header from './Components/Home/Header';
+import Home from './Components/Modules/Home';
 import mixins from './mixins';
 import VueSweetalert2 from 'vue-sweetalert2';
 
@@ -16,8 +15,5 @@ new Vue({
     render: h => h(Header)
 }).$mount('#header-component');
 new Vue({
-    render: h => h(MiniAbout)
-}).$mount('#mini-about-component');
-new Vue({
-    render: h => h(Promotions)
-}).$mount('#promotions-component');
+    render: h => h(Home)
+}).$mount('#app');

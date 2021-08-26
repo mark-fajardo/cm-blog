@@ -43,7 +43,6 @@
         <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
 
         <div id="header-component"></div>
-        <div id="mini-about-component"></div>
-        <div id="promotions-component"></div>
+        <div id="app"></div>
     </body>
 </html>
