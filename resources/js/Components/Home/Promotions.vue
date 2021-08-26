@@ -83,7 +83,8 @@
     }
 
     .promotions-img {
-        width: 370px;
+        min-width: 200px;
+        max-width: 400px;
         margin: 0 auto;
     }
     .promotions-details {
