@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'google_site_verification' => env('GOOGLE_SITE_VERIFICATION', '-TyABmmj4fxnu3NWkqO1Hqowvr6MpE2hrRJtHD5R0Vk'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
