@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="area-title">
-                        <h2><span>I'm</span> <br> Chef <span style="padding-left: 17px"></span> Morris Danzen</h2>
+                        <h2><span>I'm</span> <br> Chef Morris Danzen</h2>
                     </div>
                     <div class="about-content">
                         <p>{{ mini_about.content }}</p>
