@@ -1,0 +1,32 @@
+<template>
+    <section class="instagram-area section-padding">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h4>Follow me on Instagram <a href="//www.instagram.com/chef_morrisdanzen/" target="_blank" rel="noopener noreferrer">@chef_morrisdanzen</a></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="instagram-feed-content text-center">
+                        <ul class="instagram-feed"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+    export default {
+        name: 'SocialMediaFeed'
+    }
+</script>
+
+<style scoped>
+    .instagram-area {
+        background-color: #FFFFFF;
+    }
+</style>

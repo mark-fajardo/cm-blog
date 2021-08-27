@@ -11,10 +11,11 @@ require('laravel-mix-polyfill');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/maintenance.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css')
+mix.js('resources/js/maintenance.js', 'public/js')
+    .js('resources/js/home.js', 'public/js')
+    .js('resources/js/main.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
+    .postCss('resources/css/Front.css', 'public/css')
     .polyfill({
         enabled: true,
         useBuiltIns: 'usage',
