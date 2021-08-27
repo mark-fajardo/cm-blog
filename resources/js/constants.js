@@ -5,7 +5,7 @@
 export const MainMenu = Object.freeze([
     {
         NAME: 'Home',
-        REDIRECT: '/home'
+        REDIRECT: '/'
     },
     {
         NAME: 'About Me',
