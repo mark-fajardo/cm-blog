@@ -232,6 +232,9 @@
         display: none;
     }
     /*------------------*/
+    .top-bar {
+        background: #212324 none repeat scroll 0 0;
+    }
     .mainmenu-area {
         background: #212324 none repeat scroll 0 0;
     }
@@ -399,6 +402,10 @@
     }
     ul#nav li {
         float: none;
+    }
+
+    .top-bar {
+        background: #212324 none repeat scroll 0 0;
     }
     .mainmenu-area {
         background: #212324 none repeat scroll 0 0;

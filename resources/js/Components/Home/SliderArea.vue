@@ -1,7 +1,7 @@
 <template>
     <div class="slider-area" style="background-color: #bcbcbc">
         <div class="pogoSlider">
-            <div v-for="slider in sliders" class="pogoSlider-slide" data-transition="fade" data-duration="1500" :style="'background:url(' + ((isMobile === false || windowWidth >= 500) ? slider.image_url : slider.image_url_portrait) + ') no-repeat scroll 0 0 / cover;'">
+            <div v-for="slider in sliders" class="pogoSlider-slide" data-transition="fade" data-duration="1500" :style="'background:url(' + validatePlatform(slider.image_url, slider.image_url_portrait) + ') no-repeat scroll 0 0 / cover;'">
                 <h2 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="700">{{ slider.header }}</h2>
                 <h1 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="1500" v-html="renderSpan(slider.footer)"></h1>
                 <h3 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="2300"><a :href="slider.href">{{ slider.button }}</a></h3>
@@ -13,51 +13,12 @@
 <script>
     import { vueWindowSizeMixin } from 'vue-window-size';
     import { detectPlatformMixin } from '../../detectPlatformMixin';
+    import { mapGetters } from 'vuex';
 
     export default {
         name: 'SliderArea',
-        data() {
-            return {
-                test: true,
-                /**
-                 * TODO: For the admin side, this must be required in the form.
-                 * hrefs must be available and selectable.
-                 */
-                sliders: [
-                    {
-                        image_url: 'img/chef_morris/left_position_landscape.jpg',
-                        image_url_portrait: 'img/chef_morris/profile_2_portrait.jpg',
-                        header: 'Welcome!',
-                        footer: 'This is **Chef Morris Danzen***',
-                        button: 'See more about me',
-                        href: '/about-me'
-                    },
-                    {
-                        image_url: 'img/chef_morris/tiramisu_2_landscape.jpg',
-                        image_url_portrait: 'img/chef_morris/profile_2_portrait.jpg',
-                        header: 'Want some?',
-                        footer: 'See **more*** of this here',
-                        button: 'View Recipe List',
-                        href: '/recipe-list'
-                    },
-                    {
-                        image_url: 'img/chef_morris/no_flour_chocolate_cake_square.jpg',
-                        image_url_portrait: 'img/chef_morris/profile_2_portrait.jpg',
-                        header: 'Impossible?',
-                        footer: 'See and learn **now***',
-                        button: 'View the recipe here',
-                        href: '/recipe-list'
-                    },
-                    {
-                        image_url: 'img/chef_morris/far_with_pepper_landscape.jpg',
-                        image_url_portrait: 'img/chef_morris/profile_2_portrait.jpg',
-                        header: 'Get ready',
-                        footer: 'For the **new*** Recipes',
-                        button: 'Take a look in here',
-                        href: '/recipe-list'
-                    }
-                ]
-            };
+        computed: {
+            ...mapGetters('PageConfig', ['sliders']),
         },
         methods: {
             /**
@@ -67,6 +28,16 @@
             renderSpan(render) {
                 render = render.replace('**', '<span>');
                 return render.replace('***', '</span>');
+            },
+
+            /**
+             * Validate image to be shown.
+             * @param image_url
+             * @param image_url_portrait
+             * @returns {*}
+             */
+            validatePlatform(image_url, image_url_portrait) {
+                return (this.isMobile === false || this.windowWidth > 500) ? image_url : image_url_portrait;
             }
         },
         mixins: [ vueWindowSizeMixin, detectPlatformMixin ]

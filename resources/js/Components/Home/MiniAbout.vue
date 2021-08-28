@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="area-title">
-                        <h2><span>I'm</span> <br> Chef Morris Danzen</h2>
+                        <h2><span>{{ mini_about.small_title }}</span> <br> {{ mini_about.title }}</h2>
                     </div>
                     <div class="about-content">
                         <p>{{ mini_about.content }}</p>
@@ -32,19 +32,16 @@
 
 <script>
     import { MainMenu } from '../../constants';
+    import { mapGetters } from 'vuex';
 
     export default {
         name: 'MiniAbout',
+        computed: {
+            ...mapGetters('PageConfig', ['mini_about']),
+        },
         data() {
             return {
-                main_menu: MainMenu,
-                mini_about: {
-                    img: [
-                        'img/chef_morris/profile_portrait.jpg',
-                        'img/chef_morris/profile_2_portrait.jpg'
-                    ],
-                    content: 'A Filipino Chef in Italy sharing different recipes! From Italian and Filipino cuisine and many more! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-                }
+                main_menu: MainMenu
             };
         }
     }
