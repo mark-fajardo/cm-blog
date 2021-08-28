@@ -28,13 +28,13 @@
         <!-- Scripts -->
         <script type="text/javascript" src="{{ mix('/js/jquery-1.12.4.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/modernizr-2.8.3.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ mix('/js/home.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/jquery.pogo-slider.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/waypoints.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/wow.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/main.js') }}" defer></script>
+        <script type="text/javascript" src="{{ mix('/js/home.js') }}" defer></script>
     </head>
-    <body>
+    <body data-state="{{ $state }}">
         <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

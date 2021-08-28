@@ -1,11 +1,6 @@
 <template>
-    <section class="promotions-area section-padding">
-        <div class="promotion-area-bg">
-            <div class="video-background">
-                <div class="video-foreground">
-                    <iframe :src="'//www.youtube.com/embed/' + promotion.youtube_video_id + '?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=' + promotion.youtube_video_id" allowfullscreen></iframe>
-                </div>
-            </div>
+    <section class="promotions-area section-padding" v-show="isPromotionAvailable === true">
+        <div class="promotion-area-bg" :style="(isMainImageAvailable === true) ? 'background: rgba(0, 0, 0, 0) url('+ promoted_recipe.main_image +') no-repeat fixed 0 0 / cover' : 'background-color: #FFFFFF'">
         </div>
         <div class="container wow fadeIn">
             <div class="row">
@@ -20,12 +15,13 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="text-center">
                         <div class="single-promotions text-center">
-                            <div class="promotions-img">
-                                <img :src="promotion.href" alt="">
+                            <div class="promotions-img" :style="(isYoutubeVideoIDAvailable === false) ? 'min-width: 200px; max-width: 800px; margin: 0 auto;' : ''">
+                                <img v-if="isYoutubeVideoIDAvailable === false" :src="promoted_recipe.main_image" alt="">
+                                <iframe v-if="isYoutubeVideoIDAvailable === true" :src="'//www.youtube.com/embed/' + promoted_recipe.youtube_video_id + '?controls=1&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=' + promoted_recipe.youtube_video_id" allowfullscreen></iframe>
                             </div>
                             <div class="promotions-details">
-                                <h4>{{ promotion.title }}</h4>
-                                <a href="#" class="read-more">Check recipe</a>
+                                <h4>{{ promoted_recipe.recipe_name }}</h4>
+                                <a :href="'/recipes/' + promoted_recipe.slug_name" class="read-more">Check recipe</a>
                             </div>
                         </div>
                     </div>
@@ -36,16 +32,42 @@
 </template>
 
 <script>
+    import { mapGetters, mapActions } from 'vuex';
+
     export default {
         name: 'Promotions',
-        data() {
-            return {
-                promotion: {
-                    title: 'Stir Fried Prawns in Oyster Sauce',
-                    href: 'img/chef_morris/stir_fried_prawns_screenshot_landscape.jpg',
-                    youtube_video_id: '2qnGGVH8uSU'
-                }
-            };
+        computed: {
+            ...mapGetters('Recipe', ['promoted_recipe']),
+
+            /**
+             * Check if promoted recipe is available.
+             * @returns {boolean}
+             */
+            isPromotionAvailable() {
+                return (this.$_.isEmpty(this.promoted_recipe.recipe_name) === false);
+            },
+
+            /**
+             * Check if the main image is available.
+             * @returns {boolean}
+             */
+            isYoutubeVideoIDAvailable() {
+                return (this.$_.isEmpty(this.promoted_recipe.youtube_video_id) === false);
+            },
+
+            /**
+             * Check if the main image is available.
+             * @returns {boolean}
+             */
+            isMainImageAvailable() {
+                return (this.$_.isEmpty(this.promoted_recipe.main_image) === false);
+            },
+        },
+        methods: {
+            ...mapActions('Recipe', ['getPromotedRecipe']),
+        },
+        mounted() {
+            this.getPromotedRecipe();
         }
     }
 </script>
@@ -82,10 +104,11 @@
         .vid-info .acronym { display: none; }
     }
 
-    .promotions-img {
+    .promotions-img iframe {
+        width: 100%;
+        height: 500px;
         min-width: 200px;
-        max-width: 400px;
-        margin: 0 auto;
+        min-height: 200px;
     }
     .promotions-details {
         margin-top: 40px;

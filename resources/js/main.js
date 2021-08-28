@@ -1,28 +1,6 @@
 jQuery(document).on('ready', function ($) {
     "use strict";
 
-    /*--------------------------
-        SCROLLSPY ACTIVE
-    ---------------------------*/
-    $('body').scrollspy({
-        target: '.bs-example-js-navbar-scrollspy',
-        offset: 50
-    });
-
-    /*--------------------------
-        STICKY MAINMENU
-    ---------------------------*/
-    $("#mainmenu-area").sticky({
-        topSpacing: 0
-    });
-
-
-    /*-----------------------------
-        SLIDER ACTIVE
-    ------------------------------*/
-    var mySlider = $('.pogoSlider').pogoSlider({
-        pauseOnHover: false
-    }).data('plugin_pogoSlider');
 
 
     /*----------------------------
@@ -69,47 +47,6 @@ jQuery(document).on('ready', function ($) {
     doneResizing();
 
 
-    /*------------------------------
-        TIME PICKER ACTIVE
-    -------------------------------*/
-    var input = $('#time,#reservation_time').clockpicker({
-        placement: 'bottom',
-        align: 'left',
-        autoclose: true,
-        'default': 'now'
-    });
-
-
-    /*------------------------------
-        ABOUT VIDEO POPUP
-    --------------------------------*/
-    $('.about-video-button,.blog-video-button').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 320,
-        preloader: false
-    });
-
-
-    /*------------------------------
-        MENU IMAGE POPUP
-    -------------------------------*/
-    $('.menu-popup').magnificPopup({
-        type: 'image',
-        removalDelay: 500, //delay removal by X to allow out-animation
-        callbacks: {
-            beforeOpen: function () {
-                // just a hack that adds mfp-anim class to markup
-                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-                this.st.mainClass = this.st.el.attr('data-effect');
-            }
-        },
-        closeOnContentClick: true,
-        midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-    });
-
-
     /*---------------------------
         SMOOTH SCROLL
     -----------------------------*/
@@ -135,131 +72,6 @@ jQuery(document).on('ready', function ($) {
             $(".scrolltotop").fadeOut();
         }
     });
-
-
-    /*---------------------------
-        MENU LIST MIXITUP FILTERING
-    ----------------------------*/
-    $('.food-menu-list').mixItUp();
-
-
-    /*---------------------------
-        SCREENSHOT SLIDER
-    -----------------------------*/
-    $('.team-slider').owlCarousel({
-        merge: true,
-        video: true,
-        items: 1,
-        smartSpeed: 1000,
-        loop: true,
-        nav: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        autoplay: false,
-        autoplayTimeout: 2000,
-        margin: 15,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 5
-            }
-        }
-    });
-
-
-    /*---------------------------
-        TESTMONIAL SLIDER
-    -----------------------------*/
-    $('.testmonial-slider').owlCarousel({
-        merge: true,
-        video: true,
-        items: 1,
-        smartSpeed: 1000,
-        loop: true,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        autoplay: false,
-        autoplayTimeout: 2000,
-        margin: 15,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-
-
-    /*---------------------------
-        BLOG POST IMAGE SLIDER
-    -----------------------------*/
-    $('.blog-image-sldie').owlCarousel({
-        merge: true,
-        video: true,
-        items: 1,
-        smartSpeed: 1000,
-        loop: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut',
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        autoplay: false,
-        autoplayTimeout: 2000,
-        margin: 15,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-
-
-    /*---------------------------
-        MENU DISCOUNT SLIDER
-    -----------------------------*/
-    $('.menu-discount-offer').owlCarousel({
-        merge: true,
-        video: true,
-        items: 1,
-        smartSpeed: 1000,
-        loop: true,
-        nav: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        autoplay: false,
-        autoplayTimeout: 2000,
-        margin: 15,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-
 
     /*--------------------------
         ACTIVE WOW JS
@@ -306,11 +118,198 @@ jQuery(document).on('ready', function ($) {
 
 }(jQuery));
 
+export const jQueryMixin = {
+    method: {
+        async init() {
+            Promise.all([
+                this.loadScrollSpy(),
+                await this.loadSlider(),
+                this.loadSticky(),
+                this.loadClockPicker(),
+                this.loadOwlCarousel(),
+            ]).then(() => {
+                $(".preeloader").fadeOut(1500);
+            });
+        },
+        loadScrollSpy() {
+            $('body').scrollspy({
+                target: '.bs-example-js-navbar-scrollspy',
+                offset: 50
+            });
+        },
+        loadSticky() {
+            $("#mainmenu-area").sticky({
+                topSpacing: 0
+            });
+        },
+        loadClockPicker() {
+            /*------------------------------
+                TIME PICKER ACTIVE
+            -------------------------------*/
+            var input = $('#time,#reservation_time').clockpicker({
+                placement: 'bottom',
+                align: 'left',
+                autoclose: true,
+                'default': 'now'
+            });
+        },
+        magnificPopUp() {
+            /*------------------------------
+                ABOUT VIDEO POPUP
+            --------------------------------*/
+            $('.about-video-button,.blog-video-button').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 320,
+                preloader: false
+            });
+
+            /*------------------------------
+                MENU IMAGE POPUP
+            -------------------------------*/
+            $('.menu-popup').magnificPopup({
+                type: 'image',
+                removalDelay: 500, //delay removal by X to allow out-animation
+                callbacks: {
+                    beforeOpen: function () {
+                        // just a hack that adds mfp-anim class to markup
+                        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+                        this.st.mainClass = this.st.el.attr('data-effect');
+                    }
+                },
+                closeOnContentClick: true,
+                midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+            });
+        },
+        loadMixItUp() {
+            /*---------------------------
+                MENU LIST MIXITUP FILTERING
+            ----------------------------*/
+            $('.food-menu-list').mixItUp();
+        },
+        loadOwlCarousel() {
+            /*---------------------------
+                SCREENSHOT SLIDER
+            -----------------------------*/
+            $('.team-slider').owlCarousel({
+                merge: true,
+                video: true,
+                items: 1,
+                smartSpeed: 1000,
+                loop: true,
+                nav: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                autoplay: false,
+                autoplayTimeout: 2000,
+                margin: 15,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+
+            /*---------------------------
+                TESTMONIAL SLIDER
+            -----------------------------*/
+            $('.testmonial-slider').owlCarousel({
+                merge: true,
+                video: true,
+                items: 1,
+                smartSpeed: 1000,
+                loop: true,
+                nav: true,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                autoplay: false,
+                autoplayTimeout: 2000,
+                margin: 15,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+
+            /*---------------------------
+                BLOG POST IMAGE SLIDER
+            -----------------------------*/
+            $('.blog-image-sldie').owlCarousel({
+                merge: true,
+                video: true,
+                items: 1,
+                smartSpeed: 1000,
+                loop: true,
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut',
+                nav: true,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                autoplay: false,
+                autoplayTimeout: 2000,
+                margin: 15,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+
+            /*---------------------------
+                MENU DISCOUNT SLIDER
+            -----------------------------*/
+            $('.menu-discount-offer').owlCarousel({
+                merge: true,
+                video: true,
+                items: 1,
+                smartSpeed: 1000,
+                loop: true,
+                nav: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                autoplay: false,
+                autoplayTimeout: 2000,
+                margin: 15,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+        },
+        loadSlider() {
+            var mySlider = $('.pogoSlider').pogoSlider({
+                pauseOnHover: false
+            }).data('plugin_pogoSlider')
+        }
+    }
+}
 
 jQuery(window).on('load', function () {
-
-    /*--------------------------
-        PRE LOADER
-    ----------------------------*/
-    $(".preeloader").fadeOut(1000);
 });
