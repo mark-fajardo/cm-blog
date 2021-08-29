@@ -1,7 +1,9 @@
 {
-    "/js/home.js": "/js/home.js?id=07e0517cbae22f0bb5b5",
-    "/js/main.js": "/js/main.js?id=9fc8a3c832950e3b861c",
+    "/js/home.js": "/js/home.js?id=ae726da4a250a7e27e56",
+    "/js/main.js": "/js/main.js?id=f4da663bbcd9249deb30",
     "/js/maintenance.js": "/js/maintenance.js?id=cdb5a9dc87221d2e5ef0",
     "/css/maintenance.css": "/css/maintenance.css?id=117c1b2d2d14734e56c0",
-    "/css/Front.css": "/css/Front.css?id=8cb7b5fa0c926014bbc2"
+    "/css/Front.css": "/css/Front.css?id=db79fdb365d4470b8ff8",
+    "/js/notFound.js": "/js/notFound.js?id=24f13e18d2f839009ee5",
+    "/js/recipeList.js": "/js/recipeList.js?id=b5f2f9b98a91607e801c"
 }

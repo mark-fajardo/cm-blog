@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Constants\AppConstants;
 use App\Libraries\DBUtils;
 use App\Repository\PageConfigRepository;
+use Illuminate\Http\Request;
 
 /**
  * Contains page config service methods.
@@ -31,21 +32,25 @@ class PageConfigService extends Service
 
     /**
      * Get page config only.
-     * @param array $aRequest
-     * @return array
+     * @param Request $oRequest
+     * @return PageConfigService
      */
-    public function getPageConfig(array $aRequest): array
+    public function pageConfig(Request $oRequest): PageConfigService
     {
-        $aPageConfig = $this->oPageConfigRepository->getPageConfig($aRequest);
+        $this->request($oRequest);
+        $aPageConfig = $this->oPageConfigRepository->getPageConfig($this->aRequest);
         if (empty($aPageConfig) === true) {
-            return DBUtils::formatResponse(false);
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $this;
         }
 
         $sPageConfig = data_get($aPageConfig, AppConstants::PAGE_CONFIG_JSON, '');
         if (empty($sPageConfig) === true) {
-            return DBUtils::formatResponse(false);
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $this;
         }
 
-        return DBUtils::formatResponse(true, json_decode($sPageConfig, true));
+        $this->aResponse = DBUtils::formatResponse(true, json_decode($sPageConfig, true));
+        return $this;
     }
 }

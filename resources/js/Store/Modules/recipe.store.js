@@ -5,7 +5,12 @@ const state = {
         main_image: ''
     },
     recommended_recipes: {},
-    recommended_video_recipes: {}
+    recommended_video_recipes: {},
+    recipe_count: 0,
+    recipes: {},
+    search_keyword: '',
+    offset: 0,
+    limit: 6
 };
 
 const mutations = {
@@ -37,6 +42,46 @@ const mutations = {
      */
     SET_RECOMMENDED_VIDEO_RECIPES(state, recommended_video_recipes) {
         state.recommended_video_recipes = JSON.parse(JSON.stringify(recommended_video_recipes));
+    },
+
+    /**
+     * Set all recipe count.
+     * @param state
+     * @param recipe_count
+     * @constructor
+     */
+    SET_ALL_RECIPE_COUNT(state, recipe_count) {
+        state.recipe_count = recipe_count;
+    },
+
+    /**
+     * Set all recipes.
+     * @param state
+     * @param recipes
+     * @constructor
+     */
+    SET_ALL_RECIPES(state, recipes) {
+        state.recipes = recipes;
+    },
+
+    /**
+     * Set offset.
+     * @param state
+     * @param offset
+     * @constructor
+     */
+    SET_OFFSET(state, offset) {
+        state.offset = offset;
+    },
+
+    /**
+     * Set search keyword.
+     * @param state
+     * @param search_keyword
+     * @constructor
+     */
+    SET_SEARCH_KEYWORD(state, search_keyword) {
+        state.search_keyword = search_keyword;
     },
 };
 
@@ -82,6 +127,44 @@ const actions = {
             commit('SET_RECOMMENDED_VIDEO_RECIPES', {});
         });
     },
+
+    /**
+     * Fetch recipe count
+     * @param commit
+     */
+    async getRecipeCount({ commit }) {
+        await window.axios.get('/rest/recipe/count', {
+            params: {
+                search_keyword: state.search_keyword
+            }
+        }).then((oResponse) => {
+            if (oResponse.data.success === true) {
+                commit('SET_ALL_RECIPE_COUNT', oResponse.data.data.count);
+            }
+        }).catch(() => {
+            commit('SET_ALL_RECIPE_COUNT', {});
+        });
+    },
+
+    /**
+     * Fetch recipe
+     * @param commit
+     */
+    async getRecipe({ commit, state }) {
+        await window.axios.get('/rest/recipe', {
+            params: {
+                offset: state.offset,
+                limit: state.limit,
+                search_keyword: state.search_keyword
+            }
+        }).then((oResponse) => {
+            if (oResponse.data.success === true) {
+                commit('SET_ALL_RECIPES', oResponse.data.data);
+            }
+        }).catch(() => {
+            commit('SET_ALL_RECIPES', {});
+        });
+    },
 };
 
 const getters = {
@@ -110,6 +193,24 @@ const getters = {
      */
     recommended_video_recipes(state) {
         return state.recommended_video_recipes;
+    },
+
+    /**
+     * Get all recipe count.
+     * @param state
+     * @returns {any}
+     */
+    recipe_count(state) {
+        return state.recipe_count;
+    },
+
+    /**
+     * Get all recipes.
+     * @param state
+     * @returns {any}
+     */
+    recipes(state) {
+        return state.recipes;
     }
 };
 

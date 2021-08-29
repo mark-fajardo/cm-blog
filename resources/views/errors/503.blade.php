@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Maintenance Mode</title>
+        <title>503 - {{ config('app.name') }}</title>
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-      
+        <!--====== FAVICON ICON =======-->
+        <link rel="shortcut icon" type="image/ico" href="{{ asset('img/favicon.png') }}" />
+
         <!-- Scripts -->
         <script type="text/javascript" src="{{ mix('/js/maintenance.js') }}" defer></script>
 

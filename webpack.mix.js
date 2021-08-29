@@ -14,6 +14,8 @@ require('laravel-mix-polyfill');
 mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/home.js', 'public/js')
     .js('resources/js/main.js', 'public/js')
+    .js('resources/js/notFound.js', 'public/js')
+    .js('resources/js/recipeList.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
     .postCss('resources/css/Front.css', 'public/css')
     .polyfill({

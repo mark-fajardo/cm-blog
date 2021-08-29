@@ -6,7 +6,7 @@ use App\Constants\AppConstants;
 use App\Models\Recipe;
 
 /**
- * Contains page config service methods.
+ * RecipeRepository
  * @package App\Repository
  * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.28
@@ -21,6 +21,7 @@ class RecipeRepository extends Repository
     {
         return $this->parseFirstData(Recipe::select(AppConstants::PROMOTED_FIELDS)
             ->where(AppConstants::PROMOTED_STATUS, 1)
+            ->where(AppConstants::STATUS, 1)
             ->get()
         );
     }
@@ -33,6 +34,9 @@ class RecipeRepository extends Repository
     {
         return $this->parseData(Recipe::select(AppConstants::RECOMMENDED_FIELDS)
             ->where(AppConstants::RECOMMEND_STATUS, 1)
+            ->where(AppConstants::STATUS, 1)
+            ->orderBy(AppConstants::ID, AppConstants::DESC)
+            ->orderBy(AppConstants::UPDATED_AT, AppConstants::DESC)
             ->get()
         );
     }
@@ -45,6 +49,40 @@ class RecipeRepository extends Repository
     {
         return $this->parseData(Recipe::select(AppConstants::RECOMMENDED_VIDEO_FIELDS)
             ->where(AppConstants::RECOMMEND_VIDEO_STATUS, 1)
+            ->where(AppConstants::STATUS, 1)
+            ->orderBy(AppConstants::ID, AppConstants::DESC)
+            ->orderBy(AppConstants::UPDATED_AT, AppConstants::DESC)
+            ->get()
+        );
+    }
+
+    /**
+     * Get recipe count.
+     * @param array $aRequest
+     * @return array
+     */
+    public function getRecipeCount(array $aRequest): array
+    {
+        return [
+            AppConstants::COUNT => Recipe::where(AppConstants::STATUS, 1)
+                ->where(AppConstants::RECIPE_NAME, 'LIKE', '%' . $aRequest[AppConstants::SEARCH_KEYWORD] . '%')
+                ->count()
+        ];
+    }
+
+    /**
+     * Get recipe.
+     * @param array $aRequest
+     * @return array
+     */
+    public function getRecipe(array $aRequest): array
+    {
+        return $this->parseData(Recipe::select(AppConstants::RECIPE_LIST_FIELDS)
+            ->where(AppConstants::STATUS, 1)
+            ->where(AppConstants::RECIPE_NAME, 'LIKE', '%' . $aRequest[AppConstants::SEARCH_KEYWORD] . '%')
+            ->skip($aRequest[AppConstants::OFFSET])
+            ->take($aRequest[AppConstants::LIMIT])
+            ->orderBy(AppConstants::ID, AppConstants::DESC)
             ->get()
         );
     }

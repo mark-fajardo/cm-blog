@@ -20,7 +20,7 @@
         <!--====== FAVICON ICON =======-->
         <link rel="shortcut icon" type="image/ico" href="{{ asset('img/favicon.png') }}" />
 
-        <title>Home - {{ config('app.name') }}</title>
+        <title>Recipe List - {{ config('app.name') }}</title>
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{ mix('css/front.css') }}">
@@ -32,7 +32,7 @@
         <script type="text/javascript" src="{{ mix('/js/waypoints.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/wow.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/main.js') }}" defer></script>
-        <script type="text/javascript" src="{{ mix('/js/home.js') }}" defer></script>
+        <script type="text/javascript" src="{{ mix('/js/recipeList.js') }}" defer></script>
     </head>
     <body data-state="{{ $state }}">
         <!--[if lt IE 8]>

@@ -18,13 +18,13 @@
                         <div class="search-form-overlay"></div>
                         <a class="search-form-trigger" href="#search-form">Search<span></span></a>
                         <div id="search-form" class="search-form">
-                            <form>
-                                <input type="search" placeholder="Type recipes here...">
+                            <form action="/recipe-list?#search-results-area">
+                                <input type="search" name="search" placeholder="Type recipes here...">
                             </form>
                         </div>
                     </div>
                     <ul id="nav" class="nav navbar-nav cl-effect-11">
-                        <li :class="{ active: current_href.includes(menu.REDIRECT) }" v-for="menu in main_menu">
+                        <li :class="{ active: validateActiveMenu(menu.REDIRECT) }" v-for="menu in main_menu">
                             <a :href="menu.REDIRECT">{{ menu.NAME }}</a>
                         </li>
                     </ul>
@@ -44,6 +44,16 @@
                 main_menu: MainMenu,
                 current_href: window.location.href
             };
+        },
+        methods: {
+            /**
+             * Validate active menu for the current page.
+             * @param menu_name
+             */
+            validateActiveMenu(menu_name) {
+                let split_href = this.current_href.split('/');
+                return ('/' + split_href[split_href.length - 1] === menu_name);
+            }
         }
     }
 </script>

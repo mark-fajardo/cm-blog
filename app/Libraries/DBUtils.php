@@ -3,7 +3,7 @@
 namespace App\Libraries;
 
 use App\Constants\AppConstants;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
 /**
@@ -36,6 +36,21 @@ class DBUtils
     {
         return [
             AppConstants::STATE => Crypt::encryptString(config('app.key'))
+        ];
+    }
+
+    /**
+     * Format request data for logging.
+     * @param Request $oRequest
+     * @return array
+     */
+    public static function formatRequestLog(Request $oRequest): array
+    {
+        return [
+            'ip'      => $oRequest->ip(),
+            'headers' => $oRequest->header(),
+            'server'  => $oRequest->server(),
+            'data'    => $oRequest->all()
         ];
     }
 }

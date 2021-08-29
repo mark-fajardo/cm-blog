@@ -16,9 +16,17 @@ class AppConstants
     public const CODE = 'code';
     public const MESSAGE = 'message';
     public const STATE = 'state';
+    public const RESPONSE = 'response';
+    public const REQUEST = 'request';
+    public const COUNT = 'count';
+    public const OFFSET = 'offset';
+    public const LIMIT = 'limit';
+    public const DESC = 'DESC';
+    public const SEARCH_KEYWORD = 'search_keyword';
 
     /** DB Fields **/
     public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
     // blog_page table
     public const PAGE_TAG = 'page_tag';
     public const PAGE_CONFIG_JSON = 'page_config_json';
@@ -30,7 +38,14 @@ class AppConstants
     public const YOUTUBE_VIDEO_UPLOAD_AT = 'youtube_video_upload_at';
     public const MAIN_IMAGE = 'main_image';
     public const RECIPE_NAME = 'recipe_name';
+    public const SHORT_DESCRIPTION = 'short_description';
     public const SLUG_NAME = 'slug_name';
+    public const INGREDIENTS_JSON = 'ingredients_json';
+    public const CATEGORY_JSON = 'category_json';
+    public const STATUS = 'status';
+    // recipe_category table
+    public const ID = 'id';
+    public const CATEGORY_NAME = 'category_name';
     public const PROMOTED_FIELDS = [
         self::RECIPE_NAME,
         self::YOUTUBE_VIDEO_ID,
@@ -39,6 +54,7 @@ class AppConstants
     ];
     public const RECOMMENDED_FIELDS = [
         self::RECIPE_NAME,
+        self::SHORT_DESCRIPTION,
         self::MAIN_IMAGE,
         self::SLUG_NAME
     ];
@@ -49,9 +65,21 @@ class AppConstants
         self::CREATED_AT,
         self::SLUG_NAME
     ];
+    public const RECIPE_LIST_FIELDS = [
+        self::RECIPE_NAME,
+        self::MAIN_IMAGE,
+        self::INGREDIENTS_JSON,
+        self::CATEGORY_JSON,
+        self::SLUG_NAME
+    ];
+    public const CATEGORY_FIELDS = [
+        self::ID,
+        self::CATEGORY_NAME
+    ];
 
     /** Request validations **/
     public const REQUIRED_STRING = 'required|string';
     public const STRING = 'string';
     public const REQUIRED_INT = 'required|int';
+    public const NULLABLE = 'nullable';
 }

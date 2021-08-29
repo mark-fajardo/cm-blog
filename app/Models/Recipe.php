@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Constants\AppConstants;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,4 +18,13 @@ class Recipe extends Model
      * @var string
      */
     protected $table = 'recipe';
+
+    /**
+     * Cast column data.
+     * @var string[]
+     */
+    protected $casts = [
+        AppConstants::INGREDIENTS_JSON => 'array',
+        AppConstants::CATEGORY_JSON    => 'array',
+    ];
 }

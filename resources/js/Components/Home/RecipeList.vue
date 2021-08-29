@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row food-menu-list">
-                <div v-for="recommended_recipe in recommended_recipes" class="col-md-3 col-lg-3 col-sm-6 col-xs-12 single-menu">
+                <div v-for="recommended_recipe in limitObject(recommended_recipes, 12)" class="col-md-3 col-lg-3 col-sm-6 col-xs-12 single-menu">
                     <div class="food-menu-img-container">
                         <div class="food-menu-img">
                             <a :href="'/recipes/' + recommended_recipe.slug_name"><img :src="recommended_recipe.main_image" alt="Can't load image"></a>
@@ -57,6 +57,7 @@
 
     .food-menu-img {
         overflow: hidden;
+        height: 100%;
     }
 
     .food-menu-img img {
@@ -64,6 +65,6 @@
     }
 
     .food-menu-img-container {
-        min-height: 262.5px;
+        min-height: 150px;
     }
 </style>

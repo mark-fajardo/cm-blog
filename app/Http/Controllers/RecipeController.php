@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GetRecipeCountRequest;
+use App\Http\Requests\GetRecipeRequest;
 use App\Services\RecipeService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Str;
 
 /**
  * RecipeController
@@ -35,7 +36,7 @@ class RecipeController extends Controller
      */
     public function getPromotedRecipe(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getPromotedRecipe());
+        return response()->json($this->oRecipeService->promotedRecipe()->get());
     }
 
     /**
@@ -44,7 +45,7 @@ class RecipeController extends Controller
      */
     public function getRecommendedRecipes(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getRecommendedRecipes());
+        return response()->json($this->oRecipeService->recommendedRecipes()->get());
     }
 
     /**
@@ -53,6 +54,26 @@ class RecipeController extends Controller
      */
     public function getRecommendedVideoRecipes(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getRecommendedVideoRecipes());
+        return response()->json($this->oRecipeService->recommendedVideoRecipes()->get());
+    }
+
+    /**
+     * Get all recipe count.
+     * @param GetRecipeCountRequest $oRequest
+     * @return JsonResponse
+     */
+    public function getRecipeCount(GetRecipeCountRequest $oRequest): JsonResponse
+    {
+        return response()->json($this->oRecipeService->getRecipeCount($oRequest)->get());
+    }
+
+    /**
+     * Get all recipe.
+     * @param GetRecipeRequest $oRequest
+     * @return JsonResponse
+     */
+    public function getRecipe(GetRecipeRequest $oRequest): JsonResponse
+    {
+        return response()->json($this->oRecipeService->getRecipe($oRequest)->get());
     }
 }

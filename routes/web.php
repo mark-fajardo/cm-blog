@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home')->with(DBUtils::getStateToken());
 });
+Route::get('/recipe-list', function () {
+    return view('recipe_list')->with(DBUtils::getStateToken());
+});
 
 /** Rest endpoints **/
 Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static function() {
@@ -29,5 +32,12 @@ Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static functio
         Route::get('promoted', 'RecipeController@getPromotedRecipe');
         Route::get('recommended', 'RecipeController@getRecommendedRecipes');
         Route::get('recommended/videos', 'RecipeController@getRecommendedVideoRecipes');
+        Route::get('count', 'RecipeController@getRecipeCount');
+        Route::get('', 'RecipeController@getRecipe');
+    });
+
+    // Category rests
+    Route::group(['prefix' => 'category'], static function() {
+        Route::get('', 'CategoryController@getAllCategories');
     });
 });
