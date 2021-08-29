@@ -1,7 +1,7 @@
 <template>
     <div class="slider-area" style="background-color: #bcbcbc">
         <div class="pogoSlider">
-            <div v-for="slider in sliders" class="pogoSlider-slide" data-transition="fade" data-duration="1500" :style="'background:url(' + validatePlatform(slider.image_url, slider.image_url_portrait) + ') no-repeat scroll 0 0 / cover;'">
+            <div v-for="slider in limitObject(sliders, 20)" class="pogoSlider-slide" data-transition="fade" data-duration="1500" :style="'background:url(' + validatePlatform(slider.image_url, slider.image_url_portrait) + ') no-repeat scroll 0 0 / cover;'">
                 <h2 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="700">{{ slider.header }}</h2>
                 <h1 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="1500" v-html="renderSpan(slider.footer)"></h1>
                 <h3 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="2300"><a :href="slider.href">{{ slider.button }}</a></h3>

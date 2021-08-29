@@ -9,8 +9,8 @@
                             <h5>Page cannot be found! We'll have it figured out in no time. Meanwhile, search and check out other recipes:</h5>
                         </div>
                         <div class="single-sidebar-widget">
-                            <form action="#">
-                                <input type="search" name="search" id="search" placeholder="Search...">
+                            <form action="/recipe-list?#search-results-area">
+                                <input type="search" name="search" id="search" placeholder="Search..." v-model="search_keyword" autocomplete="off">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -30,6 +30,7 @@
         name: 'Content',
         data() {
             return {
+                search_keyword: '',
                 main_menu: MainMenu
             };
         }

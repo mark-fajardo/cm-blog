@@ -57,4 +57,21 @@ class Service
         $this->aRequest = $this->oRequest->all();
         return $this;
     }
+
+    /**
+     * Validate response if empty.
+     * @param array $aResponse
+     * @param       $oService
+     * @return mixed
+     */
+    protected function validateResponse(array $aResponse, $oService)
+    {
+        if (empty($aResponse) === true) {
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $oService;
+        }
+
+        $this->aResponse = DBUtils::formatResponse(true, $aResponse);
+        return $oService;
+    }
 }

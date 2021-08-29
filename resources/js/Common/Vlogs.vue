@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row">
-                <div v-for="recommended_video_recipe in recommended_video_recipes" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div v-for="recommended_video_recipe in limitObject(recommended_video_recipes, 6)" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="single-post text-center">
                         <div class="blog-post-img ">
                             <iframe width="560" height="315" :src="'//www.youtube.com/embed/' + recommended_video_recipe.youtube_video_id" :title="recommended_video_recipe.recipe_name" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

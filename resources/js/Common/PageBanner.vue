@@ -1,14 +1,14 @@
 <template>
     <div class="page-barner-area">
-        <div class="container wow fadeIn" v-show="BannerFor === 'not_found'">
+        <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-12 col-xs-12">
                     <div class="barner-text">
-                        <h1><span>404</span> Error</h1>
+                        <h1 v-html="banner_data[BannerFor].title"></h1>
                         <ul class="page-location">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><i class="fa fa-angle-right"></i></li>
-                            <li class="active"><a href="404.html">404 Error</a></li>
+                            <li class="active"><a :href="banner_data[BannerFor].href">{{ banner_data[BannerFor].breadcrumb_title }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -24,6 +24,32 @@
             BannerFor: {
                 type: String,
                 required: true
+            }
+        },
+        data() {
+            return {
+                banner_data: {
+                    not_found: {
+                        title: '<span>404</span> Error',
+                        breadcrumb_title: '404 Error',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
+                    recipe_list: {
+                        title: 'Recipe <span>List</span>',
+                        breadcrumb_title: 'Recipe List',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
+                }
+            };
+        },
+        computed: {
+            /**
+             * Returns current endpoint.
+             * @returns {string}
+             */
+            currentEndpoint() {
+                let split_href = this.current_href.split('/');
+                return '/' + split_href[split_href.length - 1];
             }
         }
     }

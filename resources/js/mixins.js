@@ -16,5 +16,16 @@ export default {
                 text: sText
             });
         },
+
+        /**
+         * Convert object to array and limit.
+         * @param object
+         * @param limit
+         * @returns {*[]}
+         */
+        limitObject(object, limit) {
+            let array = Object.keys(object).map((key) => object[key]);
+            return array.slice(0, limit);
+        }
     }
 };

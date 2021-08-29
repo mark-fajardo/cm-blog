@@ -162,6 +162,12 @@ export const jQueryMixin = {
             ----------------------------*/
             $('.food-menu-list').mixItUp();
         },
+        destroyMixItUp() {
+            /*---------------------------
+                MENU LIST MIXITUP FILTERING
+            ----------------------------*/
+            $('.food-menu-list').mixItUp('destroy');
+        },
         loadOwlCarousel() {
             /*---------------------------
                 SCREENSHOT SLIDER
@@ -260,8 +266,8 @@ export const jQueryMixin = {
                 loop: true,
                 nav: false,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-                autoplay: false,
-                autoplayTimeout: 2000,
+                autoplay: true,
+                autoplayTimeout: 2500,
                 margin: 15,
                 responsiveClass: true,
                 responsive: {

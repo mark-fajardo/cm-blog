@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Libraries\DBUtils;
 use App\Repository\RecipeRepository;
+use Illuminate\Http\Request;
 
 /**
  * RecipeService
@@ -35,13 +36,7 @@ class RecipeService extends Service
     public function promotedRecipe(): RecipeService
     {
         $aPromotedRecipe = $this->oRecipeRepository->getPromotedRecipe();
-        if (empty($aPromotedRecipe) === true) {
-            $this->aResponse = DBUtils::formatResponse(false);
-            return $this;
-        }
-
-        $this->aResponse = DBUtils::formatResponse(true, $aPromotedRecipe);
-        return $this;
+        return $this->validateResponse($aPromotedRecipe, $this);
     }
 
     /**
@@ -51,13 +46,7 @@ class RecipeService extends Service
     public function recommendedRecipes(): RecipeService
     {
         $aRecommendedRecipes = $this->oRecipeRepository->getRecommendedRecipes();
-        if (empty($aRecommendedRecipes) === true) {
-            $this->aResponse = DBUtils::formatResponse(false);
-            return $this;
-        }
-
-        $this->aResponse = DBUtils::formatResponse(true, $aRecommendedRecipes);
-        return $this;
+        return $this->validateResponse($aRecommendedRecipes, $this);
     }
 
     /**
@@ -67,12 +56,32 @@ class RecipeService extends Service
     public function recommendedVideoRecipes(): RecipeService
     {
         $aRecommendedVideoRecipes = $this->oRecipeRepository->getRecommendedVideoRecipes();
-        if (empty($aRecommendedVideoRecipes) === true) {
-            $this->aResponse = DBUtils::formatResponse(false);
-            return $this;
-        }
+        return $this->validateResponse($aRecommendedVideoRecipes, $this);
+    }
 
-        $this->aResponse = DBUtils::formatResponse(true, $aRecommendedVideoRecipes);
+    /**
+     * Get all recipe count.
+     * @param Request $oRequest
+     * @return RecipeService
+     */
+    public function getRecipeCount(Request $oRequest): RecipeService
+    {
+        $this->request($oRequest);
+        $this->aResponse = DBUtils::formatResponse(true,
+            $this->oRecipeRepository->getRecipeCount($this->aRequest)
+        );
         return $this;
+    }
+
+    /**
+     * Get all recipe.
+     * @param Request $oRequest
+     * @return RecipeService
+     */
+    public function getRecipe(Request $oRequest): RecipeService
+    {
+        $this->request($oRequest);
+        $aRecipes = $this->oRecipeRepository->getRecipe($this->aRequest);
+        return $this->validateResponse($aRecipes, $this);
     }
 }
