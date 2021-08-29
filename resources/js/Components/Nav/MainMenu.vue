@@ -19,7 +19,7 @@
                         <a class="search-form-trigger" href="#search-form">Search<span></span></a>
                         <div id="search-form" class="search-form">
                             <form action="/recipe-list?#search-results-area">
-                                <input type="search" name="search" placeholder="Type recipes here...">
+                                <input type="search" name="search" placeholder="Type recipes here..." autocomplete="off">
                             </form>
                         </div>
                     </div>
