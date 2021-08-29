@@ -160,7 +160,6 @@
                     this.getRecipe(),
                 ]).then(() => {
                     jQueryMixin.method.loadMixItUp();
-                    this.hideLoader();
                 });
             },
 
