@@ -46,6 +46,11 @@
         methods: {
             ...mapActions('Recipe', ['getRecommendedVideoRecipes']),
 
+            /**
+             * Convert date time to readable date and day.
+             * @param youtube_upload_date_at
+             * @param created_at
+             */
             convertDateTime(youtube_upload_date_at, created_at) {
                 let date_time_display = $moment(youtube_upload_date_at ?? created_at).tz('UTC').format('LLLL');
                 let splitted_date_time_display = date_time_display.split(' ');

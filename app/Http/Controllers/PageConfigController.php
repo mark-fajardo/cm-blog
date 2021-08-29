@@ -36,6 +36,6 @@ class PageConfigController extends Controller
      */
     public function getPageConfig(PageConfigRequest $oRequest): JsonResponse
     {
-        return response()->json($this->oPageConfigService->getPageConfig($oRequest->all()));
+        return response()->json($this->oPageConfigService->pageConfig($oRequest)->get());
     }
 }

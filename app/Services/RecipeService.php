@@ -30,43 +30,49 @@ class RecipeService extends Service
 
     /**
      * Get promoted recipe.
-     * @return array
+     * @return RecipeService
      */
-    public function getPromotedRecipe(): array
+    public function promotedRecipe(): RecipeService
     {
         $aPromotedRecipe = $this->oRecipeRepository->getPromotedRecipe();
         if (empty($aPromotedRecipe) === true) {
-            return DBUtils::formatResponse(false);
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $this;
         }
 
-        return DBUtils::formatResponse(true, $aPromotedRecipe);
+        $this->aResponse = DBUtils::formatResponse(true, $aPromotedRecipe);
+        return $this;
     }
 
     /**
      * Get all recommended recipes.
-     * @return array
+     * @return RecipeService
      */
-    public function getRecommendedRecipes(): array
+    public function recommendedRecipes(): RecipeService
     {
         $aRecommendedRecipes = $this->oRecipeRepository->getRecommendedRecipes();
         if (empty($aRecommendedRecipes) === true) {
-            return DBUtils::formatResponse(false);
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $this;
         }
 
-        return DBUtils::formatResponse(true, $aRecommendedRecipes);
+        $this->aResponse = DBUtils::formatResponse(true, $aRecommendedRecipes);
+        return $this;
     }
 
     /**
      * Get all recommended video recipes.
-     * @return array
+     * @return RecipeService
      */
-    public function getRecommendedVideoRecipes(): array
+    public function recommendedVideoRecipes(): RecipeService
     {
         $aRecommendedVideoRecipes = $this->oRecipeRepository->getRecommendedVideoRecipes();
         if (empty($aRecommendedVideoRecipes) === true) {
-            return DBUtils::formatResponse(false);
+            $this->aResponse = DBUtils::formatResponse(false);
+            return $this;
         }
 
-        return DBUtils::formatResponse(true, $aRecommendedVideoRecipes);
+        $this->aResponse = DBUtils::formatResponse(true, $aRecommendedVideoRecipes);
+        return $this;
     }
 }

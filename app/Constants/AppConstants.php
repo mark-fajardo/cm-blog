@@ -16,6 +16,8 @@ class AppConstants
     public const CODE = 'code';
     public const MESSAGE = 'message';
     public const STATE = 'state';
+    public const RESPONSE = 'response';
+    public const REQUEST = 'request';
 
     /** DB Fields **/
     public const CREATED_AT = 'created_at';

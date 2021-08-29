@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Services\RecipeService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Str;
 
 /**
  * RecipeController
@@ -35,7 +34,7 @@ class RecipeController extends Controller
      */
     public function getPromotedRecipe(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getPromotedRecipe());
+        return response()->json($this->oRecipeService->promotedRecipe()->get());
     }
 
     /**
@@ -44,7 +43,7 @@ class RecipeController extends Controller
      */
     public function getRecommendedRecipes(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getRecommendedRecipes());
+        return response()->json($this->oRecipeService->recommendedRecipes()->get());
     }
 
     /**
@@ -53,6 +52,6 @@ class RecipeController extends Controller
      */
     public function getRecommendedVideoRecipes(): JsonResponse
     {
-        return response()->json($this->oRecipeService->getRecommendedVideoRecipes());
+        return response()->json($this->oRecipeService->recommendedVideoRecipes()->get());
     }
 }
