@@ -154,7 +154,6 @@
              */
             prepareData() {
                 Promise.all([
-                    this.showLoader(),
                     jQueryMixin.method.destroyMixItUp(),
                     this.getAllCategories(),
                     this.getRecipeCount(),
