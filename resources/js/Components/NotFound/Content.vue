@@ -15,7 +15,7 @@
                             </form>
                         </div>
                         <p>Please try your search again or go to</p>
-                        <p><a :href="main_menu[0].REDIRECT">Homepage</a> or <a :href="main_menu[4].REDIRECT">Contact</a></p>
+                        <p><a :href="main_menu[0].REDIRECT">Homepage</a> or <a :href="main_menu[5].REDIRECT">Contact</a></p>
                     </div>
                 </div>
             </div>

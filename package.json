@@ -30,6 +30,7 @@
         "moment-timezone": "^0.5.33",
         "vue": "^2.6.12",
         "vue-analytics": "^5.22.1",
+        "vue-fb-customer-chat": "^0.2.0",
         "vue-gtag": "^1.16.1",
         "vue-head": "^2.2.0",
         "vue-moment-tz": "^2.1.1",

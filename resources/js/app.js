@@ -10,6 +10,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import VueGtag from 'vue-gtag';
 import _ from 'lodash';
+import VueFbCustomerChat from 'vue-fb-customer-chat'
 
 Object.defineProperty(Vue.prototype, '$_', { value: _ });
 Vue.use(VueSweetalert2);
@@ -20,3 +21,9 @@ Vue.use(VueGtag, {
         send_page_view: true
     }
 });
+
+Vue.use(VueFbCustomerChat, {
+    page_id: 455444121604547,
+    theme_color: '#d0963e',
+    locale: 'en_US',
+})
