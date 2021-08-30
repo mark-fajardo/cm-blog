@@ -70,4 +70,13 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'ftp' => [
+        'driver'   => 'ftp',
+        'host'     => env('FTP_HOST'),
+        'username' => env('FTP_USERNAME'),
+        'password' => env('FTP_PASSWORD'),
+        'url'      => env('FTP_URL'),
+        'root'     => env('FTP_ROOT'),
+        'ssl'      => true,
+    ],
 ];

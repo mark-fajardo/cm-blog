@@ -31,10 +31,13 @@
         "vue": "^2.6.12",
         "vue-analytics": "^5.22.1",
         "vue-fb-customer-chat": "^0.2.0",
+        "vue-google-adsense": "^1.10.1",
         "vue-gtag": "^1.16.1",
+        "vue-gtranslate": "^2.0.20",
         "vue-head": "^2.2.0",
         "vue-moment-tz": "^2.1.1",
         "vue-router": "^3.5.1",
+        "vue-script2": "^2.1.0",
         "vue-sweetalert2": "^4.2.0",
         "vue-window-size": "^0.6.2",
         "vuex": "^3.6.2"

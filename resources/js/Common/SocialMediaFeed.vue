@@ -16,6 +16,18 @@
                 </div>
             </div>
         </div>
+        <Adsense
+            :data-ad-client="ENV_.DATA_AD.VERTICAL_DISPLAY.CLIENT"
+            :data-ad-slot="ENV_.DATA_AD.VERTICAL_DISPLAY.SLOT">
+        </Adsense>
+        <Adsense
+            :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"
+            :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">
+        </Adsense>
+        <Adsense
+            :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
+            :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
+        </Adsense>
     </section>
 </template>
 

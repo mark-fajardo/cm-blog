@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Crypt;
 /**
  * Class ApiRequestUtils
  * @package App\Libraries
- * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>>
+ * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.28
  */
 class DBUtils

@@ -1339,7 +1339,7 @@ a.scrolltotop {
     height: 50px;
     padding-top: 10px;
     position: fixed;
-    right: 20px;
+    left: 20px;
     text-align: center;
     width: 50px;
     z-index: 99;

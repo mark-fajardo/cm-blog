@@ -48,3 +48,25 @@ export const AlertMessages = Object.freeze({
     ERROR: 'There is an error on accessing the data.',
     SUCCESS: 'Process successful.'
 });
+
+/**
+ * Contains env variables for front.
+ * @type {Readonly<{FB_PAGE_ID: number}>}
+ */
+export const Env_ = Object.freeze({
+    FB_PAGE_ID: 1627240600869791,
+    DATA_AD: {
+        SQUARE_DISPLAY: {
+            CLIENT: 'ca-pub-3450967195189254',
+            SLOT: '9831823336'
+        },
+        VERTICAL_DISPLAY: {
+            CLIENT: 'ca-pub-3450967195189254',
+            SLOT: '1784800592'
+        },
+        HORIZONTAL_DISPLAY: {
+            CLIENT: 'ca-pub-3450967195189254',
+            SLOT: '6298760678'
+        },
+    }
+});

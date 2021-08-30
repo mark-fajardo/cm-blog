@@ -1,6 +1,9 @@
+import { Env_ } from './constants';
+
 export default {
     data() {
         return {
+            ENV_: Env_
         };
     },
     methods: {

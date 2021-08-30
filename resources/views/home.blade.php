@@ -33,6 +33,19 @@
         <script type="text/javascript" src="{{ mix('/js/wow.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/main.js') }}" defer></script>
         <script type="text/javascript" src="{{ mix('/js/home.js') }}" defer></script>
+
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: "en" },
+                    "google_translate_element"
+                );
+            }
+        </script>
+        <script
+            type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        ></script>
     </head>
     <body data-state="{{ $state }}">
         <!--[if lt IE 8]>
