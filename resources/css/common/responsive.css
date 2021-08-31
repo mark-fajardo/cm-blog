@@ -106,6 +106,7 @@
     }
     .about-area .area-title h2 {
         font-size: 60px;
+        font-weight: 300;
     }
     .about-area .area-title h2 span {
         font-size: 40px;
@@ -577,7 +578,7 @@
     }
     .instagram-area .area-title h4 {
         font-size: 20px;
-        text-transform: capitalize;
+        /*text-transform: capitalize;*/
     }
     ul.instagram-feed li {
         margin-bottom: 10px;
