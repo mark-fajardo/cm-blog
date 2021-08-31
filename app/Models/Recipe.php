@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Constants\AppConstants;
+use App\Libraries\FileUtils;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -27,4 +28,9 @@ class Recipe extends Model
         AppConstants::INGREDIENTS_JSON => 'array',
         AppConstants::CATEGORY_JSON    => 'array',
     ];
+
+    public function getMainImageAttribute(string $sMainImage): string
+    {
+        return (new FileUtils)->url($sMainImage);
+    }
 }

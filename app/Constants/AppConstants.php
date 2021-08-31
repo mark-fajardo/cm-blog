@@ -39,10 +39,13 @@ class AppConstants
     public const MAIN_IMAGE = 'main_image';
     public const RECIPE_NAME = 'recipe_name';
     public const SHORT_DESCRIPTION = 'short_description';
+    public const PROCEDURE = 'procedure';
+    public const DESCRIPTION = 'description';
     public const SLUG_NAME = 'slug_name';
     public const INGREDIENTS_JSON = 'ingredients_json';
     public const CATEGORY_JSON = 'category_json';
     public const STATUS = 'status';
+    public const NOTES = 'notes';
     // recipe_category table
     public const ID = 'id';
     public const CATEGORY_NAME = 'category_name';
@@ -75,6 +78,20 @@ class AppConstants
     public const CATEGORY_FIELDS = [
         self::ID,
         self::CATEGORY_NAME
+    ];
+    public const RECIPE_BY_SLUG_FIELDS = [
+        self::RECIPE_NAME,
+        self::SHORT_DESCRIPTION,
+        self::DESCRIPTION,
+        self::PROCEDURE,
+        self::YOUTUBE_VIDEO_ID,
+        self::YOUTUBE_VIDEO_UPLOAD_AT,
+        self::MAIN_IMAGE,
+        self::INGREDIENTS_JSON,
+        self::CATEGORY_JSON,
+        self::SLUG_NAME,
+        self::NOTES,
+        self::CREATED_AT,
     ];
 
     /** Request validations **/

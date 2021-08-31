@@ -76,4 +76,14 @@ class RecipeController extends Controller
     {
         return response()->json($this->oRecipeService->getRecipe($oRequest)->get());
     }
+
+    /**
+     * Get a recipe.
+     * @param string $sSlugName
+     * @return JsonResponse
+     */
+    public function getRecipeBySlugName(string $sSlugName): JsonResponse
+    {
+        return response()->json($this->oRecipeService->getRecipeBySlugName($sSlugName)->get());
+    }
 }

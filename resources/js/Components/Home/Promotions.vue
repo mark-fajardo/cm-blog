@@ -21,7 +21,7 @@
                             </div>
                             <div class="promotions-details">
                                 <h4>{{ promoted_recipe.recipe_name }}</h4>
-                                <a :href="'/recipes/' + promoted_recipe.slug_name" class="read-more">Check recipe</a>
+                                <a :href="'/recipe/' + promoted_recipe.slug_name" class="read-more">Check recipe</a>
                             </div>
                         </div>
                     </div>

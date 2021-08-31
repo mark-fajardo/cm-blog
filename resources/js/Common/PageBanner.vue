@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col-md-12 col-xs-12">
                     <div class="barner-text">
-                        <h1 v-html="banner_data[BannerFor].title"></h1>
+                        <h1 v-html="(CustomTitle === '') ? banner_data[BannerFor].title : CustomTitle"></h1>
                         <ul class="page-location">
                             <li><a href="/">Home</a></li>
                             <li><i class="fa fa-angle-right"></i></li>
-                            <li class="active"><a :href="banner_data[BannerFor].href">{{ banner_data[BannerFor].breadcrumb_title }}</a></li>
+                            <li class="active"><a :href="banner_data[BannerFor].href">{{ (CustomBreadCrumb === '') ? banner_data[BannerFor].breadcrumb_title : CustomBreadCrumb }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -24,7 +24,17 @@
             BannerFor: {
                 type: String,
                 required: true
-            }
+            },
+            CustomTitle: {
+                type: String,
+                default: '',
+                required: false
+            },
+            CustomBreadCrumb: {
+                type: String,
+                default: '',
+                required: false
+            },
         },
         data() {
             return {
@@ -37,6 +47,11 @@
                     recipe_list: {
                         title: 'Recipe <span>List</span>',
                         breadcrumb_title: 'Recipe List',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
+                    recipe: {
+                        title: 'Recipe <span>Details</span>',
+                        breadcrumb_title: 'Recipe Details',
                         breadcrumb_href: this.currentEndpoint,
                     },
                 }

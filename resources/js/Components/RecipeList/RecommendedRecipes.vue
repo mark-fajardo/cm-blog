@@ -18,7 +18,7 @@
                     <div class="promotions-details">
                         <h3>{{ recipe.recipe_name }}</h3>
                         <p>{{ recipe.short_description }}</p>
-                        <a :href="'/recipes/' + recipe.slug_name" class="read-more">View Recipe</a>
+                        <a :href="'/recipe/' + recipe.slug_name" class="read-more">View Recipe</a>
                     </div>
                 </div>
             </div>

@@ -2,9 +2,10 @@
 
 namespace App\Libraries;
 
+use App\Constants\AppConstants;
+use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
-use phpDocumentor\Reflection\Types\This;
 
 /**
  * Class SEOUtils
@@ -51,9 +52,23 @@ class SEOUtils
         self::setupCommon([
             'title'       => 'Recipe List - Chef Morris Danzen',
             'description' => 'All About Chef Morris Danzen. List of all the Recipes of Chef Morris Danzen.',
-            'endpoint'    => '/',
+            'endpoint'    => '/recipe-list',
             'type'        => 'recipes',
         ]);
+    }
+
+    /**
+     * Setup recipe SEO METAs.
+     */
+    private static function recipeSetup(): void
+    {
+        self::setupCommon([
+            'title'       => data_get(self::$aData, AppConstants::RECIPE_NAME, 'Recipe') . ' - Chef Morris Danzen',
+            'description' => data_get(self::$aData, AppConstants::SHORT_DESCRIPTION, ''),
+            'endpoint'    => '/recipe/' . data_get(self::$aData, AppConstants::SLUG_NAME, ''),
+            'type'        => 'recipe',
+        ]);
+        OpenGraph::addImage(data_get(self::$aData, AppConstants::MAIN_IMAGE, ''));
     }
 
     /**
