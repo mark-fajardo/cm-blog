@@ -10,7 +10,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 /**
  * Class FailedValidationResponse
  * @package App\Traits
- * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>>
+ * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.07.07
  */
 trait FailedValidationResponse

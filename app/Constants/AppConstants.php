@@ -5,7 +5,7 @@ namespace App\Constants;
 /**
  * AppConstants
  * @package App\Constants
- * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>>
+ * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.28
  */
 class AppConstants

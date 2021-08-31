@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="footer-copyright">
-                        <p>&copy; 2021 <a :href="main_menu[0].REDIRECT">Chef Morris Danzen</a> | All Rights Reserved</p>
+                        <p>Copyright &copy; <a>WeCreate IT Solutions</a>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>

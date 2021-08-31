@@ -5,14 +5,7 @@
         <meta name="google-site-verification" content="{{ config('app.google_site_verification') }}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta property="og:site_name" content="All About Chef Morris Danzen"/>
-        <meta property="og:description" content="Chef Morris Danzen's recipe list, cooking tutorials and vlogs, gallery and contacts."/>
-        <meta property="og:url" content="{{ config('app.url') }}" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="All About Chef Morris Danzen"/>
-        <meta name="title" content="All About Chef Morris Danzen"/>
-        <meta name="keywords" content="recipe list, recipe, cooking vlogs, chef morris danzen, chef, chef morris, morris, danzen, chef danzen, morris danzen, food gallery, gallery, cooking tutorials, tutorial, cooking, pinoy chef, pinoy food, pinoy dishes, pinoy vlog, Video, youtube, facebook, twitter">
-        <meta name="description" content="Chef Morris Danzen's recipe list, cooking tutorials and vlogs, gallery and contacts."/>
+        {!! SEO::generate(true) !!}
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">

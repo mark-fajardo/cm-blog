@@ -9,7 +9,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * Class GetRecipeCountRequest
  * @package App\Http\Requests\Auth
- * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>>
+ * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.29
  */
 class GetRecipeCountRequest extends FormRequest

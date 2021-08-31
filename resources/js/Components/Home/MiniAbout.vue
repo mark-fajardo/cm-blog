@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="area-title">
-                        <h2><span>{{ mini_about.small_title }}</span> <br> {{ mini_about.title }}</h2>
+                        <h2><span>{{ mini_about.small_title }}</span> <br> <span class="area-title-mini-about-title">{{ mini_about.title }}</span></h2>
                     </div>
                     <div class="about-content">
                         <p>{{ mini_about.content }}</p>
@@ -50,5 +50,11 @@
 <style scoped>
     .about-area {
         background-color: #FFF;
+    }
+    .area-title-mini-about-title {
+        font-family: "Open Sans" !important;
+        font-weight: 700 !important;
+        font-size: 60px !important;
+        color: #d0963e !important;
     }
 </style>

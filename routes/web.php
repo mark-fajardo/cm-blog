@@ -1,6 +1,7 @@
 <?php
 
 use App\Libraries\DBUtils;
+use App\Libraries\SEOUtils;
 use App\Models\PageConfig;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    SEOUtils::setSEOTools('home');
     return view('home')->with(DBUtils::getStateToken());
 });
 Route::get('/recipe-list', function () {
+    SEOUtils::setSEOTools('recipes');
     return view('recipe_list')->with(DBUtils::getStateToken());
 });
 
