@@ -22,7 +22,7 @@
             jQueryMixin.method.loadOwlCarousel();
         },
         methods: {
-            ...mapActions('Recipe', ['getRecipeBySlugName']),
+            ...mapActions('Recipe', ['getRecipeBySlugName', 'getRecommendedRecipes']),
             ...mapActions('Category', ['getAllCategories']),
 
             /**
@@ -30,8 +30,9 @@
              */
             async prepareData() {
                 Promise.all([
-                    this.getRecipeBySlugName(),
-                    this.getAllCategories(),
+                    await this.getAllCategories(),
+                    await this.getRecipeBySlugName(),
+                    this.getRecommendedRecipes(),
                 ]).then(() => {
                     jQueryMixin.method.removeLoader();
                 });

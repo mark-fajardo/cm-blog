@@ -2,7 +2,7 @@ body {
     padding-right: 0 !important;
 }
 
-.no-select {
+.no-select, .page-barner-area {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -2429,8 +2429,23 @@ ul.page-pagination li a {
     color: #fff;
 }
 
+.blog-content h4 {
+    font-family: "Open Sans";
+    font-weight: 800;
+}
+
 .social-widget ul li.s_facebook a {
     background: #2069ba none repeat scroll 0 0;
+}
+
+.social-widget ul li.s_instagram a {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+}
+
+.social-widget ul li.s_whats_app a {
+    background: #1AD03F none repeat scroll 0 0;
 }
 
 .social-widget ul li.s_twitter a {
@@ -2469,11 +2484,11 @@ ul.page-pagination li a {
 .post-widget ul li .post-tumb {
     height: 80px;
     width: 80px;
+    overflow-x: hidden;
 }
 
 .post-widget ul li .post-tumb img {
     height: 100%;
-    width: 100%;
 }
 
 .post-title-and-date h4 {
@@ -2516,7 +2531,7 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .single-blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/blog/blog_details_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/seafood_in_coconut_milk_pasta_square.jpg") no-repeat scroll center center / cover;
 }
 
 .single-blog-page .title-and-meta::after {

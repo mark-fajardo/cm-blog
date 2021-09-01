@@ -7,80 +7,34 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <div class="single-sidebar-widget catagories-widget wow fadeIn">
-                <h4>Catagories</h4>
+            <div class="single-sidebar-widget post-widget wow fadeIn" v-show="areRecommendedRecipesAvailable === true">
+                <h4>Top Recipes</h4>
                 <ul>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Business Agency</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Web Design</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Health</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Graphic Design</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Lifestyle</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>PSD Template</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Wordpress</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i>Photography</a></li>
+                    <li class="s_post" v-for="recipe in limitObject(shuffle(recommended_recipes), 4)">
+                        <div class="post-tumb alignleft">
+                            <a :href="'/recipe/' + recipe.slug_name"><img :src="recipe.main_image" alt="Can't load image"></a>
+                        </div>
+                        <div class="post-title-and-date">
+                            <h4><a :href="'/recipe/' + recipe.slug_name">{{ recipe.recipe_name }}</a></h4>
+                            <p class="post-meta"><a :href="'/recipe/' + recipe.slug_name">{{ convertDateTime(recipe.created_at) }}</a></p>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="single-sidebar-widget social-widget wow fadeIn">
-                <h4>Connect With Us</h4>
+                <h4>Connect with me</h4>
                 <ul>
-                    <li class="s_facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="s_twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="s_youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li class="s_dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                </ul>
-            </div>
-            <div class="single-sidebar-widget post-widget wow fadeIn">
-                <h4>Recent Blog Post</h4>
-                <ul>
-                    <li class="s_post">
-                        <div class="post-tumb alignleft">
-                            <a href="#"><img src="img/blog/thumb/1.jpg" alt=""></a>
-                        </div>
-                        <div class="post-title-and-date">
-                            <h4><a href="#">Becoming a better life</a></h4>
-                            <p class="post-meta"><a href="#">Mar 25, 2017</a></p>
-                        </div>
-                    </li>
-                    <li class="s_post">
-                        <div class="post-tumb alignleft">
-                            <a href="#"><img src="img/blog/thumb/2.jpg" alt=""></a>
-                        </div>
-                        <div class="post-title-and-date">
-                            <h4><a href="#">Do you know how make a pizza ?</a></h4>
-                            <p class="post-meta"><a href="#">Jan 25, 2017</a></p>
-                        </div>
-                    </li>
-                    <li class="s_post">
-                        <div class="post-tumb alignleft">
-                            <a href="#"><img src="img/blog/thumb/3.jpg" alt=""></a>
-                        </div>
-                        <div class="post-title-and-date">
-                            <h4><a href="#">Why we provide best service ?</a></h4>
-                            <p class="post-meta"><a href="#">Dec 25, 2017</a></p>
-                        </div>
-                    </li>
-                    <li class="s_post">
-                        <div class="post-tumb alignleft">
-                            <a href="#"><img src="img/blog/thumb/4.jpg" alt=""></a>
-                        </div>
-                        <div class="post-title-and-date">
-                            <h4><a href="#">How to make a our community member ?</a></h4>
-                            <p class="post-meta"><a href="#">Nov 25, 2017</a></p>
-                        </div>
-                    </li>
+                    <li class="s_facebook"><a href="//www.facebook.com/Chefmorrisdanzen" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+                    <li class="s_youtube"><a href="//www.youtube.com/Chef%20Morris%20Danzen" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a></li>
+                    <li class="s_instagram"><a href="//www.instagram.com/chef_morrisdanzen/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+                    <li class="s_whats_app"><a href="//api.whatsapp.com/send?phone=393512671387" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a></li>
                 </ul>
             </div>
             <div class="single-sidebar-widget tag-widget wow fadeIn">
-                <h4>Blog Tags</h4>
+                <h4>Recipe Tags</h4>
                 <ul>
-                    <li><a href="#">Hermes</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Lifestyle</a></li>
-                    <li><a href="#">Versace</a></li>
-                    <li><a href="#">Zara</a></li>
-                    <li><a href="#">Lacoste</a></li>
-                    <li><a href="#">Chanel</a></li>
-                    <li><a href="#">D&G</a></li>
+                    <li v-for="ingredients in recipeIngredients"><a>{{ ingredients }}</a></li>
+                    <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories"><a>{{ getDefaultValue(categories[category].category_name) }}</a></li>
                 </ul>
             </div>
         </div>
@@ -88,7 +42,43 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
-        name: 'RecipeViewSideBar'
+        name: 'RecipeViewSideBar',
+        computed: {
+            ...mapGetters('Recipe', ['recommended_recipes', 'recipe']),
+            ...mapGetters('Category', ['categories']),
+
+            /**
+             * Check if recommended recipes are available
+             * @returns {boolean}
+             */
+            areRecommendedRecipesAvailable() {
+                return (this.$_.isEmpty(this.recommended_recipes) === false);
+            },
+
+            /**
+             * Check if recommended recipes are available
+             * @returns {boolean}
+             */
+            areRecipeCategoriesAvailable() {
+                return (this.$_.isEmpty(this.recipeCategories) === false);
+            },
+
+            /**
+             * Contains recipe categories.
+             */
+            recipeCategories() {
+                return this.recipe.category_json;
+            },
+
+            /**
+             * Contains recipe ingredients.
+             */
+            recipeIngredients() {
+                return this.recipe.ingredients_json;
+            }
+        }
     }
 </script>

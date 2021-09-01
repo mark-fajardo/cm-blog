@@ -59,7 +59,8 @@ class AppConstants
         self::RECIPE_NAME,
         self::SHORT_DESCRIPTION,
         self::MAIN_IMAGE,
-        self::SLUG_NAME
+        self::SLUG_NAME,
+        self::CREATED_AT
     ];
     public const RECOMMENDED_VIDEO_FIELDS = [
         self::RECIPE_NAME,

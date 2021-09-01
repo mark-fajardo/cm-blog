@@ -12,8 +12,10 @@ import VueGtag from 'vue-gtag';
 import _ from 'lodash';
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import { Env_ } from './constants';
-import Ads from 'vue-google-adsense'
+import Ads from 'vue-google-adsense';
+import VueSocialSharing from 'vue-social-sharing';
 
+Vue.use(VueSocialSharing);
 Vue.use(require('vue-script2'))
 Vue.use(Ads.Adsense)
 Vue.use(Ads.InArticleAdsense)
