@@ -178,6 +178,7 @@
                 let query_params = window.location.search.match(/(\?|&)search\=([^&]*)/);
                 if (this.$_.isEmpty(query_params) === false) {
                     this.search_keyword = decodeURIComponent(query_params[2]);
+                    this.search_keyword = this.search_keyword.replace('+', ' ');
                     this.setSearchKeyword(this.search_keyword);
                 }
             },
