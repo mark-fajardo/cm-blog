@@ -65,6 +65,14 @@
     }
 }
 
+.navbar-brand {
+    height: 80px;
+}
+
+.navbar-brand img {
+    height: 100%;
+}
+
 
 /*----------------------------------
     MEDIUM LAYOUT: 1280px
@@ -225,6 +233,8 @@
     }
     .navbar-brand.white {
         display: block;
+        height: 80px;
+
     }
     ul#nav li a {
         color: #fff;
@@ -443,9 +453,11 @@
     }
     .navbar-brand {
         display: none;
+        margin-left: 10px;
     }
     .navbar-brand.white {
         display: block;
+        height: 80px;
     }
     ul#nav li a {
         color: #fff;

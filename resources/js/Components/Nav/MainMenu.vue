@@ -10,8 +10,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/" class="navbar-brand"><img src="" alt="logo"></a>
-                    <a href="/" class="navbar-brand white"><img src="" alt="logo"></a>
+                    <a href="/" class="navbar-brand"><img src="//files.chefmorrisdanzen.com/img/logo/logo-dark.png" alt="logo"></a>
+                    <a href="/" class="navbar-brand white"><img src="//files.chefmorrisdanzen.com/img/logo/logo-light.png" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
                     <div class="search-form-area">
