@@ -11,14 +11,14 @@
                 </div>
             </div>
             <div class="row">
-                <div :class="(showSlider === true) ? 'menu-discount-offer' : '' + 'col-md-12 col-lg-12 col-sm-12 col-xs-12'">
-                    <div v-for="(recipe, index) in limitObject(shuffle(recommended_recipes), 20)" class="single-promotions">
+                <div class="menu-discount-offer col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div v-for="recipe in limitObject(shuffle(recommended_recipes), 20)" class="single-promotions">
                         <div class="promotions-img">
                             <img :src="recipe.main_image" alt="">
                         </div>
                         <div class="promotions-details">
                             <h3>{{ recipe.recipe_name }}</h3>
-                            <p>{{ recipe.short_description }}</p>
+                            <p>{{ limitText(recipe.short_description, 40) }}</p>
                             <a :href="'/recipe/' + recipe.slug_name" class="read-more">View Recipe</a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
              * @returns {boolean}
              */
             showSlider() {
-                return (Object.keys(this.recommended_recipes).length >= 2);
+                return (Object.keys(this.recommended_recipes).length > 1);
             },
         },
         methods: {
@@ -60,7 +60,7 @@
             Promise.all([
                 this.getRecommendedRecipes()
             ]).then(() => {
-                jQueryMixin.method.loadOwlCarousel();
+                jQueryMixin.method.loadOwlCarousel(this.showSlider);
             });
         }
     }

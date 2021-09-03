@@ -13,7 +13,10 @@
                 <div v-for="recommended_video_recipe in limitObject(recommended_video_recipes, 6)" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="single-post text-center">
                         <div class="blog-post-img ">
-                            <iframe width="560" height="315" :src="'//www.youtube.com/embed/' + recommended_video_recipe.youtube_video_id" :title="recommended_video_recipe.recipe_name" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <YoutubeVideoPlayer
+                                :video-id="recommended_video_recipe.youtube_video_id"
+                                :video-title="recommended_video_recipe.recipe_name">
+                            </YoutubeVideoPlayer>
                         </div>
                         <div class="post-details">
                             <a :href="'//www.youtube.com/watch?v=' + recommended_video_recipe.youtube_video_id" class="post-meta-button" target="_blank" rel="noopener noreferrer">Watch on <i class="fa fa-youtube-play"></i>Youtube</a>
@@ -29,9 +32,11 @@
 
 <script>
     import { mapActions, mapGetters } from 'vuex';
+    import YoutubeVideoPlayer from './YoutubeVideoPlayer';
 
     export default {
         name: 'Vlogs',
+        components: {YoutubeVideoPlayer},
         computed: {
             ...mapGetters('Recipe', ['recommended_video_recipes']),
 

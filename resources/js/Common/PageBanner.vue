@@ -8,6 +8,8 @@
                         <ul class="page-location">
                             <li><a href="/">Home</a></li>
                             <li><i class="fa fa-angle-right"></i></li>
+                            <li v-show="banner_data[BannerFor].breadcrumb_parent_1 !== ''"><a :href="banner_data[BannerFor].breadcrumb_parent_href_1">{{ banner_data[BannerFor].breadcrumb_parent_1 }}</a></li>
+                            <li v-show="banner_data[BannerFor].breadcrumb_parent_1 !== ''"><i class="fa fa-angle-right"></i></li>
                             <li class="active"><a :href="banner_data[BannerFor].href">{{ (CustomBreadCrumb === '') ? banner_data[BannerFor].breadcrumb_title : CustomBreadCrumb }}</a></li>
                         </ul>
                     </div>
@@ -40,17 +42,23 @@
             return {
                 banner_data: {
                     not_found: {
-                        title: '<span>404</span> Error',
-                        breadcrumb_title: '404 Error',
+                        title: '<span>Page</span> Not Found',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
+                        breadcrumb_title: 'Page Not Found',
                         breadcrumb_href: this.currentEndpoint,
                     },
                     recipe_list: {
                         title: 'Recipe <span>List</span>',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
                         breadcrumb_title: 'Recipe List',
                         breadcrumb_href: this.currentEndpoint,
                     },
                     recipe: {
                         title: 'Recipe <span>Details</span>',
+                        breadcrumb_parent_1: 'Recipe List',
+                        breadcrumb_parent_href_1: '/recipe-list',
                         breadcrumb_title: 'Recipe Details',
                         breadcrumb_href: this.currentEndpoint,
                     },

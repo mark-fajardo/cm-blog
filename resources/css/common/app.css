@@ -682,6 +682,7 @@ a.search-form-trigger::before {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
+    color: #c9cbc4;
 }
 
 .search-form input::-webkit-input-placeholder {

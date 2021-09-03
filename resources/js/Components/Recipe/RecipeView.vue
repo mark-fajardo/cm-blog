@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
                     <div class="single-blog-page single-blog text-justify wow fadeIn">
-                        <div class="blog-image-sldie">
+                        <div class="blog-image-sldie" v-show="recipe.main_image !== ''">
                             <!-- TODO: ADD MULTIPLE IMAGE FROM GALLERY TABLE -->
                             <img :src="recipe.main_image" alt="">
                         </div>
@@ -15,40 +15,27 @@
                             </div>
                             <div class="blog-content">
                                 <p class="short-description">{{ recipe.short_description }}</p>
-                                <p>{{ recipe.description }}</p>
+                                <p>
+                                    <YoutubeVideoPlayer
+                                        v-show="recipe.youtube_video_id !== ''"
+                                        :video-id="recipe.youtube_video_id"
+                                        :video-title="recipe.recipe_name"
+                                        :height="400">
+                                    </YoutubeVideoPlayer>
+                                </p>
+                                <p class="long-description">{{ recipe.description }}</p>
                                 <h4>Ingredients</h4>
-                                <p> Ingredients Here </p>
+                                <div class="ingredients-list col-lg-12">
+                                    <ul class="list-group col-lg-6 mx-auto">
+                                        <li v-for="ingredient in recipe.ingredients_json" class="list-group-item">{{ ingredient }}</li>
+                                    </ul>
+                                </div>
                                 <h4>Procedure</h4>
                                 <p v-html="recipe.procedure"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="tags-and-social-bar wow fadeIn">
-                        <div class="tags">
-                            <h3>TAGS:</h3>
-                            <ul>
-                                <li v-for="category in recipeCategories"><a>{{ getDefaultValue(categories[category].category_name) }}</a></li>
-                            </ul>
-                        </div>
-                        <div class="single-post-social-bar text-right">
-                            <h3>SHARE:</h3>
-                            <ul>
-                                <li v-for="network in share_network">
-                                    <a>
-                                        <ShareNetwork
-                                            :network="network.network"
-                                            :url="getCurrentHREF()"
-                                            :title="recipe.recipe_name"
-                                            :description="recipe.short_description"
-                                            :quote="'This is the ' + recipe.recipe_name + ' recipe. Learn this new and easy recipe right now. Just click the recipe link below. Happy cooking!'"
-                                            hashtags="ChefMorrisDanzen">
-                                            <i :class="network.icon"></i>
-                                        </ShareNetwork>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <RecipeFooter/>
                 </div>
                 <RecipeViewSideBar/>
             </div>
@@ -60,36 +47,12 @@
     import { mapGetters } from 'vuex';
     import RecipeViewSideBar from './RecipeViewSideBar';
     import { jQueryMixin } from '../../main';
+    import YoutubeVideoPlayer from '../../Common/YoutubeVideoPlayer';
+    import RecipeFooter from './RecipeFooter';
 
     export default {
         name: 'RecipeView',
-        components: { RecipeViewSideBar },
-        data() {
-            return {
-                share_network: [
-                    {
-                        network: 'facebook',
-                        icon: 'fa fa-facebook'
-                    },
-                    {
-                        network: 'twitter',
-                        icon: 'fa fa-twitter'
-                    },
-                    {
-                        network: 'telegram',
-                        icon: 'fa fa-telegram'
-                    },
-                    {
-                        network: 'whatsapp',
-                        icon: 'fa fa-whatsapp'
-                    },
-                    {
-                        network: 'sms',
-                        icon: 'fa fa-comment'
-                    },
-                ]
-            };
-        },
+        components: { RecipeFooter, YoutubeVideoPlayer, RecipeViewSideBar },
         computed: {
             ...mapGetters('Recipe', ['recipe']),
             ...mapGetters('Category', ['categories']),
@@ -102,7 +65,25 @@
             },
         },
         mounted() {
-            jQueryMixin.method.loadOwlCarousel();
+            jQueryMixin.method.loadOwlCarousel(false);
         }
     }
 </script>
+
+<style scoped>
+    .short-description {
+        margin-bottom: 50px;
+        text-indent: 50px;
+    }
+    .ingredients-list {
+        margin-bottom: 50px;
+    }
+    .single-blog {
+        /*margin-top: 10px;*/
+    }
+    .long-description {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-indent: 50px;
+    }
+</style>

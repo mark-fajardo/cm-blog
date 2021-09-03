@@ -81,6 +81,15 @@ export default {
          */
         getDefaultValue(str) {
             return (str === undefined) ? '' : str;
+        },
+
+        /**
+         * Limit long texts.
+         * @param str
+         * @param limit
+         */
+        limitText(str, limit) {
+            return (str.substring(0, limit)).concat((str.length > limit) ? '...' : '');
         }
     }
 };

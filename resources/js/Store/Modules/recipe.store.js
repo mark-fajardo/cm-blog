@@ -15,6 +15,7 @@ const state = {
         procedure: '',
         category_json: {},
         ingredients_json: {},
+        youtube_video_id: '',
         created_at: '',
     },
     recipes: {},

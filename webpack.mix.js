@@ -25,4 +25,6 @@ mix.js('resources/js/maintenance.js', 'public/js')
         targets: {'ie': 11},
         debug: true,
         corejs: 3,
-    }).version();
+    })
+    .disableNotifications()
+    .version();
