@@ -34,7 +34,7 @@
                 <h4>Recipe Tags</h4>
                 <ul>
                     <li v-for="ingredients in recipeIngredients"><a>{{ ingredients }}</a></li>
-                    <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories"><a>{{ getDefaultValue(categories[category].category_name) }}</a></li>
+                    <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories"><a>{{ getDefaultValue(categories.find(x => x.id === parseInt(category)).category_name) }}</a></li>
                 </ul>
             </div>
         </div>
