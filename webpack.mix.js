@@ -16,6 +16,7 @@ mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/main.js', 'public/js')
     .js('resources/js/notFound.js', 'public/js')
     .js('resources/js/recipeList.js', 'public/js')
+    .js('resources/js/recipe.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
     .postCss('resources/css/Front.css', 'public/css')
     .polyfill({
@@ -24,4 +25,6 @@ mix.js('resources/js/maintenance.js', 'public/js')
         targets: {'ie': 11},
         debug: true,
         corejs: 3,
-    }).version();
+    })
+    .disableNotifications()
+    .version();

@@ -84,4 +84,20 @@ class RecipeService extends Service
         $aRecipes = $this->oRecipeRepository->getRecipe($this->aRequest);
         return $this->validateResponse($aRecipes, $this);
     }
+
+    /**
+     * Get recipe by slug name.
+     * @param string $sSlugName
+     * @return RecipeService
+     */
+    public function getRecipeBySlugName(string $sSlugName = ''): RecipeService
+    {
+        $aRecipes = $this->oRecipeRepository->getRecipeBySlugName($sSlugName);
+        $aRecipe = data_get($aRecipes, '0', []);
+        if (empty($aRecipe) === true) {
+            abort(404);
+        }
+
+        return $this->validateResponse($aRecipe, $this);
+    }
 }

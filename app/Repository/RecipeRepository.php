@@ -86,4 +86,18 @@ class RecipeRepository extends Repository
             ->get()
         );
     }
+
+    /**
+     * Get recipe by slug name
+     * @param string $sSlugName
+     * @return array
+     */
+    public function getRecipeBySlugName(string $sSlugName): array
+    {
+        return $this->parseData(Recipe::select(AppConstants::RECIPE_BY_SLUG_FIELDS)
+            ->where(AppConstants::STATUS, 1)
+            ->where(AppConstants::SLUG_NAME, '=', $sSlugName)
+            ->get()
+        );
+    }
 }

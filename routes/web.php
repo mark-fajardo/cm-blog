@@ -1,8 +1,12 @@
 <?php
 
+use App\Constants\AppConstants;
 use App\Libraries\DBUtils;
 use App\Libraries\SEOUtils;
 use App\Models\PageConfig;
+use App\Repository\RecipeRepository;
+use App\Services\RecipeService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +22,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     SEOUtils::setSEOTools('home');
-    return view('home')->with(DBUtils::getStateToken());
+    return view('pages.home')->with(DBUtils::getStateToken());
 });
 Route::get('/recipe-list', function () {
     SEOUtils::setSEOTools('recipes');
-    return view('recipe_list')->with(DBUtils::getStateToken());
+    return view('pages.recipe_list')->with(DBUtils::getStateToken());
+});
+Route::get('/recipe/{sSlugName}', function (string $sSlugName) {
+    SEOUtils::setSEOTools('recipe', (new RecipeService(new RecipeRepository()))->getRecipeBySlugName($sSlugName)->get()[AppConstants::DATA]);
+    return view('pages.recipe')->with(DBUtils::getStateToken());
 });
 
 /** Rest endpoints **/
@@ -37,6 +45,7 @@ Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static functio
         Route::get('recommended/videos', 'RecipeController@getRecommendedVideoRecipes');
         Route::get('count', 'RecipeController@getRecipeCount');
         Route::get('', 'RecipeController@getRecipe');
+        Route::get('/{sSlugName}', 'RecipeController@getRecipeBySlugName');
     });
 
     // Category rests

@@ -7,6 +7,17 @@ const state = {
     recommended_recipes: {},
     recommended_video_recipes: {},
     recipe_count: 0,
+    recipe: {
+        main_image: '',
+        recipe_name: '',
+        short_description: '',
+        description: '',
+        procedure: '',
+        category_json: {},
+        ingredients_json: {},
+        youtube_video_id: '',
+        created_at: '',
+    },
     recipes: {},
     search_keyword: '',
     offset: 0,
@@ -82,6 +93,16 @@ const mutations = {
      */
     SET_SEARCH_KEYWORD(state, search_keyword) {
         state.search_keyword = search_keyword;
+    },
+
+    /**
+     * Set recipe.
+     * @param state
+     * @param recipe
+     * @constructor
+     */
+    SET_RECIPE(state, recipe) {
+        state.recipe = recipe;
     },
 };
 
@@ -165,6 +186,20 @@ const actions = {
             commit('SET_ALL_RECIPES', {});
         });
     },
+
+    /**
+     * Fetch recipe by slug name
+     * @param commit
+     */
+    async getRecipeBySlugName({ commit }) {
+        await window.axios.get('/rest' + window.location.pathname).then((oResponse) => {
+            if (oResponse.data.success === true) {
+                commit('SET_RECIPE', oResponse.data.data);
+            }
+        }).catch(() => {
+            commit('SET_RECIPE', {});
+        });
+    },
 };
 
 const getters = {
@@ -211,6 +246,15 @@ const getters = {
      */
     recipes(state) {
         return state.recipes;
+    },
+
+    /**
+     * Get current recipe.
+     * @param state
+     * @returns {any}
+     */
+    recipe(state) {
+        return state.recipe;
     }
 };
 

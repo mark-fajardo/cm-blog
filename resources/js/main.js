@@ -168,7 +168,7 @@ export const jQueryMixin = {
             ----------------------------*/
             $('.food-menu-list').mixItUp('destroy');
         },
-        loadOwlCarousel() {
+        loadOwlCarousel(loop = true) {
             /*---------------------------
                 SCREENSHOT SLIDER
             -----------------------------*/
@@ -177,7 +177,7 @@ export const jQueryMixin = {
                 video: true,
                 items: 1,
                 smartSpeed: 1000,
-                loop: true,
+                loop: loop,
                 nav: false,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
                 autoplay: false,
@@ -205,7 +205,7 @@ export const jQueryMixin = {
                 video: true,
                 items: 1,
                 smartSpeed: 1000,
-                loop: true,
+                loop: loop,
                 nav: true,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
                 autoplay: false,
@@ -233,7 +233,7 @@ export const jQueryMixin = {
                 video: true,
                 items: 1,
                 smartSpeed: 1000,
-                loop: true,
+                loop: loop,
                 animateIn: 'fadeIn',
                 animateOut: 'fadeOut',
                 nav: true,
@@ -263,7 +263,7 @@ export const jQueryMixin = {
                 video: true,
                 items: 1,
                 smartSpeed: 1000,
-                loop: true,
+                loop: loop,
                 nav: false,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
                 autoplay: true,

@@ -65,6 +65,14 @@
     }
 }
 
+.navbar-brand {
+    height: 80px;
+}
+
+.navbar-brand img {
+    height: 100%;
+}
+
 
 /*----------------------------------
     MEDIUM LAYOUT: 1280px
@@ -148,6 +156,10 @@
 ------------------------------------*/
 
 @media (min-width: 768px) and (max-width: 991px) {
+    .page-location {
+        display: none;
+    }
+
     .section-padding {
         padding: 50px 0;
     }
@@ -221,6 +233,8 @@
     }
     .navbar-brand.white {
         display: block;
+        height: 80px;
+
     }
     ul#nav li a {
         color: #fff;
@@ -366,6 +380,9 @@
 -----------------------------------*/
 
 @media only screen and (max-width: 767px) {
+    .page-location {
+        display: none;
+    }
     .section-padding {
         padding: 50px 0;
     }
@@ -436,9 +453,11 @@
     }
     .navbar-brand {
         display: none;
+        margin-left: 10px;
     }
     .navbar-brand.white {
         display: block;
+        height: 80px;
     }
     ul#nav li a {
         color: #fff;

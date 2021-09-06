@@ -21,7 +21,7 @@
                             </div>
                             <div class="promotions-details">
                                 <h4>{{ promoted_recipe.recipe_name }}</h4>
-                                <a :href="'/recipes/' + promoted_recipe.slug_name" class="read-more">Check recipe</a>
+                                <a :href="'/recipe/' + promoted_recipe.slug_name" class="read-more">Check recipe</a>
                             </div>
                         </div>
                     </div>
@@ -90,6 +90,16 @@
         pointer-events: none;
     }
 
+    .promotions-img iframe {
+        width: 100%;
+        height: 500px;
+        min-width: 200px;
+        min-height: 200px;
+    }
+    .promotions-details {
+        margin-top: 40px;
+    }
+
     @media (min-aspect-ratio: 16/9) {
         .video-foreground { height: 300%; top: -100%; }
     }
@@ -99,18 +109,14 @@
     @media all and (max-width: 600px) {
         .vid-info { width: 50%; padding: .5rem; }
         .vid-info h1 { margin-bottom: .2rem; }
+        .promotions-img iframe {
+            height: 400px;
+        }
     }
     @media all and (max-width: 500px) {
         .vid-info .acronym { display: none; }
-    }
-
-    .promotions-img iframe {
-        width: 100%;
-        height: 500px;
-        min-width: 200px;
-        min-height: 200px;
-    }
-    .promotions-details {
-        margin-top: 40px;
+        .promotions-img iframe {
+            height: 300px;
+        }
     }
 </style>

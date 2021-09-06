@@ -13,11 +13,11 @@
                 <div v-for="recommended_recipe in limitObject(recommended_recipes, 12)" class="col-md-3 col-lg-3 col-sm-6 col-xs-12 single-menu">
                     <div class="food-menu-img-container">
                         <div class="food-menu-img">
-                            <a :href="'/recipes/' + recommended_recipe.slug_name"><img :src="recommended_recipe.main_image" alt="Can't load image"></a>
+                            <a :href="'/recipe/' + recommended_recipe.slug_name"><img :src="recommended_recipe.main_image" alt="Can't load image"></a>
                         </div>
                     </div>
                     <div class="food-menu-details">
-                        <a :href="'/recipes/' + recommended_recipe.slug_name"><h4>{{ recommended_recipe.recipe_name }}</h4></a>
+                        <a :href="'/recipe/' + recommended_recipe.slug_name"><h4>{{ recommended_recipe.recipe_name }}</h4></a>
                     </div>
                 </div>
             </div>

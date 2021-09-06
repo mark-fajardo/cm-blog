@@ -2,6 +2,16 @@ body {
     padding-right: 0 !important;
 }
 
+.no-select, .page-barner-area {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .swal2-styled.swal2-confirm {
     padding-left: 45px !important;
     padding-right: 45px !important;
@@ -321,6 +331,7 @@ input:-webkit-autofill:focus {
 
 .navbar-brand.white {
     display: block;
+    height: 120px;
 }
 
 .is-sticky .navbar-brand.white {
@@ -672,6 +683,7 @@ a.search-form-trigger::before {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
+    color: #c9cbc4;
 }
 
 .search-form input::-webkit-input-placeholder {
@@ -1274,6 +1286,14 @@ ul.instagram-feed li img {
     color: #fff;
 }
 
+.footer-logo {
+    height: 100px
+}
+
+.footer-logo img {
+    height: 100%;
+}
+
 .footer-logo,
 .footer-address {
     margin-bottom: 50px;
@@ -1334,17 +1354,18 @@ ul.instagram-feed li img {
 a.scrolltotop {
     background: #d0963e none repeat scroll 0 0;
     border: 1px solid transparent;
-    bottom: 20px;
+    bottom: 27px;
     color: #fff;
     display: none;
     font-size: 20px;
-    height: 50px;
-    padding-top: 10px;
+    height: 55px;
+    padding-top: 13px;
     position: fixed;
-    left: 20px;
+    left: 27px;
     text-align: center;
-    width: 50px;
+    width: 55px;
     z-index: 99;
+    border-radius: 45px;
 }
 
 a.scrolltotop:hover {
@@ -2419,8 +2440,23 @@ ul.page-pagination li a {
     color: #fff;
 }
 
+.blog-content h4 {
+    font-family: "Open Sans";
+    font-weight: 800;
+}
+
 .social-widget ul li.s_facebook a {
     background: #2069ba none repeat scroll 0 0;
+}
+
+.social-widget ul li.s_instagram a {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+}
+
+.social-widget ul li.s_whats_app a {
+    background: #1AD03F none repeat scroll 0 0;
 }
 
 .social-widget ul li.s_twitter a {
@@ -2459,11 +2495,11 @@ ul.page-pagination li a {
 .post-widget ul li .post-tumb {
     height: 80px;
     width: 80px;
+    overflow-x: hidden;
 }
 
 .post-widget ul li .post-tumb img {
     height: 100%;
-    width: 100%;
 }
 
 .post-title-and-date h4 {
@@ -2506,7 +2542,7 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .single-blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/blog/blog_details_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/seafood_in_coconut_milk_pasta_square.jpg") no-repeat scroll center center / cover;
 }
 
 .single-blog-page .title-and-meta::after {
