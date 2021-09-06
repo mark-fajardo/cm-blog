@@ -21,6 +21,14 @@ class Recipe extends Model
     protected $table = 'recipe';
 
     /**
+     * Contains hidden fields
+     * @var array
+     */
+    protected $hidden = [
+        AppConstants::ID,
+    ];
+
+    /**
      * Cast column data.
      * @var string[]
      */
@@ -29,6 +37,11 @@ class Recipe extends Model
         AppConstants::CATEGORY_JSON    => 'array',
     ];
 
+    /**
+     * Wrap main image with file domain.
+     * @param string $sMainImage
+     * @return string
+     */
     public function getMainImageAttribute(string $sMainImage): string
     {
         return (new FileUtils)->url($sMainImage);

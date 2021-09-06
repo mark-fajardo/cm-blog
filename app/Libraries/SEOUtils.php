@@ -72,6 +72,19 @@ class SEOUtils
     }
 
     /**
+     * Setup gallery SEO METAs.
+     */
+    private static function gallerySetup(): void
+    {
+        self::setupCommon([
+            'title'       => 'Gallery - Chef Morris Danzen',
+            'description' => 'Contains the recipe gallery of Chef Morris Danzen. Gallery from the recipes of Chef Morris Danzen.',
+            'endpoint'    => '/gallery',
+            'type'        => 'gallery',
+        ]);
+    }
+
+    /**
      * Setup common METAs.
      * @param array $aData
      */
@@ -83,9 +96,9 @@ class SEOUtils
         SEOTools::setCanonical(config('app.url'));
         SEOTools::opengraph()->addProperty('type', data_get($aData, 'type', 'blog'));
         SEOTools::twitter()->setSite(data_get($aData, 'twitter_username', '@MorrisDanzen'));
-        SEOMeta::addKeyword(data_get($aData, 'keywords', '') . 'recipe list, recipe, cooking vlogs, chef morris danzen, chef, chef morris, morris, danzen, chef danzen, morris danzen, food gallery, gallery, cooking tutorials, tutorial, cooking, pinoy chef, pinoy food, pinoy dishes, pinoy vlog, Video, youtube, facebook, twitter');
+        SEOMeta::addKeyword(data_get($aData, 'keywords', 'recipe list') . ', recipe, cooking vlogs, chef morris danzen, chef, chef morris, morris, danzen, chef danzen, morris danzen, food gallery, gallery, cooking tutorials, tutorial, cooking, pinoy chef, pinoy food, pinoy dishes, pinoy vlog, Video, youtube, facebook, twitter');
 
         // TODO: UPDATE LOGO
-        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('https://files.chefmorrisdanzen.com/img/logo/favicon.png');
     }
 }

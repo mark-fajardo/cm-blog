@@ -82,3 +82,13 @@
         }
     }
 </script>
+
+<style scoped>
+    .post-tumb img {
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        cursor: pointer;
+        object-fit: cover;
+    }
+</style>

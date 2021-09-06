@@ -7,12 +7,12 @@ use App\Traits\FailedValidationResponse;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class GetRecipeCountRequest
+ * Class GetGalleryRequest
  * @package App\Http\Requests
  * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.29
  */
-class GetRecipeCountRequest extends FormRequest
+class GetGalleryRequest extends FormRequest
 {
     use FailedValidationResponse;
 
@@ -23,7 +23,8 @@ class GetRecipeCountRequest extends FormRequest
     public function rules(): array
     {
         return [
-            AppConstants::SEARCH_KEYWORD  => AppConstants::NULLABLE,
+            AppConstants::OFFSET => AppConstants::REQUIRED_INT,
+            AppConstants::LIMIT  => AppConstants::REQUIRED_INT
         ];
     }
 }

@@ -56,15 +56,15 @@
     }
 
     .food-menu-img {
-        overflow: hidden;
-        height: 100%;
+        text-align: center;
     }
 
     .food-menu-img img {
-        height: 100%;
-    }
-
-    .food-menu-img-container {
-        min-height: 150px;
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        cursor: pointer;
+        margin: 15px;
+        object-fit: cover;
     }
 </style>

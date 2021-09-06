@@ -1,10 +1,11 @@
 {
-    "/js/home.js": "/js/home.js?id=aa05f3612209c822514a",
+    "/js/gallery.js": "/js/gallery.js?id=b21c37d662f90b0e0f1b",
+    "/js/home.js": "/js/home.js?id=36fc09e5e49fbc888039",
     "/js/main.js": "/js/main.js?id=885ac9dc33784b19b46d",
     "/js/maintenance.js": "/js/maintenance.js?id=cdb5a9dc87221d2e5ef0",
     "/css/maintenance.css": "/css/maintenance.css?id=117c1b2d2d14734e56c0",
-    "/css/Front.css": "/css/Front.css?id=19577276aecd74cde2b0",
-    "/js/notFound.js": "/js/notFound.js?id=c01ae85e9f888c27f29a",
-    "/js/recipe.js": "/js/recipe.js?id=d136f574945b73a931ee",
-    "/js/recipeList.js": "/js/recipeList.js?id=2e8230fe517193414ba1"
+    "/css/Front.css": "/css/Front.css?id=4e0897918ab75abd9629",
+    "/js/notFound.js": "/js/notFound.js?id=47504f4623c613e34266",
+    "/js/recipe.js": "/js/recipe.js?id=1050d615847e72b6cc20",
+    "/js/recipeList.js": "/js/recipeList.js?id=4b7922fd2b2eac2b063b"
 }

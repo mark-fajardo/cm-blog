@@ -49,6 +49,10 @@ class AppConstants
     // recipe_category table
     public const ID = 'id';
     public const CATEGORY_NAME = 'category_name';
+    // gallery table
+    public const RECIPE_ID = 'recipe_id';
+    public const IMAGE_URL = 'image_url';
+    public const IMAGE_CAPTION = 'image_caption';
     public const PROMOTED_FIELDS = [
         self::RECIPE_NAME,
         self::YOUTUBE_VIDEO_ID,
@@ -93,6 +97,11 @@ class AppConstants
         self::SLUG_NAME,
         self::NOTES,
         self::CREATED_AT,
+    ];
+    public const GALLERY_FIELDS = [
+        self::RECIPE_ID,
+        self::IMAGE_URL,
+        self::IMAGE_CAPTION
     ];
 
     /** Request validations **/

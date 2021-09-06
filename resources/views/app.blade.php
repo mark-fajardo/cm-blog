@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--====== FAVICON ICON =======-->
-    <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/img/logo/favicon.jpg" />
+    <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/img/logo/favicon.png" />
 
     <title>{{ config('app.name') }}</title>
 

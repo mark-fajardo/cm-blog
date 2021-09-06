@@ -28,7 +28,11 @@
             <div class="row food-menu-list" v-if="areRecipesAvailable === true">
                 <div v-for="recipe in recipes" :class="'mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu ' + recipe.category_json.join(' ')">
                     <div class="single-menu-details">
-                        <div class="food-menu-img"><img :src="recipe.main_image" alt=""></div>
+                        <div class="food-menu-img">
+                            <a :href="'/recipe/' + recipe.slug_name">
+                                <img :src="recipe.main_image" alt="">
+                            </a>
+                        </div>
                         <div class="food-menu-details">
                             <h3>{{ recipe.recipe_name }} </h3>
                             <p class="menu-speacification"><span v-for="ingredient in recipe.ingredients_json">- {{ limitText(ingredient, 20) }} </span></p>
@@ -225,5 +229,14 @@
 
     .page-pagination li {
         cursor: default;
+    }
+
+    .food-menu-img img {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        cursor: pointer;
+        margin: 5px;
+        object-fit: cover;
     }
 </style>

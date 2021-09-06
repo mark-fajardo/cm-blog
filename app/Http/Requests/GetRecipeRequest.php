@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class GetRecipeRequest
- * @package App\Http\Requests\Auth
+ * @package App\Http\Requests
  * @author Mark Joshua Fajardo <mjt.fajardo@gmail.com>
  * @since 2021.08.29
  */
