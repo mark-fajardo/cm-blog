@@ -99,6 +99,7 @@ Version: 2.0
 .alignleft {
     float: left;
     margin-right: 15px;
+    overflow: hidden;
 }
 
 .alignright {
@@ -2546,6 +2547,19 @@ ul.blog-instagram-feed-widget li {
 }
 
 .single-blog-page .title-and-meta::after {
+    left: 0;
+    margin-left: auto;
+}
+
+/*
+  Gallery Page
+*/
+
+.gallery-page .page-barner-bg {
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/rana_1_landscape.jpg") no-repeat scroll center center / cover;
+}
+
+.gallery-page .title-and-meta::after {
     left: 0;
     margin-left: auto;
 }

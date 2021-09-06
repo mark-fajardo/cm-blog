@@ -62,6 +62,13 @@
                         breadcrumb_title: 'Recipe Details',
                         breadcrumb_href: this.currentEndpoint,
                     },
+                    gallery: {
+                        title: 'Gallery <span></span>',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
+                        breadcrumb_title: 'Gallery',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
                 }
             };
         },

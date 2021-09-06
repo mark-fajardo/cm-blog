@@ -17,6 +17,7 @@ mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/notFound.js', 'public/js')
     .js('resources/js/recipeList.js', 'public/js')
     .js('resources/js/recipe.js', 'public/js')
+    .js('resources/js/gallery.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
     .postCss('resources/css/Front.css', 'public/css')
     .polyfill({

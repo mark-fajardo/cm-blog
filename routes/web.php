@@ -3,10 +3,8 @@
 use App\Constants\AppConstants;
 use App\Libraries\DBUtils;
 use App\Libraries\SEOUtils;
-use App\Models\PageConfig;
 use App\Repository\RecipeRepository;
 use App\Services\RecipeService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,24 +30,7 @@ Route::get('/recipe/{sSlugName}', function (string $sSlugName) {
     SEOUtils::setSEOTools('recipe', (new RecipeService(new RecipeRepository()))->getRecipeBySlugName($sSlugName)->get()[AppConstants::DATA]);
     return view('pages.recipe')->with(DBUtils::getStateToken());
 });
-
-/** Rest endpoints **/
-Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static function() {
-    // Page config rests
-    Route::get('page-config', 'PageConfigController@getPageConfig');
-
-    // Recipe rests
-    Route::group(['prefix' => 'recipe'], static function() {
-        Route::get('promoted', 'RecipeController@getPromotedRecipe');
-        Route::get('recommended', 'RecipeController@getRecommendedRecipes');
-        Route::get('recommended/videos', 'RecipeController@getRecommendedVideoRecipes');
-        Route::get('count', 'RecipeController@getRecipeCount');
-        Route::get('', 'RecipeController@getRecipe');
-        Route::get('/{sSlugName}', 'RecipeController@getRecipeBySlugName');
-    });
-
-    // Category rests
-    Route::group(['prefix' => 'category'], static function() {
-        Route::get('', 'CategoryController@getAllCategories');
-    });
+Route::get('/gallery', function () {
+    SEOUtils::setSEOTools('gallery');
+    return view('pages.gallery')->with(DBUtils::getStateToken());
 });
