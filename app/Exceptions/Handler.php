@@ -64,6 +64,7 @@ class Handler extends ExceptionHandler
      */
     private function logError($oRequest, Throwable $oThrowable)
     {
+        dd($oThrowable->getMessage());
         Log::channel('error_stack')->error(
             (empty($oThrowable->getMessage()) === true) ? Response::$statusTexts[$oThrowable->getStatusCode()] : $oThrowable->getMessage(),
             DBUtils::formatRequestLog($oRequest)

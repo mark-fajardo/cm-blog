@@ -57,10 +57,6 @@
         },
         methods: {
             ...mapActions('Gallery', ['getGalleryImages']),
-            ...mapMutations('Gallery', {
-                'setOffset': 'SET_OFFSET',
-                'setAllImages': 'SET_ALL_IMAGES_ONLY',
-            }),
 
             /**
              * Prepare data for the components config.

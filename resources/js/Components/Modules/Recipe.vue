@@ -1,6 +1,16 @@
 <template>
     <section>
-        <RecipeView/>
+        <section class="blog-page blog-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                        <RecipeView/>
+                        <RecipeFooter/>
+                    </div>
+                    <RecipeViewSideBar/>
+                </div>
+            </div>
+        </section>
         <Footer/>
     </section>
 </template>
@@ -10,9 +20,11 @@
     import { jQueryMixin } from '../../main';
     import RecipeView from '../Recipe/RecipeView';
     import { mapActions } from 'vuex';
+    import RecipeFooter from '../Recipe/RecipeFooter';
+    import RecipeViewSideBar from '../Recipe/RecipeViewSideBar';
 
     export default {
-        components: { RecipeView, Footer },
+        components: { RecipeViewSideBar, RecipeFooter, RecipeView, Footer },
         async created() {
             await this.prepareData();
         },
@@ -22,7 +34,7 @@
             jQueryMixin.method.loadOwlCarousel();
         },
         methods: {
-            ...mapActions('Recipe', ['getRecipeBySlugName', 'getRecommendedRecipes']),
+            ...mapActions('Recipe', ['getRecipeBySlugName']),
             ...mapActions('Category', ['getAllCategories']),
 
             /**
@@ -32,7 +44,6 @@
                 Promise.all([
                     await this.getAllCategories(),
                     await this.getRecipeBySlugName(),
-                    this.getRecommendedRecipes(),
                 ]).then(() => {
                     jQueryMixin.method.removeLoader();
                 });

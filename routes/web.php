@@ -34,3 +34,7 @@ Route::get('/gallery', function () {
     SEOUtils::setSEOTools('gallery');
     return view('pages.gallery')->with(DBUtils::getStateToken());
 });
+Route::get('/timeline', function () {
+    SEOUtils::setSEOTools('timeline');
+    return view('pages.timeline')->with(DBUtils::getStateToken());
+});

@@ -1,35 +1,9 @@
 <template>
     <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
         <div class="blog-sidebar">
-            <div class="single-sidebar-widget">
-                <form action="/recipe-list?#search-results-area">
-                    <input type="search" name="search" id="search" placeholder="Search..." autocomplete="off">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <div class="single-sidebar-widget post-widget wow fadeIn" v-show="areRecommendedRecipesAvailable === true">
-                <h4>Top Recipes</h4>
-                <ul>
-                    <li class="s_post" v-for="recipe in limitObject(shuffle(recommended_recipes), 4)">
-                        <div class="post-tumb alignleft">
-                            <a :href="'/recipe/' + recipe.slug_name"><img :src="recipe.main_image" alt="Can't load image"></a>
-                        </div>
-                        <div class="post-title-and-date">
-                            <h4><a :href="'/recipe/' + recipe.slug_name">{{ recipe.recipe_name }}</a></h4>
-                            <p class="post-meta"><a :href="'/recipe/' + recipe.slug_name">{{ convertDateTime(recipe.created_at) }}</a></p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="single-sidebar-widget social-widget wow fadeIn">
-                <h4>Connect with me</h4>
-                <ul>
-                    <li class="s_facebook"><a href="//www.facebook.com/Chefmorrisdanzen" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
-                    <li class="s_youtube"><a href="//www.youtube.com/Chef%20Morris%20Danzen" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube"></i></a></li>
-                    <li class="s_instagram"><a href="//www.instagram.com/chef_morrisdanzen/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
-                    <li class="s_whats_app"><a href="//api.whatsapp.com/send?phone=393512671387" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp"></i></a></li>
-                </ul>
-            </div>
+            <SidebarSearch/>
+            <SidebarTopRecipes/>
+            <ConnectWithMe/>
             <div class="single-sidebar-widget tag-widget wow fadeIn">
                 <h4>Recipe Tags</h4>
                 <ul>
@@ -43,9 +17,13 @@
 
 <script>
     import { mapGetters } from 'vuex';
+    import ConnectWithMe from '../../Common/ConnectWithMe';
+    import SidebarSearch from '../../Common/SidebarSearch';
+    import SidebarTopRecipes from '../../Common/SidebarTopRecipes';
 
     export default {
         name: 'RecipeViewSideBar',
+        components: { SidebarTopRecipes, SidebarSearch, ConnectWithMe },
         computed: {
             ...mapGetters('Recipe', ['recommended_recipes', 'recipe']),
             ...mapGetters('Category', ['categories']),
@@ -82,13 +60,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .post-tumb img {
-        width: 80px;
-        height: 80px;
-        background-size: cover;
-        cursor: pointer;
-        object-fit: cover;
-    }
-</style>
