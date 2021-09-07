@@ -36,4 +36,46 @@ class FileUtils
     {
         return $this->disk->url($file);
     }
+
+    /**
+     * Check if file exists.
+     * @param string $file
+     * @return bool
+     */
+    public function exist(string $file): bool
+    {
+        return $this->disk->exists($file);
+    }
+
+    /**
+     * Assign URL for multiple images.
+     * @param array $aImages
+     * @return array
+     */
+    public function assignMultipleURL(array $aImages): array
+    {
+        $aAssignedImages = [];
+        foreach ($aImages as $sImage) {
+            $aAssignedImages[] = $this->url($sImage);
+        }
+
+        return $aAssignedImages;
+    }
+
+    /**
+     * Check if multiple images does exist.
+     * Unset if not.
+     * @param array $aImages
+     * @return array
+     */
+    public function validateMultipleExist(array $aImages): array
+    {
+        foreach ($aImages as $iKey => $sImage) {
+            if ($this->disk->exists($sImage) === false) {
+                unset($aImages[$iKey]);
+            }
+        }
+
+        return $aImages;
+    }
 }

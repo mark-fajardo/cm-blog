@@ -34,4 +34,9 @@ Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static functio
     Route::group(['prefix' => 'gallery'], static function() {
         Route::get('', 'GalleryController@getGalleryImages');
     });
+
+    // Timeline rests
+    Route::group(['prefix' => 'timeline'], static function() {
+        Route::get('', 'TimelineController@getTimeline');
+    });
 });

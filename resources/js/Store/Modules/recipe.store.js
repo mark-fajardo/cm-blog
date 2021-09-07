@@ -8,6 +8,7 @@ const state = {
     recommended_video_recipes: {},
     recipe_count: 0,
     recipe: {
+        gallery: {},
         main_image: '',
         recipe_name: '',
         short_description: '',

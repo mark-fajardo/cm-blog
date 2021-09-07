@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Constants\AppConstants;
 use App\Libraries\FileUtils;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Recipe Model
@@ -45,5 +46,13 @@ class Recipe extends Model
     public function getMainImageAttribute(string $sMainImage): string
     {
         return (new FileUtils)->url($sMainImage);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function gallery()
+    {
+        return $this->hasMany(Gallery::class, AppConstants::RECIPE_ID, AppConstants::ID);
     }
 }

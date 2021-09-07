@@ -21,7 +21,7 @@ class GalleryController extends Controller
     private $oGalleryService;
 
     /**
-     * RecipeController constructor
+     * GalleryController constructor
      * @param GalleryService $oGalleryService
      */
     public function __construct(GalleryService $oGalleryService)

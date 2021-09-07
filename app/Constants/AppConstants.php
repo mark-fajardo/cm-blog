@@ -80,11 +80,21 @@ class AppConstants
         self::CATEGORY_JSON,
         self::SLUG_NAME
     ];
+    public const TIMELINE_FIELDS = [
+        self::ID,
+        self::RECIPE_NAME,
+        self::MAIN_IMAGE,
+        self::SHORT_DESCRIPTION,
+        self::DESCRIPTION,
+        self::SLUG_NAME,
+        self::CREATED_AT
+    ];
     public const CATEGORY_FIELDS = [
         self::ID,
         self::CATEGORY_NAME
     ];
     public const RECIPE_BY_SLUG_FIELDS = [
+        self::ID,
         self::RECIPE_NAME,
         self::SHORT_DESCRIPTION,
         self::DESCRIPTION,

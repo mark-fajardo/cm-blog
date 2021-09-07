@@ -94,10 +94,15 @@ class RecipeRepository extends Repository
      */
     public function getRecipeBySlugName(string $sSlugName): array
     {
-        return $this->parseData(Recipe::select(AppConstants::RECIPE_BY_SLUG_FIELDS)
+        $aRecipe = $this->parseData(Recipe::with('gallery:image_url,recipe_id')
+            ->select(AppConstants::RECIPE_BY_SLUG_FIELDS)
             ->where(AppConstants::STATUS, 1)
             ->where(AppConstants::SLUG_NAME, '=', $sSlugName)
             ->get()
         );
+        $aGallery = data_get($aRecipe, '0.gallery.*.image_url', []);
+        array_unshift($aGallery, data_get($aRecipe, '0.main_image', ''));
+        data_set($aRecipe, '0.gallery', $aGallery);
+        return $aRecipe;
     }
 }

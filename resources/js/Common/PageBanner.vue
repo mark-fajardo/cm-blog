@@ -69,6 +69,13 @@
                         breadcrumb_title: 'Gallery',
                         breadcrumb_href: this.currentEndpoint,
                     },
+                    timeline: {
+                        title: 'Recipe <span>Timeline</span>',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
+                        breadcrumb_title: 'Recipe Timeline',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
                 }
             };
         },

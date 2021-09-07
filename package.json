@@ -39,6 +39,7 @@
         "vue-head": "^2.2.0",
         "vue-instagram": "^3.0.0",
         "vue-moment-tz": "^2.1.1",
+        "vue-owl-carousel": "^2.0.3",
         "vue-router": "^3.5.1",
         "vue-script2": "^2.1.0",
         "vue-social-sharing": "^3.0.8",

@@ -85,6 +85,19 @@ class SEOUtils
     }
 
     /**
+     * Setup timeline SEO METAs.
+     */
+    private static function timelineSetup(): void
+    {
+        self::setupCommon([
+            'title'       => 'Timeline - Chef Morris Danzen',
+            'description' => 'Contains the recipe timeline of Chef Morris Danzen. Timeline of all the recipes of Chef Morris Danzen.',
+            'endpoint'    => '/timeline',
+            'type'        => 'timeline',
+        ]);
+    }
+
+    /**
      * Setup common METAs.
      * @param array $aData
      */
