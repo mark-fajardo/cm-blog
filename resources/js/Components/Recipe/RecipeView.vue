@@ -1,8 +1,16 @@
 <template>
     <div class="single-blog-page single-blog text-justify wow fadeIn">
         <div class="blog-image-sldie" v-show="recipe.main_image !== ''">
-            <!-- TODO: ADD MULTIPLE IMAGE FROM GALLERY TABLE -->
-            <img :src="recipe.main_image" alt="">
+            <carousel
+                v-if="areImagesAvailable === true"
+                :items="1"
+                :margin="15"
+                :center="true"
+                :nav="false"
+                :autoplay="true"
+                :autoplayTimeout="5000">
+                <img v-for="gallery in recipe.gallery" :src="gallery" alt="Can't load image">
+            </carousel>
         </div>
         <div class="blog-details">
             <div class="title-and-meta">
@@ -35,25 +43,23 @@
 
 <script>
     import { mapGetters } from 'vuex';
-    import { jQueryMixin } from '../../main';
     import YoutubeVideoPlayer from '../../Common/YoutubeVideoPlayer';
+    import carousel from 'vue-owl-carousel'
 
     export default {
         name: 'RecipeView',
-        components: { YoutubeVideoPlayer },
+        components: { YoutubeVideoPlayer, carousel },
         computed: {
             ...mapGetters('Recipe', ['recipe']),
             ...mapGetters('Category', ['categories']),
 
             /**
-             * Contains recipe categories.
+             * Check if images are available.
+             * @returns {boolean}
              */
-            recipeCategories() {
-                return this.recipe.category_json;
-            },
-        },
-        mounted() {
-            jQueryMixin.method.loadOwlCarousel(false);
+            areImagesAvailable() {
+                return (this.$_.isEmpty(this.recipe.gallery) === false);
+            }
         }
     }
 </script>

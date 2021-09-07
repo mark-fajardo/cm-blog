@@ -1,7 +1,7 @@
 <template>
     <div class="single-sidebar-widget">
         <form action="/recipe-list?#search-results-area">
-            <input type="search" name="search" id="search" placeholder="Search..." autocomplete="off">
+            <input type="search" name="search" id="search" placeholder="Search recipes..." autocomplete="off">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>

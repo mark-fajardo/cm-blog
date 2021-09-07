@@ -31,7 +31,6 @@
         mounted() {
             jQueryMixin.method.loadSticky();
             jQueryMixin.method.loadSearch();
-            jQueryMixin.method.loadOwlCarousel();
         },
         methods: {
             ...mapActions('Recipe', ['getRecipeBySlugName']),

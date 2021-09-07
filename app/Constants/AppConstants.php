@@ -94,6 +94,7 @@ class AppConstants
         self::CATEGORY_NAME
     ];
     public const RECIPE_BY_SLUG_FIELDS = [
+        self::ID,
         self::RECIPE_NAME,
         self::SHORT_DESCRIPTION,
         self::DESCRIPTION,
