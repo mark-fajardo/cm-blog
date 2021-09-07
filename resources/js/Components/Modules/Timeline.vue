@@ -8,6 +8,7 @@
                 </div>
             </div>
         </section>
+        <Promotions/>
         <SocialMediaFeed/>
         <Footer/>
     </section>
@@ -19,9 +20,10 @@
     import SocialMediaFeed from '../../Common/SocialMediaFeed';
     import Content from '../../Components/Timeline/Content';
     import TimelineSidebar from '../Timeline/TimelineSidebar';
+    import Promotions from '../Home/Promotions';
 
     export default {
-        components: { TimelineSidebar, SocialMediaFeed, Footer, Content },
+        components: { Promotions, TimelineSidebar, SocialMediaFeed, Footer, Content },
         async created() {
             jQueryMixin.method.loadSticky();
             jQueryMixin.method.loadSearch();

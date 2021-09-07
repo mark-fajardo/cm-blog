@@ -79,6 +79,7 @@
     .read-more-area {
         margin: auto;
         text-align: center;
+        margin-bottom: 100px;
     }
 
     .read-more-area .read-more {
