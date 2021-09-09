@@ -38,3 +38,7 @@ Route::get('/timeline', function () {
     SEOUtils::setSEOTools('timeline');
     return view('pages.timeline')->with(DBUtils::getStateToken());
 });
+Route::get('/contact', function () {
+    SEOUtils::setSEOTools('contact');
+    return view('pages.contact')->with(DBUtils::getStateToken());
+});

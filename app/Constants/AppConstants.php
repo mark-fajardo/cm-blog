@@ -53,6 +53,12 @@ class AppConstants
     public const RECIPE_ID = 'recipe_id';
     public const IMAGE_URL = 'image_url';
     public const IMAGE_CAPTION = 'image_caption';
+    // message table
+    public const SENDER_NAME = 'sender_name';
+    public const SENDER_EMAIL = 'sender_email';
+    public const SENDER_PHONE = 'sender_phone';
+    public const MESSAGE_TITLE = 'message_title';
+    public const MESSAGE_REQUEST = 'message_request';
     public const PROMOTED_FIELDS = [
         self::RECIPE_NAME,
         self::YOUTUBE_VIDEO_ID,
@@ -113,10 +119,18 @@ class AppConstants
         self::IMAGE_URL,
         self::IMAGE_CAPTION
     ];
+    public const MESSAGE_CREATE_FIELDS = [
+        self::SENDER_NAME,
+        self::SENDER_EMAIL,
+        self::SENDER_PHONE,
+        self::MESSAGE_TITLE,
+        self::MESSAGE_REQUEST
+    ];
 
     /** Request validations **/
     public const REQUIRED_STRING = 'required|string';
     public const STRING = 'string';
+    public const INT = 'int';
     public const REQUIRED_INT = 'required|int';
     public const NULLABLE = 'nullable';
 }

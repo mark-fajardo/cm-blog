@@ -15,6 +15,16 @@ use Illuminate\Support\Facades\Crypt;
 class DBUtils
 {
     /**
+     * Filter array, remove null fields.
+     * @param array $aRequest
+     * @return array
+     */
+    public static function removeNullFields(array $aRequest): array
+    {
+        return array_filter($aRequest);
+    }
+
+    /**
      * Format API response.
      * @param bool|null  $bSuccess
      * @param $mData
