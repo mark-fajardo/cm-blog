@@ -76,6 +76,13 @@
                         breadcrumb_title: 'Recipe Timeline',
                         breadcrumb_href: this.currentEndpoint,
                     },
+                    contact: {
+                        title: 'Contact <span>Me</span>',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
+                        breadcrumb_title: 'Contact Me',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
                 }
             };
         },

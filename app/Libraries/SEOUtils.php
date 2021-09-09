@@ -98,6 +98,19 @@ class SEOUtils
     }
 
     /**
+     * Setup contact SEO METAs.
+     */
+    private static function contactSetup(): void
+    {
+        self::setupCommon([
+            'title'       => 'Contact Me - Chef Morris Danzen',
+            'description' => 'Contact page where you can contact Chef Morris Danzen via Chef Morris Blog.',
+            'endpoint'    => '/contact',
+            'type'        => 'contact',
+        ]);
+    }
+
+    /**
      * Setup common METAs.
      * @param array $aData
      */

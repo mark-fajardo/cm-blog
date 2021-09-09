@@ -11,11 +11,28 @@ body {
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
-.swal2-styled.swal2-confirm {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
+.swal2-confirm{
+    width: 45% !important;
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    line-height: 1.5 !important;
+    border-radius: .2rem !important;
+    background-color: #d94 !important;
+    border-color: #d94 !important;
 }
+
+.swal2-deny{
+    background-color: #444 !important;
+    width: 45% !important;
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    line-height: 1.5 !important;
+    border-radius: .2rem !important;
+}
+
+.swal2-container {
+     zoom: 1.5;
+ }
 
 /* width */
 ::-webkit-scrollbar {
@@ -2706,7 +2723,7 @@ ul.blog-instagram-feed-widget li {
 ==================================*/
 
 .contact-us-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/contact_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/far_with_pepper_landscape.jpg") no-repeat scroll center center / cover;
 }
 
 .single-contact-widget {

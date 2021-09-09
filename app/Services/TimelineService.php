@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Libraries\DBUtils;
 use App\Repository\TimelineRepository;
 use Illuminate\Http\Request;
 

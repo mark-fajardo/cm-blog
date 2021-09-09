@@ -39,4 +39,9 @@ Route::group(['middleware' => ['app.state'], 'prefix' => 'rest'], static functio
     Route::group(['prefix' => 'timeline'], static function() {
         Route::get('', 'TimelineController@getTimeline');
     });
+
+    // Message rests
+    Route::group(['prefix' => 'message'], static function() {
+        Route::post('', 'MessageController@sendMessage');
+    });
 });

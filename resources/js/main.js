@@ -288,6 +288,9 @@ export const jQueryMixin = {
                 pauseOnHover: false
             }).data('plugin_pogoSlider')
         },
+        showLoader() {
+            $(".preeloader").fadeIn(700);
+        },
         removeLoader() {
             setTimeout(() => {
                 $(".preeloader").fadeOut(700);

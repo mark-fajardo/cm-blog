@@ -21,6 +21,23 @@ export default {
         },
 
         /**
+         * Confirm message.
+         * @param sIcon
+         * @param sText
+         * @param sConfirmButton
+         * @param sCancelButton
+         */
+        confirmMessage(sIcon, sText, sConfirmButton, sCancelButton) {
+            return this.$swal.fire({
+                icon: sIcon,
+                text: sText,
+                showDenyButton: true,
+                confirmButtonText: sConfirmButton,
+                denyButtonText: sCancelButton,
+            })
+        },
+
+        /**
          * Convert object to array and limit.
          * @param object
          * @param limit
