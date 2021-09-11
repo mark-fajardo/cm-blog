@@ -172,7 +172,7 @@
              */
             searchRecipe() {
                 this.setSearchKeyword(this.search_keyword);
-                this.prepareData();
+                this.changePage(1);
             },
 
             /**

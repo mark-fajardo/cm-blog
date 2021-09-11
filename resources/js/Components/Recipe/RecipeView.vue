@@ -35,7 +35,9 @@
                     </ul>
                 </div>
                 <h4>Procedure</h4>
-                <p v-html="recipe.procedure"></p>
+                <p class="blog-content-p" v-html="recipe.procedure"></p>
+                <h4>Notes</h4>
+                <p class="blog-content-p">{{ (this.$_.isEmpty(recipe.notes) === true) ? 'There is no extra notes for this recipe.' : recipe.notes }}</p>
             </div>
         </div>
     </div>
@@ -69,7 +71,7 @@
         margin-bottom: 50px;
         text-indent: 50px;
     }
-    .ingredients-list {
+    .ingredients-list, .blog-content-p {
         margin-bottom: 50px;
     }
     .single-blog {
