@@ -10,7 +10,9 @@
                 </div>
             </div>
             <div class="row food-menu-list">
-                <img class="image" v-for="(image, i) in images" :src="image" @click="index = i">
+                <div v-lazy-container="{ selector: 'img' }">
+                    <img class="image" v-for="(image, i) in images" :data-src="image" @click="index = i">
+                </div>
                 <VueGallerySlideshow :images="images" :index="index" @close="index = null"></VueGallerySlideshow>
             </div>
             <div class="row" v-if="areImagesAvailable === false">
