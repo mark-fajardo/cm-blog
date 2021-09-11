@@ -7,7 +7,7 @@
         <title>503 - {{ config('app.name') }}</title>
 
         <!--====== FAVICON ICON =======-->
-        <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/img/logo/favicon.png" />
+        <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/l/img/logo/favicon.png" />
 
         <!-- Scripts -->
         <script type="text/javascript" src="{{ mix('/js/maintenance.js') }}" defer></script>

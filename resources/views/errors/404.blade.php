@@ -7,7 +7,7 @@
         <title>404 - {{ config('app.name') }}</title>
 
         <!--====== FAVICON ICON =======-->
-        <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/img/logo/favicon.png" />
+        <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/l/img/logo/favicon.png" />
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{ mix('css/front.css') }}">

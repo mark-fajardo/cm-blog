@@ -5,7 +5,7 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="footer-top section-padding text-center">
                         <div class="footer-logo">
-                            <a :href="main_menu[0].REDIRECT"><img src="//files.chefmorrisdanzen.com/img/logo/logo-light.png" alt="Logo"></a>
+                            <a :href="main_menu[0].REDIRECT"><img src="//files.chefmorrisdanzen.com/l/img/logo/logo-light.png" alt="Logo"></a>
                         </div>
                         <div class="footer-address">
                             <p>Sicily, Italy</p>

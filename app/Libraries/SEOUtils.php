@@ -125,6 +125,6 @@ class SEOUtils
         SEOMeta::addKeyword(data_get($aData, 'keywords', 'recipe list') . ', recipe, cooking vlogs, chef morris danzen, chef, chef morris, morris, danzen, chef danzen, morris danzen, food gallery, gallery, cooking tutorials, tutorial, cooking, pinoy chef, pinoy food, pinoy dishes, pinoy vlog, Video, youtube, facebook, twitter');
 
         // TODO: UPDATE LOGO
-        SEOTools::jsonLd()->addImage('https://files.chefmorrisdanzen.com/img/logo/favicon.png');
+        SEOTools::jsonLd()->addImage('https://files.chefmorrisdanzen.com/l/img/logo/favicon.png');
     }
 }
