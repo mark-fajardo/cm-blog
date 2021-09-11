@@ -17,10 +17,9 @@
     import Content from '../Contact/Content';
     import ContactDetails from '../Contact/ContactDetails';
     import ContactFormHeader from '../Contact/ContactFormHeader';
-    import ContactMaps from '../Contact/ContactMaps';
 
     export default {
-        components: { ContactMaps, ContactFormHeader, ContactDetails, Content, Footer },
+        components: { ContactFormHeader, ContactDetails, Content, Footer },
         async created() {
             jQueryMixin.method.loadSticky();
             jQueryMixin.method.loadSearch();

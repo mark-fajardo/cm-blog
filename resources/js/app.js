@@ -14,7 +14,9 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 import { Env_ } from './constants';
 import Ads from 'vue-google-adsense';
 import VueSocialSharing from 'vue-social-sharing';
+import VueLazyload from 'vue-lazyload';
 
+Vue.use(VueLazyload);
 Vue.use(VueSocialSharing);
 Vue.use(require('vue-script2'))
 Vue.use(Ads.Adsense)

@@ -28,7 +28,7 @@
 
         <!--- PRELOADER -->
         <div class="preeloader">
-            <div class="preloader-spinner"><img src="//chefmorrisdanzen.local.com/img/logo/chef-morris-danzen-FINAL-colored.png"/></div>
+            <div class="preloader-spinner"><img src="/img/logo/chef-morris-danzen-FINAL-colored.png"/></div>
         </div>
 
         <!--SCROLL TO TOP-->
