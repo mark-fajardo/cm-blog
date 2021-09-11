@@ -17,6 +17,7 @@
                             :title="recipe.recipe_name"
                             :description="recipe.short_description"
                             :quote="'This is the ' + recipe.recipe_name + ' recipe. Learn this new and easy recipe right now. Just click the recipe link below. Happy cooking!'"
+                            :media="recipe.main_image"
                             hashtags="ChefMorrisDanzen">
                             <i :class="network.icon"></i>
                         </ShareNetwork>
@@ -30,6 +31,7 @@
                             :title="recipe.recipe_name"
                             :description="recipe.short_description"
                             :quote="'This is the ' + recipe.recipe_name + ' recipe. Learn this new and easy recipe right now. Just click the recipe link below. Happy cooking!'"
+                            :media="recipe.main_image"
                             hashtags="ChefMorrisDanzen">
                             <i :class="network.icon"></i>
                         </ShareNetwork>
@@ -52,6 +54,11 @@
                     {
                         network: 'facebook',
                         icon: 'fa fa-facebook',
+                        mobile_only: false
+                    },
+                    {
+                        network: 'pinterest',
+                        icon: 'fa fa-pinterest',
                         mobile_only: false
                     },
                     {

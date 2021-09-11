@@ -63,9 +63,14 @@ class RecipeRepository extends Repository
      */
     public function getRecipeCount(array $aRequest): array
     {
+        $sSearchKeyword = $this->getSearchKeyword($aRequest);
+        $oCategoryRepository = new CategoryRepository();
+        $sCategoryId = $this->wrapLike((string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', ''));
         return [
             AppConstants::COUNT => Recipe::where(AppConstants::STATUS, 1)
-                ->where(AppConstants::RECIPE_NAME, 'LIKE', '%' . $aRequest[AppConstants::SEARCH_KEYWORD] . '%')
+                ->whereRaw($this->getRawLikeLower(AppConstants::RECIPE_NAME), $sSearchKeyword)
+                ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword)
+                ->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $sCategoryId)
                 ->count()
         ];
     }
@@ -77,9 +82,14 @@ class RecipeRepository extends Repository
      */
     public function getRecipe(array $aRequest): array
     {
+        $sSearchKeyword = $this->getSearchKeyword($aRequest);
+        $oCategoryRepository = new CategoryRepository();
+        $sCategoryId = $this->wrapLike((string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', ''));
         return $this->parseData(Recipe::select(AppConstants::RECIPE_LIST_FIELDS)
             ->where(AppConstants::STATUS, 1)
-            ->where(AppConstants::RECIPE_NAME, 'LIKE', '%' . $aRequest[AppConstants::SEARCH_KEYWORD] . '%')
+            ->whereRaw($this->getRawLikeLower(AppConstants::RECIPE_NAME), $sSearchKeyword)
+            ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword)
+            ->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $sCategoryId)
             ->skip($aRequest[AppConstants::OFFSET])
             ->take($aRequest[AppConstants::LIMIT])
             ->orderBy(AppConstants::ID, AppConstants::DESC)

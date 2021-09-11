@@ -8,7 +8,7 @@
                             <a :href="main_menu[0].REDIRECT"><img src="//files.chefmorrisdanzen.com/img/logo/logo-light.png" alt="Logo"></a>
                         </div>
                         <div class="footer-address">
-                            <p>Sciacca, Italy</p>
+                            <p>Sicily, Italy</p>
                             <p><a href="mailto:chefmorrisdanzen@gmail.com">chefmorrisdanzen@gmail.com</a></p>
                             <p><a>+39 351 267 1387</a></p>
                         </div>

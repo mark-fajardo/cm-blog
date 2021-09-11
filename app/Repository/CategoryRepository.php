@@ -24,4 +24,18 @@ class CategoryRepository extends Repository
             ->get()
         );
     }
+
+    /**
+     * Get category by name.
+     * @param string $sSearchKeyword
+     * @return array
+     */
+    public function getCategoryByName(string $sSearchKeyword): array
+    {
+        return $this->parseData(Category::select(AppConstants::ID)
+            ->where(AppConstants::STATUS, 1)
+            ->whereRaw($this->getRawLikeLower(AppConstants::CATEGORY_NAME), $sSearchKeyword)
+            ->get()
+        );
+    }
 }

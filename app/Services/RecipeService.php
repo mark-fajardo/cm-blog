@@ -94,7 +94,7 @@ class RecipeService extends Service
     {
         $aRecipes = $this->oRecipeRepository->getRecipeBySlugName($sSlugName);
         $aRecipe = data_get($aRecipes, '0', []);
-        if (empty($aRecipe) === true) {
+        if (data_get($aRecipe, 'recipe_name', false) === false) {
             abort(404);
         }
 

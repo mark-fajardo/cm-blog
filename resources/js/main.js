@@ -1,3 +1,10 @@
+
+
+/**********************************
+   Included from the UI template
+ *********************************/
+
+
 jQuery(document).on('ready', function ($) {
     "use strict";
 
@@ -50,44 +57,6 @@ jQuery(document).on('ready', function ($) {
         ACTIVE WOW JS
     ----------------------------*/
     new WOW().init();
-
-
-    /*----------------------------
-        INSTAGRAM FEED ACTIVE
-    -----------------------------*/
-    // jQuery.fn.spectragram.accessData = {
-    //     accessToken: 'IGQVJYLV9HOUhxUXdiUXV1bXRVVWdJb0ZAuWXU4ek9HYnB5RG50ZADA2UTd1VjlyZAk52amE4TDJyVnRXVmZABZA2lJaGdGcHVBcGxyWFloN0o2aW9nSGZA5M0NVSlRyY3ZA2XzU5Ni1Ja3loR1dOV1NQR2ttMgZDZD',
-    //     clientID: '298091052068601'
-    // }
-    //
-    // $('.instagram-feed').spectragram('getUserFeed', {
-    //     query: 'chef_morrisdanzen',
-    //     size: 'big',
-    //     max: 5
-    // });
-    // $('.blog-instagram-feed-widget').spectragram('getUserFeed', {
-    //     query: 'chef_morrisdanzen',
-    //     size: 'small',
-    //     max: 6
-    // });
-    // /*----------------------------
-    //     INSTAGRAM FEED ACTIVE
-    // -----------------------------*/
-    // jQuery.fn.spectragram.accessData = {
-    //     accessToken: process.env.MIX_INSTAGRAM_ACCESS_TOKEN,
-    //     clientID: process.env.MIX_INSTAGRAM_CLIENT_ID
-    // }
-    //
-    // $('.instagram-feed').spectragram('getUserFeed', {
-    //     query: process.env.MIX_INSTAGRAM_USERNAME,
-    //     size: 'big',
-    //     max: 5
-    // });
-    // $('.blog-instagram-feed-widget').spectragram('getUserFeed', {
-    //     query: process.env.MIX_INSTAGRAM_USERNAME,
-    //     size: 'small',
-    //     max: 6
-    // });
 
 }(jQuery));
 
@@ -285,7 +254,8 @@ export const jQueryMixin = {
         },
         loadSlider() {
             var mySlider = $('.pogoSlider').pogoSlider({
-                pauseOnHover: false
+                pauseOnHover: false,
+                autoplayTimeout: 7000
             }).data('plugin_pogoSlider')
         },
         showLoader() {

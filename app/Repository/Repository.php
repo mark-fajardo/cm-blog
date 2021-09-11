@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Constants\AppConstants;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
@@ -29,5 +30,35 @@ class Repository
     protected function parseData(Collection $oCollection): array
     {
         return $oCollection->toArray();
+    }
+
+    /**
+     * Get search keyword.
+     * @param array $aRequest
+     * @return string
+     */
+    protected function getSearchKeyword(array $aRequest): string
+    {
+        return $this->wrapLike(strtolower($aRequest[AppConstants::SEARCH_KEYWORD]));
+    }
+
+    /**
+     * Wrap string with LIKE % operator.
+     * @param string $sSearchKeyword
+     * @return string
+     */
+    protected function wrapLike(string $sSearchKeyword): string
+    {
+        return '%' . $sSearchKeyword . '%';
+    }
+
+    /**
+     * Get where raw like operator with field.
+     * @param string $sField
+     * @return string
+     */
+    protected function getRawLikeLower(string $sField): string
+    {
+        return 'LOWER(' . $sField . ') LIKE ?';
     }
 }

@@ -4,7 +4,7 @@
             <div v-for="slider in limitedSliders" class="pogoSlider-slide" data-transition="fade" data-duration="1500" :style="'background:url(' + validatePlatform(slider.image_url, slider.image_url_portrait) + ') no-repeat scroll 0 0 / cover;'">
                 <h2 class="pogoSlider-slide-element no-select" data-in="expand" data-out="expand" data-duration="700">{{ slider.header }}</h2>
                 <h1 class="pogoSlider-slide-element no-select" data-in="expand" data-out="expand" data-duration="1500" v-html="renderSpan(slider.footer)"></h1>
-                <h3 class="pogoSlider-slide-element no-select" data-in="expand" data-out="expand" data-duration="2300"><a :href="slider.href">{{ slider.button }}</a></h3>
+                <h3 v-show="isEmpty(slider.href) === false" class="pogoSlider-slide-element no-select" data-in="expand" data-out="expand" data-duration="2300"><a :href="slider.href">{{ slider.button }}</a></h3>
             </div>
         </div>
     </div>
@@ -37,6 +37,15 @@
             renderSpan(render) {
                 render = render.replace('**', '<span>');
                 return render.replace('***', '</span>');
+            },
+
+            /**
+             * Check if string was empty.
+             * @param str
+             * @returns {boolean}
+             */
+            isEmpty(str) {
+                return (this.$_.isEmpty(str) === true);
             },
 
             /**
