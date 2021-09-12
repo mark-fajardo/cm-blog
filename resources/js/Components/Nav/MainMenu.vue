@@ -57,3 +57,9 @@
         }
     }
 </script>
+
+<style>
+    .navbar-brand img {
+        margin: 0;
+    }
+</style>

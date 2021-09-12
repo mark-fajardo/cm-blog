@@ -5,7 +5,7 @@
                 <div class="contact-icon">
                     <i class="fa fa-map-marker"></i>
                 </div>
-                <address>Write exact address here</address>
+                <address>Sicily, Italy</address>
             </div>
         </div>
         <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">

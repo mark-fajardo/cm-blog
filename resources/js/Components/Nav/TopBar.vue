@@ -33,7 +33,7 @@
         name: 'TopBar',
         data() {
             return {
-                sContactHref: MainMenu[4].REDIRECT
+                sContactHref: MainMenu[5].REDIRECT
             };
         }
     }
