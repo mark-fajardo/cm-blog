@@ -22,7 +22,6 @@ const actions = {
      * @returns {Promise<void>}
      */
     async sendMessage({ commit }, params) {
-        console.log(params);
         await window.axios.post('/rest/message', { params })
             .then((oResponse) => {
                 commit('SET_MESSAGE_SENT', oResponse.data.success);

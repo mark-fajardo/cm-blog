@@ -2755,16 +2755,25 @@ ul.blog-instagram-feed-widget li {
 
 .contact-form input,
 .contact-form textarea {
-    border: 1px dashed;
+    border: 1px solid;
     border-radius: 0;
     box-shadow: 0 0 0 0;
     font-style: italic;
     letter-spacing: 1px;
-    margin-bottom: 30px;
     max-height: 130px;
     min-height: 45px;
     padding: 10px;
     width: 100%;
+}
+
+.contact-form .form-input {
+    margin-bottom: 5px;
+}
+
+.contact-form .form-group small,
+.contact-form .form-group small {
+    color: #d0963e;
+    margin-left: 3px;
 }
 
 .contact-form input:focus,
