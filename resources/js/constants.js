@@ -63,15 +63,15 @@ export const AlertMessages = Object.freeze({
         MESSAGE: 'Message not sent.'
     },
     VALIDATION: {
-        SENDER_NAME: 'The Sender\'s Name is Invalid.',
-        SENDER_EMAIL: 'The Sender\'s Email is Invalid.',
-        SENDER_PHONE: 'The Sender\'s Phone is Invalid.',
-        MESSAGE_TITLE: 'The Sender\'s Message Subject is Invalid.',
-        MESSAGE_REQUEST: 'The Sender\'s Message Request is Invalid.'
+        SENDER_NAME: 'The selected name is invalid.',
+        SENDER_EMAIL: 'The selected email is invalid.',
+        SENDER_PHONE: 'The selected phone number is invalid.',
+        MESSAGE_TITLE: 'The message subject is invalid.',
+        MESSAGE_REQUEST: 'The message request is invalid.'
     },
     REQUIRED: {
-        SENDER_EMAIL: 'The Sender\'s Email is required.',
-        MESSAGE_REQUEST: 'The Sender\'s Message Request is required.',
+        SENDER_EMAIL: 'The email is required.',
+        MESSAGE_REQUEST: 'The message request is required.',
         RECAPTCHA: 'Please verify if you are not a robot.',
     }
 });
@@ -83,6 +83,7 @@ export const AlertMessages = Object.freeze({
 export const Env_ = Object.freeze({
     FB_PAGE_ID: 1627240600869791,
     GOOGLE_API_KEY: 'AIzaSyBsp120VezmMn5tAXCjjJrNLEOTaABuz-k',
+    GOOGLE_TAG_ID: 'G-1V86N2CL6N',
     IG_ACCESS_TOKEN: 'IGQVJYLV9HOUhxUXdiUXV1bXRVVWdJb0ZAuWXU4ek9HYnB5RG50ZADA2UTd1VjlyZAk52amE4TDJyVnRXVmZABZA2lJaGdGcHVBcGxyWFloN0o2aW9nSGZA5M0NVSlRyY3ZA2XzU5Ni1Ja3loR1dOV1NQR2ttMgZDZD',
     DATA_AD: {
         SQUARE_DISPLAY: {

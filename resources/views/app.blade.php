@@ -26,18 +26,15 @@
     <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('/js/main.js') }}" defer></script>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-                { pageLanguage: "en" },
-                "google_translate_element"
-            );
-        }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1V86N2CL6N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1V86N2CL6N');
     </script>
-    <script
-        type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
 </head>
 <body data-state="{{ $state }}">
 

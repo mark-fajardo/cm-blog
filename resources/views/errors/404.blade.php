@@ -20,6 +20,16 @@
         <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('/js/main.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('/js/notFound.js') }}" defer></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1V86N2CL6N"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1V86N2CL6N');
+        </script>
     </head>
     <body>
         <!--[if lt IE 8]>

@@ -59,6 +59,7 @@ class AppConstants
     public const SENDER_PHONE = 'sender_phone';
     public const MESSAGE_TITLE = 'message_title';
     public const MESSAGE_REQUEST = 'message_request';
+    public const RECAPTCHA_RESPONSE = 'recaptcha_response';
     public const PROMOTED_FIELDS = [
         self::RECIPE_NAME,
         self::YOUTUBE_VIDEO_ID,
