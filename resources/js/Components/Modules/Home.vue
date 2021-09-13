@@ -34,7 +34,6 @@
              */
             async prepareData() {
                 Promise.all([
-                    // this.$gtag.event('home', { method: 'Google' }),
                     await this.getPageConfig('home_page')
                 ]).then(() => {
                     jQueryMixin.method.init();
