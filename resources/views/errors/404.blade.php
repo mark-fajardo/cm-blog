@@ -21,15 +21,17 @@
         <script type="text/javascript" src="{{ asset('/js/main.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('/js/notFound.js') }}" defer></script>
 
+        @if(config('app.env') === 'production')
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207398048-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207398048-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'UA-207398048-1');
-        </script>
+                gtag('config', 'UA-207398048-1');
+            </script>
+        @endif
     </head>
     <body>
         <!--[if lt IE 8]>

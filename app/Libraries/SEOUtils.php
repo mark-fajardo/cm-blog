@@ -38,9 +38,10 @@ class SEOUtils
     {
         self::setupCommon([
             'title'       => 'Home - Chef Morris Danzen',
-            'description' => 'All About Chef Morris Danzen. Recipe of the Month. About Chef Morris Danzen. Youtube Vlogs. Chef Morris Danzen Contact.',
+            'description' => 'You can see all about Chef Morris Danzen\'s recipe list, top recipes and recipes of the month. You can contact also Chef Morris Danzen here on his website.',
             'endpoint'    => '/',
-            'type'        => 'blog'
+            'type'        => 'blog',
+            'keywords'    => 'chef morris danzen website, chef morris website, chef danzen website, chef morris danzen official website, chef morris official, chef morris main website, chef morris top recipes, chef morris, chef danzen, chef morris blog',
         ]);
     }
 
@@ -51,9 +52,10 @@ class SEOUtils
     {
         self::setupCommon([
             'title'       => 'Recipe List - Chef Morris Danzen',
-            'description' => 'All About Chef Morris Danzen. List of all the Recipes of Chef Morris Danzen.',
+            'description' => 'All About Chef Morris Danzen. You can see the list of all the Recipes of Chef Morris Danzen.',
             'endpoint'    => '/recipe-list',
             'type'        => 'recipes',
+            'keywords'    => 'chef morris danzen recipe list, chef morris recipe list, chef morris top recipe list, top recipe list, chef morris own recipe list, chef morris recipe of the month, search chef morris recipes'
         ]);
     }
 
@@ -67,6 +69,7 @@ class SEOUtils
             'description' => data_get(self::$aData, AppConstants::SHORT_DESCRIPTION, ''),
             'endpoint'    => '/recipe/' . data_get(self::$aData, AppConstants::SLUG_NAME, ''),
             'type'        => 'recipe',
+            'keywords'    => data_get(self::$aData, AppConstants::RECIPE_NAME, 'recipe') . ', chef morris recipe, view chef morris recipe, recipe procedures, chef morris procedures, recipe ingredients, chef morris ingredients list'
         ]);
         OpenGraph::addImage(data_get(self::$aData, AppConstants::MAIN_IMAGE, ''));
     }
@@ -81,6 +84,7 @@ class SEOUtils
             'description' => 'Contains the recipe gallery of Chef Morris Danzen. Gallery from the recipes of Chef Morris Danzen.',
             'endpoint'    => '/gallery',
             'type'        => 'gallery',
+            'keywords'    => 'chef morris food gallery, food gallery, chef morris gallery, gallery, food images, recipe images, chef morris images, gallery images, chef morris own gallery, chef morris own food images'
         ]);
     }
 
@@ -94,6 +98,7 @@ class SEOUtils
             'description' => 'Contains the recipe timeline of Chef Morris Danzen. Timeline of all the recipes of Chef Morris Danzen.',
             'endpoint'    => '/timeline',
             'type'        => 'timeline',
+            'keywords'    => 'chef morris timeline, chef morris recipe timeline, chef morris recipes, chef morris recipe feeds, chef morris feeds, chef morris timeline recipes'
         ]);
     }
 
@@ -107,6 +112,7 @@ class SEOUtils
             'description' => 'Contact page where you can contact Chef Morris Danzen via Chef Morris Blog.',
             'endpoint'    => '/contact',
             'type'        => 'contact',
+            'keywords'    => 'chef morris contact, contact chef morris, send message, chef morris message, chef morris newsletter, ask chef morris, where is chef morris, locate chef morris'
         ]);
     }
 
@@ -122,7 +128,7 @@ class SEOUtils
         SEOTools::setCanonical(config('app.url'));
         SEOTools::opengraph()->addProperty('type', data_get($aData, 'type', 'blog'));
         SEOTools::twitter()->setSite(data_get($aData, 'twitter_username', '@MorrisDanzen'));
-        SEOMeta::addKeyword(data_get($aData, 'keywords', 'recipe list') . ', recipe, cooking vlogs, chef morris danzen, chef, chef morris, morris, danzen, chef danzen, morris danzen, food gallery, gallery, cooking tutorials, tutorial, cooking, pinoy chef, pinoy food, pinoy dishes, pinoy vlog, Video, youtube, facebook, twitter');
+        SEOMeta::addKeyword(strtolower(data_get($aData, 'keywords', 'chef morris danzen website')));
 
         // TODO: UPDATE LOGO
         SEOTools::jsonLd()->addImage('https://files.chefmorrisdanzen.com/l/img/logo/favicon.png');
