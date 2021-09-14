@@ -65,13 +65,16 @@ class RecipeRepository extends Repository
     {
         $sSearchKeyword = $this->getSearchKeyword($aRequest);
         $oCategoryRepository = new CategoryRepository();
-        $sCategoryId = $this->wrapLike((string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', ''));
+        $sCategoryId = (string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', '');
+        $oRecipe = Recipe::where(AppConstants::STATUS, 1)
+            ->whereRaw($this->getRawLikeLower(AppConstants::RECIPE_NAME), $sSearchKeyword)
+            ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword);
+        if (empty($sCategoryId) === false) {
+            $oRecipe = $oRecipe->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $this->wrapLike($sCategoryId));
+        }
+
         return [
-            AppConstants::COUNT => Recipe::where(AppConstants::STATUS, 1)
-                ->whereRaw($this->getRawLikeLower(AppConstants::RECIPE_NAME), $sSearchKeyword)
-                ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword)
-                ->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $sCategoryId)
-                ->count()
+            AppConstants::COUNT => $oRecipe->count()
         ];
     }
 
@@ -84,13 +87,16 @@ class RecipeRepository extends Repository
     {
         $sSearchKeyword = $this->getSearchKeyword($aRequest);
         $oCategoryRepository = new CategoryRepository();
-        $sCategoryId = $this->wrapLike((string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', ''));
-        return $this->parseData(Recipe::select(AppConstants::RECIPE_LIST_FIELDS)
+        $sCategoryId = (string)data_get($oCategoryRepository->getCategoryByName($sSearchKeyword), '0.id', '');
+        $oRecipe = Recipe::select(AppConstants::RECIPE_LIST_FIELDS)
             ->where(AppConstants::STATUS, 1)
             ->whereRaw($this->getRawLikeLower(AppConstants::RECIPE_NAME), $sSearchKeyword)
-            ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword)
-            ->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $sCategoryId)
-            ->skip($aRequest[AppConstants::OFFSET])
+            ->orWhereRaw($this->getRawLikeLower(AppConstants::INGREDIENTS_JSON), $sSearchKeyword);
+        if (empty($sCategoryId) === false) {
+            $oRecipe = $oRecipe->orWhereRaw($this->getRawLikeLower(AppConstants::CATEGORY_JSON), $this->wrapLike($sCategoryId));
+        }
+
+        return $this->parseData($oRecipe->skip($aRequest[AppConstants::OFFSET])
             ->take($aRequest[AppConstants::LIMIT])
             ->orderBy(AppConstants::ID, AppConstants::DESC)
             ->get()
