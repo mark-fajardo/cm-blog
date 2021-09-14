@@ -106,7 +106,9 @@ export default {
          * @param limit
          */
         limitText(str, limit) {
-            return (str.substring(0, limit)).concat((str.length > limit) ? '...' : '');
+            let new_str = str.substring(0, limit);
+            new_str = new_str.trim();
+            return new_str.concat((str.length > limit) ? '...' : '');
         }
     }
 };
