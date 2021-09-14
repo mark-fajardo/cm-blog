@@ -15,30 +15,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <Adsense
+                    :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
+                    :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
+                </Adsense>
+            </div>
         </div>
-<!--        <VueInstagram :token="ENV_.IG_ACCESS_TOKEN" :count="5" :tags="['hashtag1', 'hashtag2']" mediaType="image">-->
-<!--            <template v-slot:loading="props">-->
-<!--                <h1 v-if="props.loading" class="fancy-loading">Loading, please wait...</h1>-->
-<!--            </template>-->
-<!--            <template v-slot:feeds="props">-->
-<!--                <li class="fancy-list"> {{ props.feed.link }} </li>-->
-<!--            </template>-->
-<!--            <template v-slot:error="props">-->
-<!--                <div class="fancy-alert"> {{ props.error.error_message }} </div>-->
-<!--            </template>-->
-<!--        </VueInstagram>-->
-<!--        <Adsense-->
-<!--            :data-ad-client="ENV_.DATA_AD.VERTICAL_DISPLAY.CLIENT"-->
-<!--            :data-ad-slot="ENV_.DATA_AD.VERTICAL_DISPLAY.SLOT">-->
-<!--        </Adsense>-->
-<!--        <Adsense-->
-<!--            :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"-->
-<!--            :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">-->
-<!--        </Adsense>-->
-<!--        <Adsense-->
-<!--            :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"-->
-<!--            :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">-->
-<!--        </Adsense>-->
     </section>
 </template>
 

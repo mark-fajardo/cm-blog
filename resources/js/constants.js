@@ -83,20 +83,20 @@ export const AlertMessages = Object.freeze({
 export const Env_ = Object.freeze({
     FB_PAGE_ID: 1627240600869791,
     GOOGLE_API_KEY: 'AIzaSyBsp120VezmMn5tAXCjjJrNLEOTaABuz-k',
-    GOOGLE_TAG_ID: 'G-1V86N2CL6N',
+    GOOGLE_TAG_ID: 'UA-207398048-1',
     IG_ACCESS_TOKEN: 'IGQVJYLV9HOUhxUXdiUXV1bXRVVWdJb0ZAuWXU4ek9HYnB5RG50ZADA2UTd1VjlyZAk52amE4TDJyVnRXVmZABZA2lJaGdGcHVBcGxyWFloN0o2aW9nSGZA5M0NVSlRyY3ZA2XzU5Ni1Ja3loR1dOV1NQR2ttMgZDZD',
     DATA_AD: {
         SQUARE_DISPLAY: {
-            CLIENT: 'ca-pub-3450967195189254',
-            SLOT: '9831823336'
+            CLIENT: 'ca-pub-2660471773096082',
+            SLOT: '2380239536'
         },
         VERTICAL_DISPLAY: {
-            CLIENT: 'ca-pub-3450967195189254',
-            SLOT: '1784800592'
+            CLIENT: 'ca-pub-2660471773096082',
+            SLOT: '1428112339'
         },
         HORIZONTAL_DISPLAY: {
-            CLIENT: 'ca-pub-3450967195189254',
-            SLOT: '6298760678'
+            CLIENT: 'ca-pub-2660471773096082',
+            SLOT: '4814831185'
         },
     }
 });
