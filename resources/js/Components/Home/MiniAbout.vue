@@ -8,7 +8,7 @@
                     </div>
                     <div class="about-content">
                         <p>{{ mini_about.content }}</p>
-                        <a :href="main_menu[1].REDIRECT" class="read-more">Read more</a>
+                        <a :href="main_menu[1].REDIRECT" class="read-more" v-show="false">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -24,6 +24,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <Adsense
+                        :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
+                        :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
+                    </Adsense>
                 </div>
             </div>
         </div>

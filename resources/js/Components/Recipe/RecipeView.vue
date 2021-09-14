@@ -28,6 +28,10 @@
                     </YoutubeVideoPlayer>
                 </p>
                 <p class="long-description">{{ recipe.description }}</p>
+                <Adsense
+                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"
+                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">
+                </Adsense>
                 <h4>Ingredients</h4>
                 <div class="ingredients-list col-lg-12">
                     <ul class="list-group col-lg-6 mx-auto">

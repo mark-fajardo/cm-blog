@@ -25,6 +25,10 @@
             <div class="row read-more-area" v-if="hide_load_more === false">
                 <a @click="prepareData" class="read-more">Load more</a>
             </div>
+            <Adsense
+                :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
+                :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
+            </Adsense>
         </div>
     </section>
 </template>
