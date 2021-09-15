@@ -70,8 +70,9 @@ export const AlertMessages = Object.freeze({
         MESSAGE_REQUEST: 'The message request is invalid.'
     },
     REQUIRED: {
-        SENDER_EMAIL: 'The email is required.',
-        MESSAGE_REQUEST: 'The message request is required.',
+        SENDER_NAME: 'The name field is required.',
+        SENDER_EMAIL: 'The email field is required.',
+        MESSAGE_REQUEST: 'The message request field is required.',
         RECAPTCHA: 'Please verify if you are not a robot.',
     }
 });

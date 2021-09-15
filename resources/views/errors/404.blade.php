@@ -11,27 +11,6 @@
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{ mix('css/front.css') }}">
-
-        <!-- Scripts -->
-        <script type="text/javascript" src="{{ asset('/js/jquery-1.12.4.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/modernizr-2.8.3.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/jquery.pogo-slider.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/waypoints.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/main.js') }}" defer></script>
-        <script type="text/javascript" src="{{ asset('/js/notFound.js') }}" defer></script>
-
-        @if(config('app.env') === 'production')
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207398048-1"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'UA-207398048-1');
-            </script>
-        @endif
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -48,5 +27,26 @@
 
         <div id="header-component"></div>
         <div id="app"></div>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{{ asset('/js/jquery-1.12.4.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/modernizr-2.8.3.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/jquery.pogo-slider.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/waypoints.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/main.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('/js/notFound.js') }}" defer></script>
+
+        @if(config('app.env') === 'production')
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207398048-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-207398048-1');
+            </script>
+        @endif
     </body>
 </html>
