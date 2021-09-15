@@ -5,7 +5,7 @@
                 <form id="contact-form" @submit.prevent="validateForm()">
                     <div class="form-group" id="name-field">
                         <div class="form-input col-md-6">
-                            <input type="text" v-model="sender_name" :class="'form-control ' + inputChecker($v.sender_name.minLength && $v.sender_name.maxLength)" id="form-name" name="form-name" placeholder="Your Name (Min: 2, Max 50)">
+                            <input type="text" v-model="sender_name" :class="'form-control ' + inputChecker($v.sender_name.required && $v.sender_name.minLength && $v.sender_name.maxLength)" id="form-name" name="form-name" placeholder="Your Name (Min: 2, Max 50)">
                             <small>{{ sender_name_error }}&nbsp;</small>
                         </div>
                     </div>
@@ -23,13 +23,13 @@
                     </div>
                     <div class="form-group" id="subject-field">
                         <div class="form-input col-md-6">
-                            <input type="text" v-model="message_title" :class="'form-control ' + inputChecker($v.message_title.minLength && $v.message_title.maxLength)" id="form-subject" name="form-subject" placeholder="Your Subject (Min: 3, Max 50)">
+                            <input type="text" v-model="message_title" :class="'form-control ' + inputChecker($v.message_title.minLength && $v.message_title.maxLength)" id="form-subject" name="form-subject" placeholder="Message Subject (Min: 3, Max 50)">
                             <small>{{ message_title_error }}&nbsp;</small>
                         </div>
                     </div>
                     <div class="form-group" id="message-field">
                         <div class="form-input col-md-12">
-                            <textarea v-model="message_request" :class="'form-control ' + inputChecker($v.message_request.required && $v.message_request.minLength && $v.message_request.maxLength)" rows="6" id="form-message" name="form-message" placeholder="Your Message (Required, Min: 10, Max 3000)"></textarea>
+                            <textarea v-model="message_request" :class="'form-control ' + inputChecker($v.message_request.required && $v.message_request.minLength && $v.message_request.maxLength)" rows="6" id="form-message" name="form-message" placeholder="Message Request (Required, Min: 10, Max 3000)"></textarea>
                             <small>{{ message_request_error }}&nbsp;</small>
                         </div>
                     </div>
@@ -134,11 +134,14 @@
              * Validate required. Return string if failed and boolean true if successful.
              */
             validateRequired() {
+                if (this.$v.sender_name.required === false) {
+                    this.sender_name_error = AlertMessages.REQUIRED.SENDER_NAME;
+                }
                 if (this.$v.sender_email.required === false) {
-                    this.sender_email_error =  AlertMessages.REQUIRED.SENDER_EMAIL;
+                    this.sender_email_error = AlertMessages.REQUIRED.SENDER_EMAIL;
                 }
                 if (this.$v.message_request.required === false) {
-                    this.message_request_error =  AlertMessages.REQUIRED.MESSAGE_REQUEST;
+                    this.message_request_error = AlertMessages.REQUIRED.MESSAGE_REQUEST;
                 }
             },
 
@@ -146,23 +149,23 @@
              * Validate input fields.
              */
             validateInput() {
-                if (this.$v.sender_name.$invalid === true) {
-                    this.sender_name_error =  AlertMessages.VALIDATION.SENDER_NAME;
+                if (this.$v.sender_name.$invalid === true && this.$v.sender_name.required === true) {
+                    this.sender_name_error = AlertMessages.VALIDATION.SENDER_NAME;
                 }
-                if (this.$v.sender_email.$invalid === true) {
-                    this.sender_email_error =  AlertMessages.VALIDATION.SENDER_EMAIL;
+                if (this.$v.sender_email.$invalid === true && this.$v.sender_email.required === true) {
+                    this.sender_email_error = AlertMessages.VALIDATION.SENDER_EMAIL;
                 }
                 if (this.$v.sender_phone.$invalid === true) {
-                    this.sender_phone_error =  AlertMessages.VALIDATION.SENDER_PHONE;
+                    this.sender_phone_error = AlertMessages.VALIDATION.SENDER_PHONE;
                 }
                 if (this.$v.message_title.$invalid === true) {
-                    this.sender_phone_error =  AlertMessages.VALIDATION.MESSAGE_TITLE;
+                    this.sender_phone_error = AlertMessages.VALIDATION.MESSAGE_TITLE;
                 }
-                if (this.$v.message_request.$invalid === true) {
-                    this.message_request_error =  AlertMessages.VALIDATION.MESSAGE_REQUEST;
+                if (this.$v.message_request.$invalid === true && this.$v.message_request.required === true) {
+                    this.message_request_error = AlertMessages.VALIDATION.MESSAGE_REQUEST;
                 }
                 if (this.$v.recaptcha_response.required === false) {
-                    this.recaptcha_response_error =  AlertMessages.REQUIRED.RECAPTCHA;
+                    this.recaptcha_response_error = AlertMessages.REQUIRED.RECAPTCHA;
                 }
             },
 
@@ -243,6 +246,7 @@
         },
         validations: {
             sender_name: {
+                required,
                 minLength: minLength(2),
                 maxLength: maxLength(50)
             },

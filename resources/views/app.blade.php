@@ -18,6 +18,23 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ mix('css/front.css') }}">
 
+</head>
+<body data-state="{{ $state }}">
+
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"><img src="/img/logo/chef-morris-danzen-FINAL-colored.png"/></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    @yield('body')
+
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('/js/jquery-1.12.4.min.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('/js/modernizr-2.8.3.min.js') }}" defer></script>
@@ -37,22 +54,7 @@
             gtag('config', 'UA-207398048-1');
         </script>
     @endif
-</head>
-<body data-state="{{ $state }}">
 
-    <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!--- PRELOADER -->
-    <div class="preeloader">
-        <div class="preloader-spinner"><img src="/img/logo/chef-morris-danzen-FINAL-colored.png"/></div>
-    </div>
-
-    <!--SCROLL TO TOP-->
-    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
-
-    @yield('body')
-
+    @stack('scripts')
 </body>
 </html>

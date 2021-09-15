@@ -29,7 +29,7 @@ class SendMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            self::REQUEST_PREFIX . AppConstants::SENDER_NAME        => [AppConstants::NULLABLE, AppConstants::STRING],
+            self::REQUEST_PREFIX . AppConstants::SENDER_NAME        => AppConstants::REQUIRED_STRING,
             self::REQUEST_PREFIX . AppConstants::SENDER_PHONE       => [AppConstants::NULLABLE, AppConstants::STRING],
             self::REQUEST_PREFIX . AppConstants::SENDER_EMAIL       => AppConstants::REQUIRED_STRING,
             self::REQUEST_PREFIX . AppConstants::MESSAGE_TITLE      => [AppConstants::NULLABLE, AppConstants::STRING],
