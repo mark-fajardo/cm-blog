@@ -13,8 +13,12 @@
             <div class="single-sidebar-widget tag-widget wow fadeIn">
                 <h4>Recipe Tags</h4>
                 <ul>
-                    <li v-for="ingredients in recipeIngredients"><a>{{ limitText(ingredients, 12) }}</a></li>
-                    <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories"><a>{{ getDefaultValue(categories.find(x => x.id === parseInt(category)).category_name) }}</a></li>
+                    <li v-for="ingredients in recipeIngredients">
+                        <a :href="'/recipe-list?search=' + encodeURI(ingredients) + '#search-results-area'">{{ limitText(ingredients, 12) }}</a>
+                    </li>
+                    <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories" :set="category_name = getDefaultValue(categories.find(x => x.id === parseInt(category)).category_name)">
+                        <a :href="'/recipe-list?search=' + encodeURI(category_name) + '#search-results-area'">{{ category_name }}</a>
+                    </li>
                 </ul>
             </div>
         </div>

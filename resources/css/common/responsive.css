@@ -662,6 +662,9 @@
     .top-area.single-page {
         height: 350px;
     }
+    .top-area.single-page.about-page {
+        height: 550px;
+    }
     .barner-text h1 {
         font-size: 40px;
     }
@@ -704,7 +707,7 @@
         text-align: center;
         border-bottom: 1px solid #c3c3c4;
         margin: -40px auto 60px;
-        padding-bottom: 20px;
+        padding-bottom: 13px;
     }
     .single-event-social-bar,
     .single-post-social-bar {

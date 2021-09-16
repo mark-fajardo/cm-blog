@@ -177,8 +177,9 @@ export const jQueryMixin = {
                 loop: loop,
                 nav: true,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-                autoplay: false,
+                autoplay: true,
                 autoplayTimeout: 2000,
+                autoplayHoverPause: true,
                 margin: 15,
                 responsiveClass: true,
                 responsive: {

@@ -8,7 +8,7 @@
                     </div>
                     <div class="about-content">
                         <p>{{ mini_about.content }}</p>
-                        <a :href="main_menu[1].REDIRECT" class="read-more" v-show="false">Read more</a>
+                        <a :href="main_menu[1].REDIRECT" class="read-more" v-show="ShowButton === true">Read more</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -44,6 +44,13 @@
 
     export default {
         name: 'MiniAbout',
+        props: {
+            ShowButton: {
+                type: Boolean,
+                required: false,
+                default: true
+            }
+        },
         computed: {
             ...mapGetters('PageConfig', ['mini_about']),
         },

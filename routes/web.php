@@ -22,6 +22,10 @@ Route::get('/', function () {
     SEOUtils::setSEOTools('home');
     return view('pages.home')->with(DBUtils::getStateToken());
 });
+Route::get('/about-me', function () {
+    SEOUtils::setSEOTools('aboutMe');
+    return view('pages.about_me')->with(DBUtils::getStateToken());
+});
 Route::get('/recipe-list', function () {
     SEOUtils::setSEOTools('recipes');
     return view('pages.recipe_list')->with(DBUtils::getStateToken());
