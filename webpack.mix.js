@@ -20,6 +20,7 @@ mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/gallery.js', 'public/js')
     .js('resources/js/timeline.js', 'public/js')
     .js('resources/js/contact.js', 'public/js')
+    .js('resources/js/aboutMe.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
     .postCss('resources/css/front.css', 'public/css')
     .polyfill({

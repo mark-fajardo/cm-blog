@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <ul id="nav" class="nav navbar-nav cl-effect-11">
-                        <li :class="{ active: validateActiveMenu(menu.REDIRECT) }" v-for="menu in main_menu" v-show="(menu.NAME !== 'About Me')">
+                        <li :class="{ active: validateActiveMenu(menu.REDIRECT) }" v-for="menu in main_menu">
                             <a :href="menu.REDIRECT">{{ menu.NAME }}</a>
                         </li>
                     </ul>

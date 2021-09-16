@@ -83,6 +83,13 @@
                         breadcrumb_title: 'Contact Me',
                         breadcrumb_href: this.currentEndpoint,
                     },
+                    about_me: {
+                        title: 'About <span>Me</span>',
+                        breadcrumb_parent_1: '',
+                        breadcrumb_parent_href_1: '',
+                        breadcrumb_title: 'About Me',
+                        breadcrumb_href: this.currentEndpoint,
+                    },
                 }
             };
         },

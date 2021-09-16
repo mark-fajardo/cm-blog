@@ -46,6 +46,20 @@ class SEOUtils
     }
 
     /**
+     * Setup About Me SEO METAs.
+     */
+    private static function aboutMeSetup(): void
+    {
+        self::setupCommon([
+            'title'       => 'About Me - Chef Morris Danzen',
+            'description' => 'You can see all about Chef Morris Danzen. His Mission, Vision, and his journey to become an internationally well-known and a successful chef.',
+            'endpoint'    => '/about-me',
+            'type'        => 'blog',
+            'keywords'    => 'about chef morris danzen, about chef morris, about chef danzen website, about chef morris danzen journey, about chef morris official, chef morris about me page, chef morris story, chef morris, chef danzen',
+        ]);
+    }
+
+    /**
      * Setup recipe list SEO METAs.
      */
     private static function recipesSetup(): void
