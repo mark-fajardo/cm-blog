@@ -978,7 +978,7 @@ a.read-more {
     text-align: center;
 }
 
-.food-menu-details a {
+.food-menu-details.view-recipe-link {
     position: absolute;
     bottom: 10px;
     right: 10px;

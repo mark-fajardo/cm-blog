@@ -64,7 +64,6 @@
         height: 300px;
         background-size: cover;
         cursor: pointer;
-        margin: 15px;
         object-fit: cover;
     }
 </style>
