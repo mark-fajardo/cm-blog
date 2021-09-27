@@ -11,16 +11,16 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import _ from 'lodash';
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import { Env_ } from './constants';
-import Ads from 'vue-google-adsense';
+// import Ads from 'vue-google-adsense';
 import VueSocialSharing from 'vue-social-sharing';
 import VueLazyload from 'vue-lazyload';
 
 Vue.use(VueLazyload);
 Vue.use(VueSocialSharing);
 Vue.use(require('vue-script2'))
-Vue.use(Ads.Adsense)
-Vue.use(Ads.InArticleAdsense)
-Vue.use(Ads.InFeedAdsense)
+// Vue.use(Ads.Adsense)
+// Vue.use(Ads.InArticleAdsense)
+// Vue.use(Ads.InFeedAdsense)
 Object.defineProperty(Vue.prototype, '$_', { value: _ });
 Vue.use(VueSweetalert2);
 Vue.mixin(mixins);

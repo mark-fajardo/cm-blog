@@ -39,6 +39,7 @@ class AppConstants
     public const MAIN_IMAGE = 'main_image';
     public const RECIPE_NAME = 'recipe_name';
     public const SHORT_DESCRIPTION = 'short_description';
+    public const DIFFICULTY = 'difficulty';
     public const PROCEDURE = 'procedure';
     public const DESCRIPTION = 'description';
     public const SLUG_NAME = 'slug_name';
@@ -105,6 +106,7 @@ class AppConstants
         self::RECIPE_NAME,
         self::SHORT_DESCRIPTION,
         self::DESCRIPTION,
+        self::DIFFICULTY,
         self::PROCEDURE,
         self::YOUTUBE_VIDEO_ID,
         self::YOUTUBE_VIDEO_UPLOAD_AT,
