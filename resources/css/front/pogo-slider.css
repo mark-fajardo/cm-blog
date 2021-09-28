@@ -5,7 +5,7 @@
  * pogoSlider-dir-btn     =   10
  * pogoSlider-nav         =   10
  * pogoSlider-loading     =   11
- * 
+ *
  */
 
 .pogoSlider {
@@ -105,7 +105,8 @@
     color: #fff;
     cursor: pointer;
     display: table-cell;
-    font-family: lato;
+    font-family: "Roboto";
+    font-weight: 300;
     font-size: 50px;
     opacity: 0.4;
     position: absolute;

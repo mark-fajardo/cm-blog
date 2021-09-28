@@ -4,16 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Maintenance Mode</title>
+        <title>503 - {{ config('app.name') }}</title>
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-      
+        <!--====== FAVICON ICON =======-->
+        <link rel="shortcut icon" type="image/ico" href="//files.chefmorrisdanzen.com/l/img/logo/favicon.png" />
+
         <!-- Scripts -->
         <script type="text/javascript" src="{{ mix('/js/maintenance.js') }}" defer></script>
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{ mix('css/maintenance.css') }}">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1V86N2CL6N"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1V86N2CL6N');
+        </script>
     </head>
     <body>
         <div class="container">

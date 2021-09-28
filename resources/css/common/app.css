@@ -2,10 +2,37 @@ body {
     padding-right: 0 !important;
 }
 
-.swal2-styled.swal2-confirm {
-    padding-left: 45px !important;
-    padding-right: 45px !important;
+.no-select, .page-barner-area {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
+.swal2-confirm{
+    width: 45% !important;
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    line-height: 1.5 !important;
+    border-radius: .2rem !important;
+    background-color: #d94 !important;
+    border-color: #d94 !important;
+}
+
+.swal2-deny{
+    background-color: #444 !important;
+    width: 45% !important;
+    padding: .25rem .5rem !important;
+    font-size: .875rem !important;
+    line-height: 1.5 !important;
+    border-radius: .2rem !important;
+}
+
+.swal2-container {
+     zoom: 1.5;
+ }
 
 /* width */
 ::-webkit-scrollbar {
@@ -85,10 +112,11 @@ Version: 2.0
    1. BASE CSS
 ----------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff|Lato:100,300,400,400i,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&family=Roboto:wght@300&display=swap');
 .alignleft {
     float: left;
     margin-right: 15px;
+    overflow: hidden;
 }
 
 .alignright {
@@ -139,9 +167,9 @@ body {
 
 body {
     color: #555555;
-    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     font-size: 15px;
-    font-weight: 400;
     letter-spacing: 0.3px;
     line-height: 1.7em;
 }
@@ -178,7 +206,8 @@ input:-webkit-autofill:focus {
 }
 
 .area-title {
-    font-family: "Segoe UI Light";
+    font-family: "Open Sans";
+    font-weight: 300;
     margin-bottom: 60px;
 }
 
@@ -186,7 +215,7 @@ input:-webkit-autofill:focus {
     color: #d0963e;
     display: inline-block;
     font-size: 60px;
-    font-weight: 570;
+    font-weight: 500;
     margin: 0;
     padding: 0 10px;
     position: relative;
@@ -197,7 +226,7 @@ input:-webkit-autofill:focus {
 .area-title h3 {
     color: #212324;
     font-size: 40px;
-    font-weight: 525;
+    font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -320,6 +349,7 @@ input:-webkit-autofill:focus {
 
 .navbar-brand.white {
     display: block;
+    height: 120px;
 }
 
 .is-sticky .navbar-brand.white {
@@ -486,11 +516,11 @@ ul#nav ul li:hover a {
 }
 
 .slider-area {
-    font-family: 'Segoe UI Light', sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
     height: 100%;
     width: 100%;
     position: relative;
-    font-weight: 900;
     color: #fff;
 }
 
@@ -506,15 +536,15 @@ ul#nav ul li:hover a {
 }
 
 .slider-area h2 {
-    font-family: "Segoe UI Light";
-    font-weight: 700;
+    font-family: "Open Sans";
+    font-weight: 300;
     font-size: 80px;
     letter-spacing: 2px;
 }
 
 .slider-area h3 {
-    font-family: lato;
-    font-weight: 500;
+    font-family: "Roboto";
+    font-weight: 300;
     letter-spacing: 6px;
     text-transform: uppercase;
 }
@@ -671,6 +701,7 @@ a.search-form-trigger::before {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
+    color: #c9cbc4;
 }
 
 .search-form input::-webkit-input-placeholder {
@@ -753,8 +784,8 @@ a.search-form-trigger::before {
 
 .about-area .area-title h2 span {
     color: #212324;
-    font-family: lato;
-    font-weight: 500;
+    font-family: "Roboto";
+    font-weight: 300;
     font-size: 35px;
     text-transform: uppercase;
 }
@@ -797,7 +828,8 @@ a.read-more {
 ------------------------------*/
 
 .promotions-area {
-    font-family: "Segoe UI Light";
+    font-family: "Open Sans";
+    font-weight: 300;
     position: relative;
 }
 
@@ -873,8 +905,8 @@ a.read-more {
 }
 
 .promotions-details h4 {
-    font-family: "Segoe UI";
-    font-weight: lighter;
+    font-family: "Open Sans";
+    font-weight: 300;
     font-size: 50px;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -946,9 +978,15 @@ a.read-more {
     text-align: center;
 }
 
+.food-menu-details.view-recipe-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
 .food-menu-details > h4 {
     color: #232527;
-    font-size: 18px;
+    font-size: 40px;
     font-weight: 400;
     letter-spacing: 1px;
     padding-bottom: 20px;
@@ -1272,6 +1310,14 @@ ul.instagram-feed li img {
     color: #fff;
 }
 
+.footer-logo {
+    height: 100px
+}
+
+.footer-logo img {
+    height: 100%;
+}
+
 .footer-logo,
 .footer-address {
     margin-bottom: 50px;
@@ -1332,17 +1378,18 @@ ul.instagram-feed li img {
 a.scrolltotop {
     background: #d0963e none repeat scroll 0 0;
     border: 1px solid transparent;
-    bottom: 20px;
+    bottom: 27px;
     color: #fff;
     display: none;
     font-size: 20px;
-    height: 50px;
-    padding-top: 10px;
+    height: 55px;
+    padding-top: 13px;
     position: fixed;
-    right: 20px;
+    left: 27px;
     text-align: center;
-    width: 50px;
+    width: 55px;
     z-index: 99;
+    border-radius: 45px;
 }
 
 a.scrolltotop:hover {
@@ -1429,8 +1476,8 @@ a.about-video-button:hover {
 }
 
 .style-two .promotions-details h3 {
-    font-family: "Segoe UI";
-    font-weight: lighter;
+    font-family: "Open Sans";
+    font-weight: 300;
     font-size: 58px;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -1444,7 +1491,7 @@ a.about-video-button:hover {
     letter-spacing: 2px;
     margin-bottom: 30px;
     text-transform: uppercase;
-    font-family: lato;
+    font-family: "Roboto Light";
 }
 
 .style-two .promotions-details p {
@@ -1509,6 +1556,7 @@ a.about-video-button:hover {
     padding-bottom: 40px;
     padding-left: 140px;
     position: relative;
+    min-height: 110px;
 }
 
 .style-two .food-menu-img {
@@ -1676,6 +1724,9 @@ option {
     height: 500px;
     position: relative;
 }
+.top-area.single-page.about-page {
+    height: 750px;
+}
 
 .page-barner-bg {
     background-attachment: fixed !important;
@@ -1687,7 +1738,7 @@ option {
 }
 
 .about-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/about/about_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/far_with_pepper_landscape_cropped.jpg") no-repeat scroll center center / cover;
 }
 
 .count-area-bg:after,
@@ -1807,7 +1858,7 @@ h3.counter {
 }
 
 .testmonial-area-bg {
-    background: rgba(0, 0, 0, 0) url("/img/testmonial/testmonial.jpg") no-repeat scroll center center / cover;
+    background-color: #EBEBEB;
     height: 100%;
     left: 0;
     position: absolute;
@@ -1831,9 +1882,14 @@ h3.counter {
     border-radius: 50%;
     color: #c1934c;
     height: 50px;
-    margin: auto auto 40px;
+    margin: auto auto 10px;
     padding-top: 12px;
     width: 50px;
+}
+
+.single-testmonail h2 {
+    color: #c1934c;
+    margin-bottom: 50px;
 }
 
 .testmonial-member-name-title > h4 {
@@ -2138,7 +2194,7 @@ ul.page-pagination li a {
 .tags-and-social-bar {
     border-bottom: 1px solid #c3c3c4;
     margin: -40px 0 60px;
-    padding-bottom: 20px;
+    padding-bottom: 13px;
 }
 
 .tags h3,
@@ -2196,7 +2252,7 @@ ul.page-pagination li a {
 =================================*/
 
 .blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/blog/blog_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/tinola_noodles.jpg") no-repeat scroll center center / cover;
 }
 
 .blog-page.section-padding {
@@ -2417,8 +2473,23 @@ ul.page-pagination li a {
     color: #fff;
 }
 
+.blog-content h4 {
+    font-family: "Open Sans";
+    font-weight: 800;
+}
+
 .social-widget ul li.s_facebook a {
     background: #2069ba none repeat scroll 0 0;
+}
+
+.social-widget ul li.s_instagram a {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+}
+
+.social-widget ul li.s_whats_app a {
+    background: #1AD03F none repeat scroll 0 0;
 }
 
 .social-widget ul li.s_twitter a {
@@ -2457,11 +2528,11 @@ ul.page-pagination li a {
 .post-widget ul li .post-tumb {
     height: 80px;
     width: 80px;
+    overflow-x: hidden;
 }
 
 .post-widget ul li .post-tumb img {
     height: 100%;
-    width: 100%;
 }
 
 .post-title-and-date h4 {
@@ -2504,10 +2575,23 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .single-blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/blog/blog_details_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/seafood_in_coconut_milk_pasta_square.jpg") no-repeat scroll center center / cover;
 }
 
 .single-blog-page .title-and-meta::after {
+    left: 0;
+    margin-left: auto;
+}
+
+/*
+  Gallery Page
+*/
+
+.gallery-page .page-barner-bg {
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/rana_1_landscape.jpg") no-repeat scroll center center / cover;
+}
+
+.gallery-page .title-and-meta::after {
     left: 0;
     margin-left: auto;
 }
@@ -2568,7 +2652,7 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .menu-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/contact_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/recipe_book.jpg") no-repeat scroll center center / cover;
 }
 
 .style-three .promotion-area-bg {
@@ -2654,7 +2738,7 @@ ul.blog-instagram-feed-widget li {
 ==================================*/
 
 .contact-us-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/contact_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/tiramisu_2_landscape.jpg") no-repeat scroll center center / cover;
 }
 
 .single-contact-widget {
@@ -2686,16 +2770,25 @@ ul.blog-instagram-feed-widget li {
 
 .contact-form input,
 .contact-form textarea {
-    border: 1px dashed;
+    border: 1px solid;
     border-radius: 0;
     box-shadow: 0 0 0 0;
     font-style: italic;
     letter-spacing: 1px;
-    margin-bottom: 30px;
     max-height: 130px;
     min-height: 45px;
     padding: 10px;
     width: 100%;
+}
+
+.contact-form .form-input {
+    margin-bottom: 5px;
+}
+
+.contact-form .form-group small,
+.contact-form .form-group small {
+    color: #d0963e;
+    margin-left: 3px;
 }
 
 .contact-form input:focus,
@@ -2732,7 +2825,7 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .error-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/blog/blog_page_barner.jpg") no-repeat scroll center center / cover;
+    background: rgba(0, 0, 0, 0) url("/img/chef_morris/no_flour_chocolate_cake_square.jpg") no-repeat scroll center center / cover;
 }
 
 .error-text {

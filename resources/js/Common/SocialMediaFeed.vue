@@ -15,13 +15,24 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+<!--                <Adsense-->
+<!--                    :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"-->
+<!--                    :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">-->
+<!--                </Adsense>-->
+            </div>
         </div>
     </section>
 </template>
 
 <script>
+    import VueInstagram from 'vue-instagram'
+
     export default {
-        name: 'SocialMediaFeed'
+        name: 'SocialMediaFeed',
+        components: {
+            VueInstagram
+        }
     }
 </script>
 

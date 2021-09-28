@@ -5,10 +5,10 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="footer-top section-padding text-center">
                         <div class="footer-logo">
-                            <a :href="main_menu[0].REDIRECT"><img src="" alt="Logo Here"></a>
+                            <a :href="main_menu[0].REDIRECT"><img src="//files.chefmorrisdanzen.com/l/img/logo/logo-light.png" alt="Logo"></a>
                         </div>
                         <div class="footer-address">
-                            <p>Sciacca, Italy</p>
+                            <p>Sicily, Italy</p>
                             <p><a href="mailto:chefmorrisdanzen@gmail.com">chefmorrisdanzen@gmail.com</a></p>
                             <p><a>+39 351 267 1387</a></p>
                         </div>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row below-footer">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="footer-menu">
                         <ul>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="footer-copyright">
-                        <p>&copy; 2021 <a :href="main_menu[0].REDIRECT">Chef Morris Danzen</a> | All Rights Reserved</p>
+                        <p>Copyright &copy; <a>Chef Morris Danzen</a>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>

@@ -10,21 +10,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="/" class="navbar-brand"><img src="" alt="logo"></a>
-                    <a href="/" class="navbar-brand white"><img src="" alt="logo"></a>
+                    <a href="/" class="navbar-brand"><img src="//files.chefmorrisdanzen.com/l/img/logo/logo-dark.png" alt="logo"></a>
+                    <a href="/" class="navbar-brand white"><img src="//files.chefmorrisdanzen.com/l/img/logo/logo-light.png" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
                     <div class="search-form-area">
                         <div class="search-form-overlay"></div>
                         <a class="search-form-trigger" href="#search-form">Search<span></span></a>
                         <div id="search-form" class="search-form">
-                            <form>
-                                <input type="search" placeholder="Type recipes here...">
+                            <form action="/recipes?#search-results-area">
+                                <input type="search" name="search" placeholder="Search recipes..." autocomplete="off">
                             </form>
                         </div>
                     </div>
                     <ul id="nav" class="nav navbar-nav cl-effect-11">
-                        <li :class="{ active: current_href.includes(menu.REDIRECT) }" v-for="menu in main_menu">
+                        <li :class="{ active: validateActiveMenu(menu.REDIRECT) }" v-for="menu in main_menu">
                             <a :href="menu.REDIRECT">{{ menu.NAME }}</a>
                         </li>
                     </ul>
@@ -44,6 +44,22 @@
                 main_menu: MainMenu,
                 current_href: window.location.href
             };
+        },
+        methods: {
+            /**
+             * Validate active menu for the current page.
+             * @param menu_name
+             */
+            validateActiveMenu(menu_name) {
+                let split_href = this.current_href.split('/');
+                return ('/' + split_href[split_href.length - 1] === menu_name);
+            }
         }
     }
 </script>
+
+<style>
+    .navbar-brand img {
+        margin: 0;
+    }
+</style>

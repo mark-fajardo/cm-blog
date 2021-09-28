@@ -10,16 +10,28 @@ require('laravel-mix-polyfill');
  | file for the application as well as bundling up all the JS files.
  |
  */
+module.exports = {
+    devtool: "source-map",
+}
 
 mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/home.js', 'public/js')
     .js('resources/js/main.js', 'public/js')
+    .js('resources/js/notFound.js', 'public/js')
+    .js('resources/js/recipeList.js', 'public/js')
+    .js('resources/js/recipe.js', 'public/js')
+    .js('resources/js/gallery.js', 'public/js')
+    .js('resources/js/timeline.js', 'public/js')
+    .js('resources/js/contact.js', 'public/js')
+    .js('resources/js/aboutMe.js', 'public/js')
     .postCss('resources/css/maintenance.css', 'public/css')
-    .postCss('resources/css/Front.css', 'public/css')
+    .postCss('resources/css/front.css', 'public/css')
     .polyfill({
         enabled: true,
         useBuiltIns: 'usage',
         targets: {'ie': 11},
         debug: true,
         corejs: 3,
-    }).version();
+    })
+    .disableNotifications()
+    .version();
