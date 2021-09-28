@@ -27,6 +27,9 @@ Route::get('/about-me', function () {
     return view('pages.about_me')->with(DBUtils::getStateToken());
 });
 Route::get('/recipe-list', function () {
+    return redirect('/recipes');
+});
+Route::get('/recipes', function () {
     SEOUtils::setSEOTools('recipes');
     return view('pages.recipe_list')->with(DBUtils::getStateToken());
 });

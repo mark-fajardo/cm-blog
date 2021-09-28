@@ -10,6 +10,9 @@ require('laravel-mix-polyfill');
  | file for the application as well as bundling up all the JS files.
  |
  */
+module.exports = {
+    devtool: "source-map",
+}
 
 mix.js('resources/js/maintenance.js', 'public/js')
     .js('resources/js/home.js', 'public/js')

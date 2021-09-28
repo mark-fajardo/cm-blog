@@ -26,10 +26,10 @@
             <a @click="prepareData" class="read-more">Load more</a>
         </div>
         <div class="row read-more-area">
-            <Adsense
-                :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
-                :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
-            </Adsense>
+<!--            <Adsense-->
+<!--                :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"-->
+<!--                :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">-->
+<!--            </Adsense>-->
         </div>
     </div>
 </template>

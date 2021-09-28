@@ -3,10 +3,10 @@
         <div class="blog-sidebar">
             <SidebarSearch/>
             <div class="single-sidebar-widget">
-                <Adsense
-                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"
-                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">
-                </Adsense>
+<!--                <Adsense-->
+<!--                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"-->
+<!--                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">-->
+<!--                </Adsense>-->
             </div>
             <SidebarTopRecipes/>
             <ConnectWithMe/>

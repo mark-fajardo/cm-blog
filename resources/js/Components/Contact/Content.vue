@@ -51,10 +51,10 @@
                     </div>
                     <div class="form-group">
                       <div class="form-input col-md-12">
-                        <Adsense
-                            :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
-                            :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
-                        </Adsense>
+<!--                        <Adsense-->
+<!--                            :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"-->
+<!--                            :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">-->
+<!--                        </Adsense>-->
                       </div>
                     </div>
                 </form>

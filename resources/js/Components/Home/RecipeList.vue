@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="area-title text-center">
-                        <h2>Recipe List</h2>
+                        <h2>Recipes</h2>
                         <h3>New and Recommended Recipes</h3>
                     </div>
                 </div>

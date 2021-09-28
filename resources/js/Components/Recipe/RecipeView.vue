@@ -15,7 +15,7 @@
         <div class="blog-details">
             <div class="title-and-meta">
                 <h3><a :href="'/recipe/' + recipe.slug_name">{{ recipe.recipe_name }}</a></h3>
-                <p class="post-meta">By <a>Chef Morris Danzen</a> | <a>{{ convertDateTime(recipe.created_at) }}</a></p>
+                <p class="post-meta">By <a>Chef Morris Danzen</a> | <a>{{ difficulties[parseInt(recipe.difficulty) - 1] }}</a> | <a>{{ convertDateTime(recipe.created_at) }}</a></p>
             </div>
             <div class="blog-content">
                 <p class="short-description">{{ recipe.short_description }}</p>
@@ -28,10 +28,10 @@
                     </YoutubeVideoPlayer>
                 </p>
                 <p class="long-description">{{ recipe.description }}</p>
-                <Adsense
-                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"
-                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">
-                </Adsense>
+<!--                <Adsense-->
+<!--                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"-->
+<!--                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">-->
+<!--                </Adsense>-->
                 <h4>Ingredients</h4>
                 <div class="ingredients-list col-lg-12">
                     <ul class="list-group col-lg-6 mx-auto">
@@ -55,6 +55,15 @@
     export default {
         name: 'RecipeView',
         components: { YoutubeVideoPlayer, carousel },
+        data() {
+            return {
+                difficulties: [
+                    'Beginner',
+                    'Intermediate',
+                    'Expert'
+                ]
+            };
+        },
         computed: {
             ...mapGetters('Recipe', ['recipe']),
             ...mapGetters('Category', ['categories']),

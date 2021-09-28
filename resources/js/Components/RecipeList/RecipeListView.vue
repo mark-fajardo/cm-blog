@@ -61,10 +61,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <Adsense
-                        :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"
-                        :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">
-                    </Adsense>
+<!--                    <Adsense-->
+<!--                        :data-ad-client="ENV_.DATA_AD.HORIZONTAL_DISPLAY.CLIENT"-->
+<!--                        :data-ad-slot="ENV_.DATA_AD.HORIZONTAL_DISPLAY.SLOT">-->
+<!--                    </Adsense>-->
                 </div>
             </div>
         </div>

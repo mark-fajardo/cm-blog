@@ -1,6 +1,6 @@
 <template>
     <section>
-        <MiniAbout :show-button="false"/>
+        <MiniAbout :preview="false"/>
         <MissionVision/>
     </section>
 </template>

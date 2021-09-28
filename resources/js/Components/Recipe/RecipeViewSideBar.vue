@@ -3,10 +3,10 @@
         <div class="blog-sidebar">
             <SidebarSearch/>
             <div class="single-sidebar-widget">
-                <Adsense
-                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"
-                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">
-                </Adsense>
+<!--                <Adsense-->
+<!--                    :data-ad-client="ENV_.DATA_AD.SQUARE_DISPLAY.CLIENT"-->
+<!--                    :data-ad-slot="ENV_.DATA_AD.SQUARE_DISPLAY.SLOT">-->
+<!--                </Adsense>-->
             </div>
             <SidebarTopRecipes/>
             <ConnectWithMe/>
@@ -14,10 +14,10 @@
                 <h4>Recipe Tags</h4>
                 <ul>
                     <li v-for="ingredients in recipeIngredients">
-                        <a :href="'/recipe-list?search=' + encodeURI(ingredients) + '#search-results-area'">{{ limitText(ingredients, 12) }}</a>
+                        <a :href="'/recipes?search=' + encodeURI(ingredients) + '#search-results-area'">{{ limitText(ingredients, 12) }}</a>
                     </li>
                     <li v-show="areRecipeCategoriesAvailable === true" v-for="category in recipeCategories" :set="category_name = getDefaultValue(categories.find(x => x.id === parseInt(category)).category_name)">
-                        <a :href="'/recipe-list?search=' + encodeURI(category_name) + '#search-results-area'">{{ category_name }}</a>
+                        <a :href="'/recipes?search=' + encodeURI(category_name) + '#search-results-area'">{{ category_name }}</a>
                     </li>
                 </ul>
             </div>
