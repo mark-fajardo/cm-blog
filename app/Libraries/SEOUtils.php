@@ -38,7 +38,7 @@ class SEOUtils
     {
         self::setupCommon([
             'title'       => 'Home - Chef Morris Danzen',
-            'description' => 'You can see all about Chef Morris Danzen\'s recipe list, top recipes and recipes of the month. You can contact also Chef Morris Danzen here on his website.',
+            'description' => 'You can see all about Chef Morris Danzen\'s recipes, top recipes and recipes of the month. You can contact also Chef Morris Danzen here on his website.',
             'endpoint'    => '/',
             'type'        => 'blog',
             'keywords'    => 'chef morris danzen website, chef morris website, chef danzen website, chef morris danzen official website, chef morris official, chef morris main website, chef morris top recipes, chef morris, chef danzen, chef morris blog',
@@ -65,11 +65,11 @@ class SEOUtils
     private static function recipesSetup(): void
     {
         self::setupCommon([
-            'title'       => 'Recipe List - Chef Morris Danzen',
+            'title'       => 'Recipes - Chef Morris Danzen',
             'description' => 'All About Chef Morris Danzen. You can see the list of all the Recipes of Chef Morris Danzen.',
-            'endpoint'    => '/recipe-list',
+            'endpoint'    => '/recipes',
             'type'        => 'recipes',
-            'keywords'    => 'chef morris danzen recipe list, chef morris recipe list, chef morris top recipe list, top recipe list, chef morris own recipe list, chef morris recipe of the month, search chef morris recipes'
+            'keywords'    => 'chef morris danzen recipes, chef morris recipes, chef morris top recipes, top recipes, chef morris own recipes, chef morris recipe of the month, search chef morris recipes'
         ]);
     }
 

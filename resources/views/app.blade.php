@@ -53,6 +53,10 @@
 
             gtag('config', 'UA-207398048-1');
         </script>
+
+        <!-- Auto Ads - Google Adsense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2660471773096082"
+                crossorigin="anonymous"></script>
     @endif
 
     @stack('scripts')

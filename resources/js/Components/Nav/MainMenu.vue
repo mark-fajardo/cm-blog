@@ -18,7 +18,7 @@
                         <div class="search-form-overlay"></div>
                         <a class="search-form-trigger" href="#search-form">Search<span></span></a>
                         <div id="search-form" class="search-form">
-                            <form action="/recipe-list?#search-results-area">
+                            <form action="/recipes?#search-results-area">
                                 <input type="search" name="search" placeholder="Search recipes..." autocomplete="off">
                             </form>
                         </div>

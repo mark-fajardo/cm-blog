@@ -4,7 +4,7 @@
             <h3>TAGS:</h3>
             <ul>
                 <li v-for="category in recipeCategories" :set="category_name = getDefaultValue(categories.find(x => x.id === parseInt(category)).category_name)">
-                    <a :href="'/recipe-list?search=' + encodeURI(category_name) + '#search-results-area'">{{ category_name }}</a>
+                    <a :href="'/recipes?search=' + encodeURI(category_name) + '#search-results-area'">{{ category_name }}</a>
                 </li>
             </ul>
         </div>

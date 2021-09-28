@@ -16,8 +16,8 @@ export const MainMenu = Object.freeze([
         REDIRECT: '/gallery'
     },
     {
-        NAME: 'Recipe List',
-        REDIRECT: '/recipe-list'
+        NAME: 'Recipes',
+        REDIRECT: '/recipes'
     },
     {
         NAME: 'Timeline',
