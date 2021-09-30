@@ -27,6 +27,10 @@ Blog for Chef Morris Danzen
 - Google Analytics
 - Facebook Page Messenger Chat
 
+## [1.0.1](https://wecreate.atlassian.net/browse/CMB-123)
+### Updated
+- Changed Gallery Page Header
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
