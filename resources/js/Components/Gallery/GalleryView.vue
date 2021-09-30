@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="area-title text-center">
-                        <h2>Recipe Gallery</h2>
-                        <h3>Recipe Images Gallery of Chef Morris Danzen</h3>
+                        <h2 class="capitalize">My Photo Gallery</h2>
+                        <h3 class="no-text-transform">My Life In And Out Of The Kitchen</h3>
                     </div>
                 </div>
             </div>
@@ -105,5 +105,13 @@
 
     .read-more-area .read-more:hover {
         color: white;
+    }
+
+    .no-text-transform {
+        text-transform: none;
+    }
+
+    .capitalize {
+        text-transform: uppercase;
     }
 </style>
