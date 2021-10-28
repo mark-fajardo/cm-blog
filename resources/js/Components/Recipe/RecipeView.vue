@@ -21,8 +21,8 @@
                 <p class="short-description">{{ recipe.short_description }}</p>
                 <p>
                     <YoutubeVideoPlayer
-                        v-show="recipe.youtube_video_id !== ''"
-                        :video-id="recipe.youtube_video_id"
+                        v-show="this.$_.isEmpty(recipe.youtube_video_id) === false"
+                        :video-id="(this.$_.isEmpty(recipe.youtube_video_id)) ? '' : recipe.youtube_video_id"
                         :video-title="recipe.recipe_name"
                         :Height="400">
                     </YoutubeVideoPlayer>
@@ -40,8 +40,8 @@
                 </div>
                 <h4>Procedure</h4>
                 <p class="blog-content-p" v-html="recipe.procedure"></p>
-                <h4>Notes</h4>
-                <p class="blog-content-p">{{ (this.$_.isEmpty(recipe.notes) === true) ? 'There is no extra notes for this recipe.' : recipe.notes }}</p>
+                <h4 v-show="this.$_.isEmpty(recipe.notes) === false">Notes</h4>
+                <p class="blog-content-p" v-show="this.$_.isEmpty(recipe.notes) === false">{{ recipe.notes }}</p>
             </div>
         </div>
     </div>

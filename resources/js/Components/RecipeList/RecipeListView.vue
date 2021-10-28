@@ -34,8 +34,8 @@
                             </a>
                         </div>
                         <div class="food-menu-details">
-                            <h3>{{ recipe.recipe_name }} </h3>
-                            <p class="menu-speacification"><span v-for="ingredient in limitObject(recipe.ingredients_json, 6)">- {{ limitText(ingredient, 10) }}&nbsp;</span></p>
+                            <h3 style="height: 50px;">{{ recipe.recipe_name }} </h3>
+                            <p class="menu-speacification"><span v-for="ingredient in limitObject(recipe.ingredients_json, 6)">- {{ limitText(ingredient, 7) }}&nbsp;</span></p>
                             <a class="view-recipe-link" :href="'/recipe/' + recipe.slug_name"><span class="menu-price">View Recipe <i class="fa fa-angle-right"></i></span></a>
                         </div>
                     </div>
