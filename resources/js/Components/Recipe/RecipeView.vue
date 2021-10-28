@@ -20,7 +20,6 @@
             <div class="blog-content">
                 <p class="short-description">{{ recipe.short_description }}</p>
                 <p>
-                    {{ this.$_.isEmpty(recipe.youtube_video_id) === false }}
                     <YoutubeVideoPlayer
                         v-show="this.$_.isEmpty(recipe.youtube_video_id) === false"
                         :video-id="(this.$_.isEmpty(recipe.youtube_video_id)) ? '' : recipe.youtube_video_id"
