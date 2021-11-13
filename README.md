@@ -1,10 +1,35 @@
 # Chef Morris Blog
 Blog for Chef Morris Danzen
 
-## Features
-- Chef Morris' Recipe list
-- Chef Morris' Timeline
-- Chef Morris' Chat Service Powered by Facebook Messenger.
+## [1.0.0](https://wecreate.atlassian.net/browse/CMB-1)
+### Added
+- Home Page
+  - Website banners and announcements
+  - Mini about me
+  - Recipe of the month promotion
+  - Top recipes' list
+  - Recommended Youtube Vlogs
+- About Me Page
+  - About Chef Morris Danzen
+  - Chef Morris Danzen Vision and Mission
+- Recipe Gallery Page
+  - Contains the images added to the gallery.
+- Recipes Page
+  - Chef Morris Danzen's Recipes
+- Recipe Timeline
+  - Timeline view of Chef Morris Danzen's Recipes
+- Contact Me
+  - Contact page for Chef Morris Danzen
+
+### Additional Features
+- Recipe search
+- Google Adsense
+- Google Analytics
+- Facebook Page Messenger Chat
+
+## [1.0.1](https://wecreate.atlassian.net/browse/CMB-123)
+### Updated
+- Changed Gallery Page Header
 
 ## Contributing
 
