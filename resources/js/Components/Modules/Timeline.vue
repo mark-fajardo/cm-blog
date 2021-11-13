@@ -21,6 +21,8 @@
     import Content from '../../Components/Timeline/Content';
     import TimelineSidebar from '../Timeline/TimelineSidebar';
     import Promotions from '../Home/Promotions';
+    import { mapActions } from 'vuex';
+    import { PageTags } from '../../constants';
 
     export default {
         components: { Promotions, TimelineSidebar, SocialMediaFeed, Footer, Content },
@@ -28,6 +30,12 @@
             jQueryMixin.method.loadSticky();
             jQueryMixin.method.loadSearch();
             jQueryMixin.method.removeLoader();
+            await this.getPageConfig(PageTags.TIMELINE);
+        },
+        methods: {
+            ...mapActions('PageConfig', {
+                getPageConfig: 'getPageConfig'
+            }),
         }
     }
 </script>
