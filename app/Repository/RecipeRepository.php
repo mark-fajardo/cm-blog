@@ -37,6 +37,7 @@ class RecipeRepository extends Repository
             ->where(AppConstants::STATUS, 1)
             ->orderBy(AppConstants::ID, AppConstants::DESC)
             ->orderBy(AppConstants::UPDATED_AT, AppConstants::DESC)
+            ->limit(20)
             ->get()
         );
     }
@@ -52,6 +53,7 @@ class RecipeRepository extends Repository
             ->where(AppConstants::STATUS, 1)
             ->orderBy(AppConstants::ID, AppConstants::DESC)
             ->orderBy(AppConstants::UPDATED_AT, AppConstants::DESC)
+            ->limit(6)
             ->get()
         );
     }

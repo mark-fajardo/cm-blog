@@ -1737,10 +1737,6 @@ option {
     width: 100%;
 }
 
-.about-page .page-barner-bg {
-    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/far_with_pepper_landscape_cropped.jpg") no-repeat scroll center center / cover;*/
-}
-
 .count-area-bg:after,
 .page-barner-bg::after {
     background: #000;
@@ -2251,10 +2247,6 @@ ul.page-pagination li a {
     18. BLOG PAGE
 =================================*/
 
-.blog-page .page-barner-bg {
-    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/tinola_noodles.jpg") no-repeat scroll center center / cover;*/
-}
-
 .blog-page.section-padding {
     padding-top: 50px;
 }
@@ -2574,10 +2566,6 @@ ul.blog-instagram-feed-widget li {
     19. SINGLE BLOG PAGE
 ================================*/
 
-.single-blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/seafood_in_coconut_milk_pasta_square.jpg") no-repeat scroll center center / cover;
-}
-
 .single-blog-page .title-and-meta::after {
     left: 0;
     margin-left: auto;
@@ -2586,10 +2574,6 @@ ul.blog-instagram-feed-widget li {
 /*
   Gallery Page
 */
-
-.gallery-page .page-barner-bg {
-    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/rana_1_landscape.jpg") no-repeat scroll center center / cover;*/
-}
 
 .gallery-page .title-and-meta::after {
     left: 0;
@@ -2650,10 +2634,6 @@ ul.blog-instagram-feed-widget li {
 /*===============================
     20. MENU PAGE
 ================================*/
-
-.menu-page .page-barner-bg {
-    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/recipe_book.jpg") no-repeat scroll center center / cover;*/
-}
 
 .style-three .promotion-area-bg {
     background: #f4f4f4 none repeat scroll 0 0;
@@ -2736,10 +2716,6 @@ ul.blog-instagram-feed-widget li {
 /*=================================
     21. CONTACT US PAGE
 ==================================*/
-
-.contact-us-page .page-barner-bg {
-    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/tiramisu_2_landscape.jpg") no-repeat scroll center center / cover;*/
-}
 
 .single-contact-widget {
     margin-bottom: 30px;
