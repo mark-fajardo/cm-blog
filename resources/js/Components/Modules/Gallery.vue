@@ -13,6 +13,8 @@
     import SocialMediaFeed from '../../Common/SocialMediaFeed';
     import GalleryView from '../Gallery/GalleryView';
     import Promotions from '../Home/Promotions';
+    import { mapActions } from 'vuex';
+    import { PageTags } from '../../constants';
 
     export default {
         components: { Promotions, GalleryView, SocialMediaFeed, Footer },
@@ -20,6 +22,12 @@
             jQueryMixin.method.loadSticky();
             jQueryMixin.method.loadSearch();
             jQueryMixin.method.removeLoader();
+            await this.getPageConfig(PageTags.GALLERY);
+        },
+        methods: {
+            ...mapActions('PageConfig', {
+                getPageConfig: 'getPageConfig'
+            }),
         }
     }
 </script>

@@ -1738,7 +1738,7 @@ option {
 }
 
 .about-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/far_with_pepper_landscape_cropped.jpg") no-repeat scroll center center / cover;
+    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/far_with_pepper_landscape_cropped.jpg") no-repeat scroll center center / cover;*/
 }
 
 .count-area-bg:after,
@@ -2252,7 +2252,7 @@ ul.page-pagination li a {
 =================================*/
 
 .blog-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/tinola_noodles.jpg") no-repeat scroll center center / cover;
+    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/tinola_noodles.jpg") no-repeat scroll center center / cover;*/
 }
 
 .blog-page.section-padding {
@@ -2588,7 +2588,7 @@ ul.blog-instagram-feed-widget li {
 */
 
 .gallery-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/rana_1_landscape.jpg") no-repeat scroll center center / cover;
+    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/rana_1_landscape.jpg") no-repeat scroll center center / cover;*/
 }
 
 .gallery-page .title-and-meta::after {
@@ -2652,7 +2652,7 @@ ul.blog-instagram-feed-widget li {
 ================================*/
 
 .menu-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/recipe_book.jpg") no-repeat scroll center center / cover;
+    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/recipe_book.jpg") no-repeat scroll center center / cover;*/
 }
 
 .style-three .promotion-area-bg {
@@ -2738,7 +2738,7 @@ ul.blog-instagram-feed-widget li {
 ==================================*/
 
 .contact-us-page .page-barner-bg {
-    background: rgba(0, 0, 0, 0) url("/img/chef_morris/tiramisu_2_landscape.jpg") no-repeat scroll center center / cover;
+    /*background: rgba(0, 0, 0, 0) url("/img/chef_morris/tiramisu_2_landscape.jpg") no-repeat scroll center center / cover;*/
 }
 
 .single-contact-widget {

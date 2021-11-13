@@ -23,12 +23,20 @@ class PageConfigService extends Service
     private $oPageConfigRepository;
 
     /**
+     * File utils
+     * @var FileUtils
+     */
+    private $oFileUtils;
+
+    /**
      * PageConfigService constructor
      * @param PageConfigRepository $oPageConfigRepository
+     * @param FileUtils $oFileUtils
      */
-    public function __construct(PageConfigRepository $oPageConfigRepository)
+    public function __construct(PageConfigRepository $oPageConfigRepository, FileUtils $oFileUtils)
     {
         $this->oPageConfigRepository = $oPageConfigRepository;
+        $this->oFileUtils = $oFileUtils;
     }
 
     /**
@@ -51,6 +59,12 @@ class PageConfigService extends Service
             return $this;
         }
 
+        if ($this->aRequest[AppConstants::PAGE_TAG] !== AppConstants::PAGE_TAG_HOME) {
+            $aJsonConfig = $this->manageCommonPageConfig($sPageConfig);
+            $this->aResponse = DBUtils::formatResponse(true, $aJsonConfig);
+            return $this;
+        }
+
         $aJsonConfig = $this->assignImage($sPageConfig);
         $this->aResponse = DBUtils::formatResponse(true, $aJsonConfig);
         return $this;
@@ -64,15 +78,30 @@ class PageConfigService extends Service
     private function assignImage(string $sPageConfig): array
     {
         $aJsonConfig = json_decode($sPageConfig, true);
-        $oFileUtils = new FileUtils();
-        $aLandscapeImages = $oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'sliders.*.image_url', []));
-        $aPortraitImages = $oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'sliders.*.image_url_portrait', []));
-        data_set($aJsonConfig, 'mini_about.img', $oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'mini_about.img', [])));
+        $aLandscapeImages = $this->oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'sliders.*.image_url', []));
+        $aPortraitImages = $this->oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'sliders.*.image_url_portrait', []));
+        data_set($aJsonConfig, 'mini_about.img', $this->oFileUtils->assignMultipleURL(data_get($aJsonConfig, 'mini_about.img', [])));
         foreach ($aJsonConfig['sliders'] as $iKey => $sValue) {
             data_set($aJsonConfig['sliders'], $iKey . '.image_url', data_get($aLandscapeImages, $iKey, ''));
             data_set($aJsonConfig['sliders'], $iKey . '.image_url_portrait', data_get($aPortraitImages, $iKey, ''));
         }
 
+        return $aJsonConfig;
+    }
+
+    /**
+     * Manage common page config.
+     * @param string $sPageConfig
+     * @return array
+     */
+    private function manageCommonPageConfig(string $sPageConfig): array
+    {
+        $aJsonConfig = json_decode($sPageConfig, true);
+        data_set(
+            $aJsonConfig['header'],
+            'img',
+            $this->oFileUtils->url(data_get($aJsonConfig, 'header.img', ''))
+        );
         return $aJsonConfig;
     }
 }

@@ -110,3 +110,16 @@ export const GoogleRecaptcha = Object.freeze({
     SITE_KEY: '6LehHFIcAAAAAKUxBM0ftsBwMhcuOv746rb1883B',
     SECRET: '6LehHFIcAAAAAA9PTfxD5RcR3liUsczXn5YU0DTF',
 });
+
+/**
+ * Contains the page tags' values.
+ * @type {Readonly<{ABOUT_ME: string, CONTACT: string, GALLERY: string, RECIPES: string, HOME: string, TIMELINE: string}>}
+ */
+export const PageTags = Object.freeze({
+    HOME: 'home_page', // custom
+    ABOUT_ME: 'about_me_page',
+    GALLERY: 'gallery_page',
+    RECIPES: 'recipes_page',
+    TIMELINE: 'timeline_page',
+    CONTACT: 'contact_page',
+});
