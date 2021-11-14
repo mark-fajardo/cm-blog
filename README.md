@@ -1,6 +1,21 @@
 # Chef Morris Blog
 Blog for Chef Morris Danzen
 
+## [1.1.0](https://wecreate.atlassian.net/browse/CMB-126)
+### Updated
+- Recipes page header title
+- Implement dynamic header images
+- Limit loading of data
+
+## [1.0.2](https://wecreate.atlassian.net/browse/CMB-125)
+### Fixed
+- UI issues regarding the multiple items display
+- Null youtube video
+
+## [1.0.1](https://wecreate.atlassian.net/browse/CMB-123)
+### Updated
+- Changed Gallery Page Header
+
 ## [1.0.0](https://wecreate.atlassian.net/browse/CMB-1)
 ### Added
 - Home Page
@@ -26,10 +41,6 @@ Blog for Chef Morris Danzen
 - Google Adsense
 - Google Analytics
 - Facebook Page Messenger Chat
-
-## [1.0.1](https://wecreate.atlassian.net/browse/CMB-123)
-### Updated
-- Changed Gallery Page Header
 
 ## Contributing
 
