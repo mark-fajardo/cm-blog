@@ -5,7 +5,7 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="area-title text-center">
                         <h2>Recipes</h2>
-                        <h3>New and Updated Recipes for you</h3>
+                        <h3>New and Fresh Recipes for you</h3>
                     </div>
                 </div>
             </div>

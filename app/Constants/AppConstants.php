@@ -136,4 +136,7 @@ class AppConstants
     public const INT = 'int';
     public const REQUIRED_INT = 'required|int';
     public const NULLABLE = 'nullable';
+
+    /** Page Tags' Constants **/
+    public const PAGE_TAG_HOME = 'home_page';
 }

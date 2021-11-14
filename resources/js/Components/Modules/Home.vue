@@ -18,6 +18,7 @@
     import SocialMediaFeed from '../../Common/SocialMediaFeed';
     import Vlogs from '../../Common/Vlogs';
     import { jQueryMixin } from '../../main';
+    import { PageTags } from '../../constants';
 
     export default {
         components: { Vlogs, SocialMediaFeed, Footer, RecipeList, Promotions, MiniAbout },
@@ -34,7 +35,7 @@
              */
             async prepareData() {
                 Promise.all([
-                    await this.getPageConfig('home_page')
+                    await this.getPageConfig(PageTags.HOME),
                 ]).then(() => {
                     jQueryMixin.method.init();
                 })
